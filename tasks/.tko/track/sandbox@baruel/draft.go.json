@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-04_21-48-10",
+            "content": "@@ -144,17 +144,16 @@\n petidas \n-*\n %5B%5Dstring\n@@ -269,17 +269,16 @@\n         \n-*\n repetida\n@@ -288,17 +288,16 @@\n  append(\n-*\n repetida\n@@ -400,17 +400,16 @@\n altando \n-*\n %5B%5Dstring\n@@ -483,17 +483,16 @@\n         \n-*\n faltando\n@@ -501,17 +501,16 @@\n  append(\n-*\n faltando\n@@ -952,17 +952,16 @@\n rinhas, \n-&\n repetida\n@@ -1010,17 +1010,16 @@\n rinhas, \n-&\n faltando\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-04_21-50-07",
+            "content": "@@ -433,26 +433,19 @@\n  := \n-1; i %3C=\n+range\n  total\n-; i++\n  %7B%0A \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-04_21-51-18",
+            "content": "@@ -537,17 +537,29 @@\n nv.Itoa(\n-i\n+figurinhas%5Bi%5D\n ))%0A     \n@@ -666,17 +666,16 @@\n tidas, %22\n- \n %22))%0A    \n@@ -706,17 +706,16 @@\n tando, %22\n- \n %22))%0A%7D%0A%0Af\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-04_21-53-26",
+            "content": "@@ -617,29 +617,25 @@\n ring) %7B%0A    \n-fmt.P\n+p\n rintln(strin\n@@ -667,13 +667,9 @@\n     \n-fmt.P\n+p\n rint\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-04_21-56-28",
+            "content": "@@ -580,96 +580,94 @@\n dos(\n-vetor %5B%5Dstring) %7B%0A    if len(vetor) == 0 %7B%0A        fmt.Println('N')%0A        return%0A    %7D\n+repetidas %5B%5Dstring, faltando %5B%5Dstring) %7B%0A    fmt.Println(strings.Join(repetidas, %22 %22))\n %0A   \n@@ -696,13 +696,16 @@\n oin(\n-vetor\n+faltando\n , %22 \n@@ -1057,33 +1057,18 @@\n epetidas\n-)%0A    resultados(\n+, \n faltando\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-04_21-58-40",
+            "content": "@@ -643,11 +643,11 @@\n tln(\n-%22N%22\n+'N'\n )%0A  \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-04_21-59-12",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc ler(x *int) {\n    fmt.Scan(x)\n}\n\nfunc adicionarFigurinha(figurinhas map[int]int, repetidas *[]string) {\n    var figurinha int\n    ler(&figurinha)\n    figurinhas[figurinha]++\n    if figurinhas[figurinha] > 1 {\n        *repetidas = append(*repetidas, strconv.Itoa(figurinha))\n    }\n}\n\nfunc encontrarFaltando(total int, figurinhas map[int]int, faltando *[]string) {\n    for i := 1; i <= total; i++ {\n        if figurinhas[i] == 0 {\n            *faltando = append(*faltando, strconv.Itoa(i))\n        }\n    }\n}\n\nfunc resultados(vetor []string) {\n    if len(vetor) == 0 {\n        fmt.Println(\"N\")\n        return\n    }\n    fmt.Println(strings.Join(vetor, \" \"))\n}\n\nfunc main() {\n    var total, quantidade int\n    ler(&total)\n    ler(&quantidade)\n    figurinhas := make(map[int]int)\n    repetidas := make([]string, 0)\n    faltando := make([]string, 0)\n    for range quantidade {\n        adicionarFigurinha(figurinhas, &repetidas)\n    }\n    encontrarFaltando(total, figurinhas, &faltando)\n    resultados(repetidas)\n    resultados(faltando)\n}\n",
+            "lines": "51"
+        }
+    ]
+}

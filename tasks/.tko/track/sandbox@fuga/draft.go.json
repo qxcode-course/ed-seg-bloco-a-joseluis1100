@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-04_05-37-07",
+            "content": "@@ -80,22 +80,12 @@\n   F \n-= (F + D) %25 16\n++= D\n %0A   \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-04_05-37-47",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var H, P\n@@ -60,17 +60,26 @@\n int%0A\n-%09\n+    \n for %7B%0A\n-%09%09\n+        \n F = \n@@ -88,22 +88,23 @@\n  + D\n- + 16\n ) %25 16%0A\n-%09%09\n+        \n if F\n@@ -111,19 +111,28 @@\n  == H %7B%0A\n-%09%09%09\n+            \n fmt.Prin\n@@ -144,71 +144,119 @@\n S%22)%0A\n-%09%09%09return%0A%09%09%7D%0A%09%09if F == P %7B%0A%09%09%09fmt.Println(%22N%22)%0A%09%09%09return%0A%09%09%7D%0A%09\n+            return%0A        %7D%0A        if F == P %7B%0A            fmt.Println(%22N%22)%0A            return%0A        %7D%0A    \n %7D%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-04_05-38-13",
+            "content": "@@ -119,29 +119,30 @@\n tln(%22S%22)%0A%09%09%09\n-b\n re\n-ak\n+turn\n %0A%09%09%7D%0A%09%09if F \n@@ -175,13 +175,14 @@\n %0A%09%09%09\n-b\n re\n-ak\n+turn\n %0A%09%09%7D\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-04_05-41-20",
+            "content": "@@ -136,14 +136,11 @@\n %0A%09%09%7D\n- else \n+%0A%09%09\n if F\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-04_05-42-21",
+            "content": "@@ -30,118 +30,36 @@\n unc \n-ler(x *int) %7B%0A%09fmt.Scan(x)%0A%7D%0Afunc main() %7B%0A%09var H, P, F, D int%0A    ler(&H)%0A    ler(&P)%0A    ler(&F)%0A    ler(&D)\n+main() %7B%0A%09var H, P, F, D int\n %0A%09fo\n@@ -74,16 +74,21 @@\n = (F + D\n+ + 16\n ) %25 16%0A%09\n@@ -127,21 +127,23 @@\n %0A%09%09%09\n+b\n re\n-turn%0A%09%09%7D%0A%09%09\n+ak%0A%09%09%7D else \n if F\n@@ -177,14 +177,13 @@\n %0A%09%09%09\n+b\n re\n-turn\n+ak\n %0A%09%09%7D\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-04_05-44-03",
+            "content": "@@ -160,13 +160,8 @@\n  + D\n- + 16\n ) %25 \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-04_05-44-18",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ler(x *int) {\n\tfmt.Scan(x)\n}\nfunc main() {\n\tvar H, P, F, D int\n    ler(&H)\n    ler(&P)\n    ler(&F)\n    ler(&D)\n\tfor {\n\t\tF = (F + D + 16) % 16\n\t\tif F == H {\n\t\t\tfmt.Println(\"S\")\n\t\t\treturn\n\t\t}\n\t\tif F == P {\n\t\t\tfmt.Println(\"N\")\n\t\t\treturn\n\t\t}\n\t}\n}\n",
+            "lines": "25"
+        }
+    ]
+}

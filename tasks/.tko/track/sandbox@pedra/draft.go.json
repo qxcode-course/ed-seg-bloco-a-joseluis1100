@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-04_19-43-55",
+            "content": "@@ -389,30 +389,59 @@\n %7D%0A%0Afunc \n-definirMelhor(\n+main() %7B%0A%09var repeticoes, melhor int%0A%09ler(&\n repetico\n@@ -446,22 +446,19 @@\n coes\n- int, \n+)%0A%09\n pessoas \n %5B%5DPe\n@@ -457,48 +457,39 @@\n oas \n-%5B%5DPessoa) string %7B%0A    melhor := -1%0A    \n+:= make(%5B%5DPessoa, repeticoes)%0A%09\n for \n@@ -622,250 +622,6 @@\n %0A%09%7D%0A\n-    if melhor == -1 %7B%0A        return %22sem ganhador%22%0A    %7D else %7B%0A        return string(melhor)%0A    %7D%0A%7D%0A%0Afunc main() %7B%0A%09var repeticoes int%0A%09ler(&repeticoes)%0A%09pessoas := make(%5B%5DPessoa, repeticoes)%0A%09fmt.Println(definirMelhor(repeticoes, pessoas))%0A\n %7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-04_19-51-44",
+            "content": "@@ -69,30 +69,8 @@\n int%0A\n-    classificado bool%0A\n %7D%0A%0Af\n@@ -190,138 +190,8 @@\n .B)%0A\n-    if pessoa.A %3C 10 %7C%7C pessoa.B %3C 10 %7B%0A        pessoa.classificado = false%0A    %7D else %7B%0A        pessoa.classificado = true%0A    %7D%0A\n %09ret\n@@ -467,43 +467,8 @@\n  -1%0A\n-    pessoas%5B0%5D = adicionarPessoa()%0A\n     \n@@ -480,14 +480,13 @@\n  := \n-1; i %3C\n+range\n  rep\n@@ -496,13 +496,8 @@\n coes\n-; i++\n  %7B%0A%09\n@@ -532,39 +532,12 @@\n a()%0A\n+\n %09%09if\n- pessoas%5Bi%5D.classificado &&\n  atu\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-04_20-01-08",
+            "content": "@@ -623,46 +623,16 @@\n     \n-for i := range repeticoes %7B%0A%09%09\n pessoas%5B\n i%5D =\n@@ -627,17 +627,17 @@\n pessoas%5B\n-i\n+0\n %5D = adic\n@@ -658,89 +658,74 @@\n     \n-    if melhor == -1 && pessoas%5Bi%5D.classificado %7B%0A            melhor = i%0A        %7D\n+for i := 1; i %3C repeticoes; i++ %7B%0A%09%09pessoas%5Bi%5D = adicionarPessoa()\n %0A%09%09i\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-04_20-02-38",
+            "content": "@@ -35,19 +35,8 @@\n th%22%0A\n-%09%22strconv%22%0A\n )%0A%0At\n@@ -953,17 +953,11 @@\n  str\n-conv.Itoa\n+ing\n (mel\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-04_20-03-57",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n\t\"strconv\"\n)\n\ntype Pessoa struct {\n\tA, B int\n    classificado bool\n}\n\nfunc ler(x *int) {\n\tfmt.Scan(x)\n}\n\nfunc adicionarPessoa() Pessoa {\n\tvar pessoa Pessoa\n\tler(&pessoa.A)\n\tler(&pessoa.B)\n    if pessoa.A < 10 || pessoa.B < 10 {\n        pessoa.classificado = false\n    } else {\n        pessoa.classificado = true\n    }\n\treturn pessoa\n}\n\nfunc atualizarMelhor(pessoa1 Pessoa, pessoa2 Pessoa) bool {\n\tif math.Abs(float64(pessoa1.A-pessoa1.B)) < math.Abs(float64(pessoa2.A-pessoa2.B)) {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc definirMelhor(repeticoes int, pessoas []Pessoa) string {\n    melhor := -1\n    for i := range repeticoes {\n\t\tpessoas[i] = adicionarPessoa()\n        if melhor == -1 && pessoas[i].classificado {\n            melhor = i\n        }\n\t\tif pessoas[i].classificado && atualizarMelhor(pessoas[i], pessoas[melhor]) {\n\t\t\tmelhor = i\n\t\t}\n\t}\n    if melhor == -1 {\n        return \"sem ganhador\"\n    } else {\n        return strconv.Itoa(melhor)\n    }\n}\n\nfunc main() {\n\tvar repeticoes int\n\tler(&repeticoes)\n\tpessoas := make([]Pessoa, repeticoes)\n\tfmt.Println(definirMelhor(repeticoes, pessoas))\n}\n",
+            "lines": "60"
+        }
+    ]
+}

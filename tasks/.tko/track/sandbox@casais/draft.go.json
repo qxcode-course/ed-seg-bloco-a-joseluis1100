@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-04_20-22-02",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -39,17 +39,20 @@\n *int) %7B%0A\n-%09\n+    \n fmt.Scan\n@@ -106,17 +106,20 @@\n ) int %7B%0A\n-%09\n+    \n var anim\n@@ -125,17 +125,20 @@\n mal int%0A\n-%09\n+    \n ler(&ani\n@@ -142,17 +142,20 @@\n animal)%0A\n-%09\n+    \n if anima\n@@ -172,18 +172,24 @@\n  == 0 %7B%0A\n-%09%09\n+        \n animais%5B\n@@ -198,18 +198,24 @@\n imal%5D++%0A\n-%09%09\n+        \n return 0\n@@ -215,17 +215,20 @@\n eturn 0%0A\n-%09\n+    \n %7D else %7B\n@@ -228,18 +228,24 @@\n  else %7B%0A\n-%09%09\n+        \n animais%5B\n@@ -256,18 +256,24 @@\n al%5D = 0%0A\n-%09%09\n+        \n return 1\n@@ -273,17 +273,20 @@\n eturn 1%0A\n-%09\n+    \n %7D%0A%7D%0A%0Afun\n@@ -296,17 +296,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, c\n@@ -318,17 +318,20 @@\n ais int%0A\n-%09\n+    \n animais \n@@ -351,17 +351,20 @@\n nt%5Dint)%0A\n-%09\n+    \n for rang\n@@ -373,10 +373,16 @@\n n %7B%0A\n-%09%09\n+        \n casa\n@@ -416,12 +416,18 @@\n is)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n prin\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-04_20-22-17",
+            "content": "@@ -278,23 +278,8 @@\n int%0A\n-    casais = 0%0A\n %09ani\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-04_20-25-40",
+            "content": "@@ -274,16 +274,31 @@\n ais int%0A\n+    casais = 0%0A\n %09animais\n@@ -379,13 +379,9 @@\n %09%7D%0A%09\n-fmt.P\n+p\n rint\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-26-08",
+            "content": "@@ -308,20 +308,8 @@\n nt)%0A\n-    ler(&n)%0A\n %09for\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-04_20-29-29",
+            "content": "@@ -158,9 +158,9 @@\n al%5D \n-!\n+=\n = 0 \n@@ -182,10 +182,10 @@\n mal%5D\n---\n+++\n %0A%09%09r\n@@ -194,9 +194,9 @@\n urn \n-1\n+0\n %0A%09%7D \n@@ -211,34 +211,36 @@\n %09animais%5Banimal%5D\n-++\n+ = 0\n %0A%09%09return 0%0A%09%7D%0A%7D\n@@ -233,17 +233,17 @@\n %09return \n-0\n+1\n %0A%09%7D%0A%7D%0A%0Af\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-32-13",
+            "content": "@@ -18,26 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -138,52 +138,8 @@\n al)%0A\n-    animal = int(math.Abs(float64(animal)))%0A\n %09if \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-34-27",
+            "content": "@@ -18,13 +18,26 @@\n ort \n+(%0A%09\n %22fmt%22\n+%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -151,38 +151,73 @@\n al)%0A\n-%09if\n+   \n  anima\n-is%5Banimal%5D - animal =\n+l = int(math.Abs(float64(animal)))%0A%09if animais%5Banimal%5D !\n = 0 \n@@ -239,12 +239,10 @@\n mal%5D\n- = 0\n+--\n %0A%09%09r\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-04_20-38-13",
+            "content": "@@ -154,17 +154,17 @@\n animal%5D \n-+\n+-\n  animal \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-38-27",
+            "content": "@@ -18,26 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -150,38 +150,14 @@\n ais%5B\n-int(math.Abs(float64(\n animal\n-)))\n %5D + \n@@ -227,38 +227,14 @@\n ais%5B\n-int(math.Abs(float64(\n animal\n-)))\n %5D++%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-42-15",
+            "content": "@@ -18,13 +18,26 @@\n ort \n+(%0A%09\n %22fmt%22\n+%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -163,18 +163,51 @@\n ais%5B\n--animal%5D %3E\n+int(math.Abs(float64(animal)))%5D + animal ==\n  0 %7B\n@@ -228,10 +228,12 @@\n mal%5D\n---\n+ = 0\n %0A%09%09r\n@@ -260,22 +260,46 @@\n animais%5B\n+int(math.Abs(float64(\n animal\n+)))\n %5D++%0A%09%09re\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-04_20-46-34",
+            "content": "@@ -185,35 +185,8 @@\n %5D--%0A\n-        animais%5B-animal%5D--%0A\n %09%09re\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-04_20-47-29",
+            "content": "@@ -161,16 +161,36 @@\n %5D %3E 0 %7B%0A\n+%09%09animais%5Banimal%5D--%0A\n         \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-04_20-48-43",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ler(x *int) {\n\tfmt.Scan(x)\n}\n\nfunc adicionarAnimal(animais map[int]int) int {\n\tvar animal int\n\tler(&animal)\n\tif animais[-animal] > 0 {\n        animais[-animal]--\n\t\treturn 1\n\t} else {\n\t\tanimais[animal]++\n\t\treturn 0\n\t}\n}\n\nfunc main() {\n\tvar n, casais int\n\tanimais := make(map[int]int)\n    ler(&n)\n\tfor range n {\n\t\tcasais += adicionarAnimal(animais)\n\t}\n\tfmt.Println(casais)\n}\n",
+            "lines": "29"
+        }
+    ]
+}

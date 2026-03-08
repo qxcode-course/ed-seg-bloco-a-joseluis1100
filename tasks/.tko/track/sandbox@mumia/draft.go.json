@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-04_05-11-05",
+            "content": "@@ -77,17 +77,16 @@\n mt.Scan(\n-&\n nome)%0A%09f\n@@ -97,9 +97,8 @@\n can(\n-&\n idad\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-04_05-11-21",
+            "content": "@@ -30,39 +30,113 @@\n unc \n-estado(idade int) string %7B%0A    \n+main() %7B%0A%09var nome string%0A%09var idade int%0A%09fmt.Scan(&nome)%0A%09fmt.Scan(&idade)%0A%09fmt.Printf(%22%25s eh %22, nome)%0A%09\n swit\n@@ -166,23 +166,28 @@\n         \n-return \n+fmt.Println(\n %22crianca\n@@ -187,16 +187,17 @@\n crianca%22\n+)\n %0A    cas\n@@ -222,22 +222,28 @@\n     \n-return \n+fmt.Println(\n %22jovem%22\n+)\n %0A   \n@@ -272,23 +272,28 @@\n     \n-return \n+fmt.Println(\n %22adulto%22\n %0A   \n@@ -288,16 +288,17 @@\n %22adulto%22\n+)\n %0A    cas\n@@ -325,22 +325,28 @@\n     \n-return \n+fmt.Println(\n %22idoso%22\n+)\n %0A   \n@@ -367,153 +367,30 @@\n     \n-return %22mumia%22%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%09var nome string%0A%09var idade int%0A%09fmt.Scan(&nome)%0A%09fmt.Scan(&idade)%0A%09fmt.Printf(%22%25s eh %25s%22, nome, estado(idade))\n+fmt.Println(%22mumia%22)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-04_05-14-01",
+            "content": "@@ -392,10 +392,8 @@\n h %25s\n-%5Cn\n %22, n\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-04_05-14-08",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc estado(idade int) string {\n    switch {\n\tcase idade < 12:\n        return \"crianca\"\n    case idade < 18:\n        return \"jovem\"\n    case idade < 65:\n        return \"adulto\"\n    case idade < 1000:\n        return \"idoso\"\n    default:\n        return \"mumia\"\n\t}\n}\n\nfunc main() {\n\tvar nome string\n\tvar idade int\n\tfmt.Scan(&nome)\n\tfmt.Scan(&idade)\n\tfmt.Printf(\"%s eh %s\\n\", nome, estado(idade))\n}\n",
+            "lines": "26"
+        }
+    ]
+}
