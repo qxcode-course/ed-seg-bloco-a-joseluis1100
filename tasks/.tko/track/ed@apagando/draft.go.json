@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_01-14-17",
+            "content": "@@ -934,14 +934,8 @@\n dos)\n- + %22 %22\n )%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-09_01-14-49",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc montarFila(quantidadePessoas int) []string {\n\tpessoas := make([]string, quantidadePessoas)\n\tfor i := range quantidadePessoas {\n\t\tfmt.Scan(&pessoas[i])\n\t}\n\treturn pessoas\n}\n\nfunc mapearRemovidos(quantidadeRemovidos int) map[string]bool {\n\tvar removido string\n\tremovidos := make(map[string]bool)\n\tfor range quantidadeRemovidos {\n\t\tfmt.Scan(&removido)\n\t\tremovidos[removido] = true\n\t}\n\treturn removidos\n}\n\nfunc novaFila(pessoas []string, removidos map[string]bool) string {\n\tfila := make([]string, 0)\n\tfor _, pessoa := range pessoas {\n\t\tif !removidos[pessoa] {\n\t\t\tfila = append(fila, pessoa)\n\t\t}\n\t}\n\treturn strings.Join(fila, \" \")\n}\n\nfunc main() {\n\tvar quantidadePessoas, quantidadeRemovidos int\n\tfmt.Scan(&quantidadePessoas)\n\tpessoas := montarFila(quantidadePessoas)\n\tfmt.Scan(&quantidadeRemovidos)\n\tremovidos := mapearRemovidos(quantidadeRemovidos)\n\tfmt.Println(novaFila(pessoas, removidos) + \" \")\n}\n",
+            "lines": "43"
+        }
+    ]
+}

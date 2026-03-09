@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_01-40-09",
+            "content": "@@ -807,30 +807,8 @@\n os)%0A\n-%09fmt.Scan(&numBuscas)%0A\n %09bus\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-09_01-42-06",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc adicionarConsultados(numConsultados int) map[string]int {\n\tconsultados := make(map[string]int)\n\tvar consultado string\n\tfor range numConsultados {\n\t\tfmt.Scan(&consultado)\n\t\tconsultados[consultado]++\n\t}\n\treturn consultados\n}\n\nfunc adicionarBuscas(numBuscas int) []string {\n\tbuscas := make([]string, numBuscas)\n\tfor i := range buscas {\n\t\tfmt.Scan(&buscas[i])\n\t}\n\treturn buscas\n}\n\nfunc procurarMatchs(consultados map[string]int, buscas []string) string {\n\tresultados := make([]string, len(buscas))\n\tfor i, busca := range buscas {\n\t\tresultados[i] = strconv.Itoa(consultados[busca])\n\t}\n\treturn strings.Join(resultados, \" \")\n}\n\nfunc main() {\n\tvar numConsultados, numBuscas int\n\tfmt.Scan(&numConsultados)\n\tconsultados := adicionarConsultados(numConsultados)\n\tfmt.Scan(&numBuscas)\n\tbuscas := adicionarBuscas(numBuscas)\n\tfmt.Println(procurarMatchs(consultados, buscas))\n}\n",
+            "lines": "42"
+        }
+    ]
+}

@@ -1,28 +1,30 @@
 version: '0.2'
 sources:
-- alias: sandbox
+- name: sandbox
   target: sandbox
   type: local
   writeable: true
-  filters: null
-- alias: ed
+  quests: null
+  tasks: null
+- name: ed
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-06 23:17:06'
-  filters: null
+  cache_timestamp: '2026-03-09 03:05:24'
+  quests: null
+  tasks: null
 expanded:
-- sandbox@sandbox
-- sandbox@sandbox:sandbox:00_rascunhos
-- ed@main-quest
 - ed@revisão
+- sandbox@student_sandbox_alias
+- ed@main-quest
+- sandbox@student_sandbox_alias:00_rascunhos
+- ed@análise
 tasks:
-  sandbox@baruel: '{rate:100}'
-  sandbox@casais: '{rate:100}'
-  sandbox@fuga: '{rate:100}'
-  sandbox@mumia: '{rate:100}'
-  sandbox@pedra: '{rate:100}'
-  sandbox@pintando: '{rate:100}'
+  ed@princesa: '{self:1, rate:100, study:120, concept:1}'
+  ed@apagando: '{self:1, rate:100, study:30}'
+  ed@buscas: '{self:1, rate:100, study:20}'
+  ed@rotacoes: '{self:1, rate:100, study:20}'
+  ed@alternando: '{self:1, rate:100, study:60}'
 flags:
   painel: 2
   quests: 0
@@ -31,4 +33,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: sandbox@mumia
+selected: ed@alternando
+next_draft_id: 2

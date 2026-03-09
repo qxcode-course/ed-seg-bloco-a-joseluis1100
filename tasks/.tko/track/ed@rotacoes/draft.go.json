@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_01-56-53",
+            "content": "@@ -376,19 +376,8 @@\n tor)\n-+len(vetor)\n %5D)%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_01-57-25",
+            "content": "@@ -387,10 +387,8 @@\n tor)\n--1\n %5D)%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_01-57-43",
+            "content": "@@ -388,9 +388,9 @@\n or)-\n-2\n+1\n %5D)%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_01-58-36",
+            "content": "@@ -364,9 +364,10 @@\n coes\n-+\n+)%25\n len(\n@@ -372,18 +372,17 @@\n n(vetor)\n-)%25\n++\n len(veto\n@@ -383,16 +383,18 @@\n n(vetor)\n+-2\n %5D)%0A%09%7D%0A%09r\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_01-59-17",
+            "content": "@@ -364,10 +364,9 @@\n coes\n-)%25\n++\n len(\n@@ -371,17 +371,18 @@\n n(vetor)\n-+\n+)%25\n len(veto\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_01-59-51",
+            "content": "@@ -350,17 +350,16 @@\n (vetor%5B(\n-(\n i-rotaco\n@@ -383,28 +383,16 @@\n n(vetor)\n-)%25len(vetor)\n %5D)%0A%09%7D%0A%09r\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-09_02-01-50",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc criarVetor(tamanho int) []int {\n\tvetor := make([]int, tamanho)\n\tfor i := range vetor {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\treturn vetor\n}\n\nfunc rotacionar(rotacoes int, vetor []int) string {\n\tvetorRotacionado := make([]string, len(vetor))\n\tfor i := range vetor {\n\t\tvetorRotacionado[i] = strconv.Itoa(vetor[((i-rotacoes)%len(vetor)+len(vetor))%len(vetor)])\n\t}\n\treturn strings.Join(vetorRotacionado, \" \")\n}\n\nfunc main() {\n\tvar tamanho, rotacoes int\n\tfmt.Scan(&tamanho, &rotacoes)\n\tvetor := criarVetor(tamanho)\n\tfmt.Printf(\"[ %s ]\\n\", rotacionar(rotacoes, vetor))\n}\n",
+            "lines": "30"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-08_22-48-50",
+            "content": "@@ -10,938 +10,59 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Afunc iniciarSoldados(N int) %5B%5Dbool %7B%0A%09soldados := make(%5B%5Dbool, N)%0A%09for i := range soldados %7B%0A%09%09soldados%5Bi%5D = true%0A%09%7D%0A%09return soldados%0A%7D%0A%0Afunc imprimirSoldados(E int, soldados %5B%5Dbool) %7B%0A%09vetor := make(%5B%5Dstring, len(soldados))%0A%09for i := range soldados %7B%0A%09%09if soldados%5Bi%5D %7B%0A%09%09%09vetor%5Bi%5D = strconv.Itoa(i + 1)%0A%09%09%09if i == E %7B%0A%09%09%09%09vetor%5Bi%5D += %22%3E%22%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09fmt.Printf(%22%5B %25s %5D%22, strings.Join(vetor, %22 %22))%0A%7D%0A%0Afunc procurarVivo(E int, soldados %5B%5Dbool)%0A%0Afunc jogo(E int, soldados %5B%5Dbool) %7B%0A%09imprimirSoldados(E, soldados)%0A%09if len(soldados) == 1 %7B%0A%09%09return%0A%09%7D%0A%09for i := (E + 1) %25 len(soldados); ; i = (i + 1) %25 len(soldados) %7B%0A%09%09if soldados%5B(i)%5D %7B%0A%09%09%09soldados%5B(i)%25len(soldados)%5D = false%0A%09%09%09for j := i + 1; ; j = (j + 1) %25 len(soldados) %7B%0A%09%09%09%09if soldados%5Bj%5D %7B%0A%09%09%09%09%09jogo(j, soldados)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%09soldados := iniciarSoldados(N)%0A%09jogo(E, soldados\n+func main() %7B%0A    fmt.Println(%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-09_00-00-19",
+            "content": "@@ -447,24 +447,67 @@\n r, %22 %22))%0A%7D%0A%0A\n+func procurarVivo(E int, soldados %5B%5Dbool)%0A%0A\n func jogo(E \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-01-22",
+            "content": "@@ -423,10 +423,8 @@\n %25s %5D\n-%5Cn\n %22, s\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-09_00-01-55",
+            "content": "@@ -369,10 +369,8 @@\n == E\n--1\n  %7B%0A%09\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-09_00-02-36",
+            "content": "@@ -698,39 +698,21 @@\n or j := \n-(\n i + 1\n-) %25 len(soldados)\n ; ; j = \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-09_00-03-32",
+            "content": "@@ -464,20 +464,14 @@\n unc \n-proxVivo(pos\n+jogo(E\n  int\n@@ -493,54 +493,97 @@\n ol) \n-int %7B%0A%09for i := (pos + 1) %25 len(soldados); i %3C\n+%7B%0A%09imprimirSoldados(E, soldados)%0A%09if len(soldados) == 1 %7B%0A%09%09return%0A%09%7D%0A%09for i := (E + 1) %25\n  len\n@@ -593,16 +593,18 @@\n ldados);\n+ ;\n  i = (i \n@@ -654,227 +654,174 @@\n %0A%09%09%09\n-return i%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0A%0Afunc jogo(E int, soldados %5B%5Dbool) %7B%0A%09imprimirSoldados(E, soldados)%0A%09prox := proxVivo(E, soldados)%0A%09if prox == -1 %7B%0A%09%09return%0A%09%7D%0A%09soldados%5Bprox%5D = false%0A%09jogo(proxVivo(E, soldados), soldados)\n+soldados%5B(i)%25len(soldados)%5D = false%0A%09%09%09for j := (i + 1) %25 len(soldados); ; j = (j + 1) %25 len(soldados) %7B%0A%09%09%09%09if soldados%5Bj%5D %7B%0A%09%09%09%09%09jogo(j, soldados)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-09_00-12-56",
+            "content": "@@ -511,19 +511,16 @@\n or i\n-, j\n  := (pos\n +1)%25\n@@ -515,20 +515,24 @@\n  := (pos\n-+1)%25\n+ + 1) %25 \n len(sold\n@@ -540,14 +540,11 @@\n dos)\n-, 0\n ; \n-j\n+i\n  %3C l\n@@ -562,20 +562,21 @@\n ); i\n-, j\n  = (i\n-+1)%25\n+ + 1) %25 \n len(\n@@ -588,13 +588,8 @@\n dos)\n-, j+1\n  %7B%0A%09\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-18-38",
+            "content": "@@ -419,16 +419,17 @@\n tf(%22%5B %25s\n+ \n %5D%5Cn%22, st\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-18-59",
+            "content": "@@ -419,17 +419,16 @@\n tf(%22%5B %25s\n- \n %5D%5Cn%22, st\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-19-11",
+            "content": "@@ -683,16 +683,47 @@\n bool) %7B%0A\n+%09imprimirSoldados(E, soldados)%0A\n %09prox :=\n@@ -778,39 +778,8 @@\n %0A%09%7D%0A\n-%09imprimirSoldados(E, soldados)%0A\n %09sol\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-21-47",
+            "content": "@@ -258,17 +258,29 @@\n string, \n-0\n+len(soldados)\n )%0A%09for i\n@@ -331,24 +331,13 @@\n etor\n- = append(vetor,\n+%5Bi%5D =\n  str\n@@ -347,19 +347,20 @@\n v.Itoa(i\n-+1)\n+ + 1\n )%0A%09%09%09if \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-23-57",
+            "content": "@@ -363,16 +363,18 @@\n f i == E\n+-1\n  %7B%0A%09%09%09%09v\n@@ -923,18 +923,16 @@\n %0A%09jogo(E\n--1\n , soldad\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-25-21",
+            "content": "@@ -921,17 +921,17 @@\n %0A%09jogo(E\n-+\n+-\n 1, solda\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-25-41",
+            "content": "@@ -921,16 +921,18 @@\n %0A%09jogo(E\n++1\n , soldad\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-25-53",
+            "content": "@@ -363,18 +363,16 @@\n f i == E\n--1\n  %7B%0A%09%09%09%09v\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-26-21",
+            "content": "@@ -297,16 +297,19 @@\n %09if \n-i == E-1\n+soldados%5Bi%5D\n  %7B%0A%09\n@@ -353,45 +353,36 @@\n i+1)\n-+%22%3E%22)%0A%09%09%7D%0A%09%09if soldados%5Bi%5D\n+)%0A%09%09%09if i == E-1\n  %7B%0A\n+%09\n %09%09%09vetor\n  = a\n@@ -381,43 +381,23 @@\n etor\n- = append(vetor, strconv.Itoa(i+1))\n+%5Bi%5D += %22%3E%22%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-29-58",
+            "content": "@@ -359,14 +359,11 @@\n %0A%09%09%7D\n- else \n+%0A%09%09\n if s\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-09_00-30-24",
+            "content": "@@ -952,18 +952,16 @@\n %0A%09jogo(E\n--1\n , soldad\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-09_00-42-56",
+            "content": "@@ -299,16 +299,18 @@\n f i == E\n+-1\n  %7B%0A%09%09%09ve\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-09_00-43-15",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc iniciarSoldados(N int) []bool {\n\tsoldados := make([]bool, N)\n\tfor i := range soldados {\n\t\tsoldados[i] = true\n\t}\n\treturn soldados\n}\n\nfunc imprimirSoldados(E int, soldados []bool) {\n\tvetor := make([]string, 0)\n\tfor i := range soldados {\n\t\tif i == E {\n\t\t\tvetor = append(vetor, strconv.Itoa(i+1)+\">\")\n\t\t} else if soldados[i] {\n\t\t\tvetor = append(vetor, strconv.Itoa(i+1))\n\t\t}\n\t}\n\tfmt.Printf(\"[ %s ]\\n\", strings.Join(vetor, \" \"))\n}\n\nfunc proxVivo(pos int, soldados []bool) int {\n\tfor i, j := (pos+1)%len(soldados), 0; j < len(soldados); i, j = (i+1)%len(soldados), j+1 {\n\t\tif soldados[(i)] {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc jogo(E int, soldados []bool) {\n\tprox := proxVivo(E, soldados)\n\tif prox == -1 {\n\t\treturn\n\t}\n\timprimirSoldados(E, soldados)\n\tsoldados[prox] = false\n\tjogo(proxVivo(E, soldados), soldados)\n}\n\nfunc main() {\n\tvar N, E int\n\tfmt.Scan(&N, &E)\n\tsoldados := iniciarSoldados(N)\n\tjogo(E-1, soldados)\n}\n",
+            "lines": "53"
+        }
+    ]
+}
