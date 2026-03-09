@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_19-11-49",
+            "content": "@@ -345,22 +345,8 @@\n   %7D%0A\n-    for %7B%0A    \n     \n@@ -377,20 +377,16 @@\n         \n-    \n mapa%5Bpos\n@@ -407,82 +407,8 @@\n     \n-    break%0A        %7D else %7B%0A            valor++%0A        %7D%0A    %7D%0A    return \n proc\n@@ -432,16 +432,36 @@\n valor+1)\n+%0A    %7D%0A    return -1\n %0A%7D%0A%0Afunc\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-09_19-14-49",
+            "content": "@@ -183,17 +183,16 @@\n if div %3C\n-=\n  int(mat\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-09_19-18-13",
+            "content": "@@ -34,16 +34,42 @@\n ath%22%0A)%0A%0A\n+var mapa = map%5Bint%5Dint%7B%7D%0A%0A\n func eh_\n@@ -183,16 +183,17 @@\n if div %3C\n+=\n  int(mat\n@@ -328,21 +328,23 @@\n  return \n-valor\n+mapa%5B1%5D\n %0A    %7D%0A \n@@ -380,24 +380,54 @@\n valor, 2) %7B%0A\n+            mapa%5Bpos%5D = valor%0A\n             \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-09_19-19-13",
+            "content": "@@ -282,18 +282,17 @@\n  pos == \n--1\n+0\n  %7B%0A     \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-19-41",
+            "content": "@@ -278,24 +278,25 @@\n   if pos == \n+-\n 1 %7B%0A        \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-19-49",
+            "content": "@@ -246,17 +246,19 @@\n arPrimo(\n-n\n+pos\n , valor \n@@ -279,14 +279,16 @@\n  if \n-n\n+pos\n  == \n-0\n+1\n  %7B%0A \n@@ -451,17 +451,19 @@\n arPrimo(\n-n\n+pos\n -1, valo\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-22-29",
+            "content": "@@ -457,16 +457,18 @@\n 1, valor\n++1\n )%0A%7D%0A%0Afun\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-22-41",
+            "content": "@@ -457,18 +457,16 @@\n 1, valor\n-+1\n )%0A%7D%0A%0Afun\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-23-27",
+            "content": "@@ -38,30 +38,8 @@\n %0A)%0A%0A\n-var primos = %5B%5Dint%7B%7D%0A%0A\n func\n@@ -259,16 +259,20 @@\n lor int)\n+ int\n  %7B%0A    i\n@@ -296,16 +296,22 @@\n   return\n+ valor\n %0A    %7D%0A \n@@ -355,51 +355,8 @@\n ) %7B%0A\n-            primos = append(primos, valor)%0A\n     \n@@ -422,24 +422,31 @@\n %7D%0A    %7D%0A    \n+return \n procurarPrim\n@@ -513,16 +513,28 @@\n &n)%0A    \n+fmt.Println(\n procurar\n@@ -548,34 +548,8 @@\n , 2)\n-%0A    fmt.Println(primos%5Bn%5D\n )%0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-28-17",
+            "content": "@@ -605,15 +605,13 @@\n primos%5Bn\n--1\n %5D)%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-09_19-28-27",
+            "content": "@@ -206,18 +206,16 @@\n t64(x)))\n-+1\n  %7B%0A%09%09eh_\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-09_19-32-31",
+            "content": "@@ -206,28 +206,23 @@\n t64(x)))\n++1\n  %7B%0A%09%09\n-return \n eh_primo\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-09_19-43-16",
+            "content": "@@ -34,16 +34,38 @@\n ath%22%0A)%0A%0A\n+var primos = %5B%5Dint%7B%7D%0A%0A\n func eh_\n@@ -288,20 +288,16 @@\n lor int)\n- int\n  %7B%0A    i\n@@ -321,22 +321,16 @@\n   return\n- valor\n %0A    %7D%0A \n@@ -366,24 +366,67 @@\n valor, 2) %7B%0A\n+            primos = append(primos, valor)%0A\n             \n@@ -564,16 +564,39 @@\n can(&n)%0A\n+    procurarPrimo(n, 2)\n %0A    fmt\n@@ -606,29 +606,21 @@\n intln(pr\n-ocurarPrimo(n, 2)\n+imos%5Bn-1%5D\n )%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-09_19-43-47",
+            "content": "@@ -433,23 +433,16 @@\n   %7D%0A    \n-return \n procurar\n@@ -509,16 +509,17 @@\n can(&n)%0A\n+%0A\n     fmt.\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-09_19-43-59",
+            "content": "@@ -38,30 +38,8 @@\n %0A)%0A%0A\n-var primos = %5B%5Dint%7B%7D%0A%0A\n func\n@@ -266,16 +266,20 @@\n lor int)\n+ int\n  %7B%0A    i\n@@ -303,16 +303,22 @@\n   return\n+ valor\n %0A    %7D%0A \n@@ -362,51 +362,8 @@\n ) %7B%0A\n-            primos = append(primos, valor)%0A\n     \n@@ -429,24 +429,31 @@\n %7D%0A    %7D%0A    \n+return \n procurarPrim\n@@ -520,16 +520,28 @@\n &n)%0A    \n+fmt.Println(\n procurar\n@@ -555,36 +555,8 @@\n , 2)\n-%0A    fmt.Println(primos%5Bn-1%5D\n )%0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-09_19-46-06",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nvar primos = []int{}\n\nfunc eh_primo(x int, div int) bool {\n\tif x == 2 {\n\t\treturn true\n\t}\n\tif x % div == 0 || x == 1 {\n\t\treturn false\n\t}\n\tif div < int(math.Sqrt(float64(x))) {\n\t\treturn eh_primo(x, div+1)\n\t}\n\treturn true\n}\n\nfunc procurarPrimo(n, valor int) {\n    if n == 0 {\n        return\n    }\n    for {\n        if eh_primo(valor, 2) {\n            primos = append(primos, valor)\n            break\n        } else {\n            valor++\n        }\n    }\n    procurarPrimo(n-1, valor+1)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    procurarPrimo(n, 2)\n    fmt.Println(primos[n-1])\n}\n",
+            "lines": "43"
+        }
+    ]
+}
