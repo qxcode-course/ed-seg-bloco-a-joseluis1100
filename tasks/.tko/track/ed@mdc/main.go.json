@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_10-47-28",
+            "content": "@@ -106,23 +106,16 @@\n n a%0A%09%7D%0A%09\n-return \n mdc(b, a\n@@ -118,16 +118,26 @@\n b, a%25b)%0A\n+%09return 0%0A\n %7D%0A%0Afunc \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-09_10-49-39",
+            "content": "@@ -78,16 +78,43 @@\n rn b%0A%09%7D%0A\n+%09if b == 0 %7B%0A%09%09return a%0A%09%7D%0A\n %09return \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-09_10-49-45",
+            "content": "@@ -55,17 +55,17 @@\n t %7B%0A%09if \n-b\n+a\n  == 0 %7B%0A\n@@ -73,17 +73,17 @@\n %09return \n-a\n+b\n %0A%09%7D%0A%09ret\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-09_10-49-50",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif b == 0 {\n\t\treturn a\n\t}\n\treturn mdc(b, a%b)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "18"
+        }
+    ]
+}

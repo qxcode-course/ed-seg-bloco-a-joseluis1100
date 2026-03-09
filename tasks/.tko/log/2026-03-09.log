@@ -126,3 +126,11 @@
 2026-03-09 10:31:55, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:19
 2026-03-09 10:32:15, MOVE, v:1, k:ed@resto, mode:BACK
 2026-03-09 10:32:24, SELF, v:1, k:ed@resto, self:1, rate:100, study:7
+2026-03-09 10:40:38, MOVE, v:1, k:ed@mdc, mode:DOWN
+2026-03-09 10:40:40, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-03-09 10:47:28, EXEC, v:1, k:ed@mdc, mode:FULL, rate:0, size:22
+2026-03-09 10:49:39, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100, size:21
+2026-03-09 10:49:45, EXEC, v:1, k:ed@mdc, mode:FULL, rate:0, size:18
+2026-03-09 10:49:50, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100, size:18
+2026-03-09 10:50:01, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-03-09 10:50:19, SELF, v:1, k:ed@mdc, self:1, rate:100, study:10
