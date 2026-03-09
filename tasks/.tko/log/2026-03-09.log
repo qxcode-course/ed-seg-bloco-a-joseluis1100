@@ -88,3 +88,14 @@
 2026-03-09 03:10:01, EXEC, v:1, k:ed@alternando, mode:FULL, rate:100, size:75
 2026-03-09 03:10:05, MOVE, v:1, k:ed@alternando, mode:BACK
 2026-03-09 03:10:19, SELF, v:1, k:ed@alternando, self:1, rate:100, study:60
+2026-03-09 09:21:57, MOVE, v:1, k:ed@triangulo, mode:DOWN
+2026-03-09 09:22:34, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-09 09:24:13, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-09 09:24:51, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-09 09:30:11, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:56
+2026-03-09 09:31:55, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:56
+2026-03-09 09:32:06, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:56
+2026-03-09 09:32:37, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:56
+2026-03-09 09:32:42, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100, size:56
+2026-03-09 09:32:45, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-09 09:32:57, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:10
