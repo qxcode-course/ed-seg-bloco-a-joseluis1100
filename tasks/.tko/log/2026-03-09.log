@@ -120,3 +120,9 @@
 2026-03-09 10:21:06, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:109
 2026-03-09 10:23:14, MOVE, v:1, k:ed@treinando, mode:BACK
 2026-03-09 10:23:35, SELF, v:1, k:ed@treinando, self:1, rate:100, study:50, concept:1
+2026-03-09 10:24:18, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-03-09 10:24:22, MOVE, v:1, k:ed@resto, mode:PICK
+2026-03-09 10:31:11, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:16
+2026-03-09 10:31:55, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:19
+2026-03-09 10:32:15, MOVE, v:1, k:ed@resto, mode:BACK
+2026-03-09 10:32:24, SELF, v:1, k:ed@resto, self:1, rate:100, study:7

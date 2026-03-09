@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-09_10-31-11",
+            "content": "@@ -52,37 +52,8 @@\n ) %7B%0A\n-%09if valor == 0 %7B%0A%09%09return%0A%09%7D%0A\n %09div\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-09_10-31-55",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc operacao(valor int) {\n\tif valor == 0 {\n\t\treturn\n\t}\n\tdivInt := valor / 2\n\tresto := valor % 2\n\toperacao(divInt)\n\tfmt.Printf(\"%d %d\\n\", divInt, resto)\n}\n\nfunc main() {\n\tvar valor int\n\tfmt.Scan(&valor)\n\toperacao(valor)\n}\n",
+            "lines": "19"
+        }
+    ]
+}

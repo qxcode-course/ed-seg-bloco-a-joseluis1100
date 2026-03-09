@@ -28,6 +28,7 @@ tasks:
   ed@alternando: '{self:1, rate:100, study:60}'
   ed@triangulo: '{self:1, rate:100, study:10}'
   ed@treinando: '{self:1, rate:100, study:50, concept:1}'
+  ed@resto: '{self:1, rate:100, study:7}'
 flags:
   painel: 2
   quests: 0
