@@ -1,0 +1,239 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_00-53-59",
+            "content": "@@ -23,28 +23,30 @@\n mt%22%0A\n-%0A\n func \n-verificaIgual(\n+main() %7B%0A    var \n veto\n@@ -66,18 +66,39 @@\n ring\n-) string %7B\n+%0A    fmt.Scan(&vetor1, &vetor2)\n %0A   \n@@ -132,23 +132,28 @@\n     \n-return \n+fmt.Println(\n %22iguais%22\n %0A   \n@@ -148,16 +148,17 @@\n %22iguais%22\n+)\n %0A    %7D e\n@@ -175,157 +175,38 @@\n     \n-return %22diferentes%22%0A    %7D%0A%7D%0A%0Afunc main() %7B%0A    var vetor1, vetor2 string%0A    fmt.Scan(&vetor1, &vetor2)%0A    fmt.Println(verificaIgual(vetor1, vetor2))\n+fmt.Println(%22diferentes%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-10_00-58-31",
+            "content": "@@ -10,172 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A%09%22slices%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Afunc converterVetor(vetor string) %5B%5Dstring %7B%0A    vet := strings.Split(vetor%5B1:len(vetor)%5D, %22 %22)%0A    return vet%0A%7D\n %0A%0Afu\n@@ -58,10 +58,8 @@\n or2 \n-%5B%5D\n stri\n@@ -82,36 +82,24 @@\n  if \n-slices.Equal(\n vetor1\n-,\n+ ==\n  vetor2\n-)\n  %7B%0A \n@@ -280,55 +280,24 @@\n ual(\n-converterVetor(\n vetor1\n-)\n , \n-converterVetor(\n vetor2))\n )%0A%7D%0A\n@@ -292,12 +292,11 @@\n vetor2))\n-)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-10_19-03-14",
+            "content": "@@ -33,16 +33,27 @@\n slices%22%0A\n+%09%22strconv%22%0A\n %09%22string\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-10_19-03-22",
+            "content": "@@ -139,10 +139,8 @@\n tor)\n--1\n %5D, %22\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-10_19-03-53",
+            "content": "@@ -135,16 +135,18 @@\n n(vetor)\n+-1\n %5D, %22 %22)%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-10_19-04-08",
+            "content": "@@ -96,68 +96,8 @@\n g %7B%0A\n-    if len(vetor) == 3 %7B%0A        return %5B%5Dstring%7B%22 %22%7D%0A    %7D%0A\n     \n@@ -139,10 +139,8 @@\n tor)\n--1\n %5D, %22\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-10_19-11-10",
+            "content": "@@ -471,42 +471,8 @@\n     \n-fmt.Println(vetor1, vetor2)%0A    //\n fmt.\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-12-09",
+            "content": "@@ -485,16 +485,24 @@\n n(vetor1\n+, vetor2\n )%0A    //\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-12-29",
+            "content": "@@ -22,26 +22,11 @@\n (%0A%09%22\n-bufio%22%0A%09%22fmt%22%0A%09%22os\n+fmt\n %22%0A%09%22\n@@ -410,110 +410,38 @@\n     \n-scanner := bufio.NewScanner(os.Stdin)%0A    vetor1 := scanner.Text()%0A    vetor2 := scanner.Text()\n+var vetor1, vetor2 string\n %0A    \n-//\n fmt.\n@@ -463,24 +463,50 @@\n vetor2)%0A    \n+fmt.Println(vetor1)%0A    //\n fmt.Println(\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-16-30",
+            "content": "@@ -210,16 +210,18 @@\n n(vetor)\n+-1\n %5D, %22 %22)%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-16-39",
+            "content": "@@ -523,28 +523,28 @@\n     \n+//\n fmt.\n-Printl\n+Sca\n n(\n+&\n vetor1, \n veto\n@@ -535,24 +535,25 @@\n an(&vetor1, \n+&\n vetor2)%0A    \n@@ -548,26 +548,24 @@\n vetor2)%0A    \n-//\n fmt.Println(\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-16-59",
+            "content": "@@ -461,27 +461,8 @@\n in)%0A\n-    scanner.Scan()%0A\n     \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-20-53",
+            "content": "@@ -538,16 +538,50 @@\n t()%0A    \n+fmt.Println(vetor1, vetor2)%0A    //\n fmt.Prin\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-10_19-21-03",
+            "content": "@@ -270,16 +270,18 @@\n  vetor2 \n+%5B%5D\n string) \n@@ -300,21 +300,36 @@\n  if \n+slices.Equal(\n vetor1\n+,\n  vetor2\n+)\n  %7B%0A \n@@ -568,23 +568,54 @@\n ual(\n+converterVetor(\n vetor1\n+)\n , \n+converterVetor(\n vetor2))\n %0A%7D%0A\n@@ -611,11 +611,12 @@\n vetor2))\n+)\n %0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-22-03",
+            "content": "@@ -300,19 +300,16 @@\n f vetor1\n- ==\n  vetor2 \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-22-11",
+            "content": "@@ -38,16 +38,26 @@\n %22%0A%09%22os%22%0A\n+%09%22slices%22%0A\n %09%22string\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-22-19",
+            "content": "@@ -288,44 +288,24 @@\n  if \n-strings.Compare(\n vetor1\n-,\n+ ==\n  vetor2\n-) == 0\n  %7B%0A \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-10_19-23-42",
+            "content": "@@ -42,18 +42,8 @@\n os%22%0A\n-%09%22slices%22%0A\n %09%22st\n@@ -289,33 +289,29 @@\n if s\n-lices.Equal(%5B%5Drun\n+trings.Compar\n e(vetor1\n ), %5B\n@@ -310,26 +310,22 @@\n tor1\n-)\n , \n-%5B%5Drune(\n vetor2)\n-)\n+ == 0\n  %7B%0A \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-10_19-25-09",
+            "content": "@@ -107,17 +107,20 @@\n tring %7B%0A\n-%09\n+    \n if len(v\n@@ -132,18 +132,24 @@\n  == 3 %7B%0A\n-%09%09\n+        \n return %5B\n@@ -165,12 +165,18 @@\n  %22%7D%0A\n-%09%7D%0A%09\n+    %7D%0A    \n vet \n@@ -218,17 +218,20 @@\n %5D, %22 %22)%0A\n-%09\n+    \n return v\n@@ -287,17 +287,20 @@\n tring %7B%0A\n-%09\n+    \n if slice\n@@ -341,18 +341,24 @@\n or2)) %7B%0A\n-%09%09\n+        \n return %22\n@@ -365,17 +365,20 @@\n iguais%22%0A\n-%09\n+    \n %7D else %7B\n@@ -382,10 +382,16 @@\n e %7B%0A\n-%09%09\n+        \n retu\n@@ -406,17 +406,20 @@\n rentes%22%0A\n-%09\n+    \n %7D%0A%7D%0A%0Afun\n@@ -429,17 +429,20 @@\n ain() %7B%0A\n-%09\n+    \n scanner \n@@ -471,17 +471,20 @@\n .Stdin)%0A\n-%09\n+    \n scanner.\n@@ -490,17 +490,20 @@\n .Scan()%0A\n-%09\n+    \n vetor1 :\n@@ -519,17 +519,20 @@\n .Text()%0A\n-%09\n+    \n vetor2 :\n@@ -556,39 +556,8 @@\n     \n-fmt.Println(vetor1, vetor2)%0A%09//\n fmt.\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-10_19-26-00",
+            "content": "@@ -475,27 +475,8 @@\n t()%0A\n-    scanner.Scan()%0A\n %09vet\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-10_19-26-34",
+            "content": "@@ -524,10 +524,8 @@\n     \n-//\n fmt.\n@@ -548,20 +548,19 @@\n vetor2)%0A\n-    \n+%09//\n fmt.Prin\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-10_19-26-50",
+            "content": "@@ -48,17 +48,184 @@\n slices%22%0A\n-)\n+%09%22strings%22%0A)%0A%0Afunc converterVetor(vetor string) %5B%5Dstring %7B%0A%09if len(vetor) == 3 %7B%0A%09%09return %5B%5Dstring%7B%22 %22%7D%0A%09%7D%0A%09vet := strings.Split(vetor%5B1:len(vetor)%5D, %22 %22)%0A%09return vet%0A%7D\n %0A%0Afunc v\n@@ -512,24 +512,58 @@\n nner.Text()%0A\n+    //fmt.Println(vetor1, vetor2)%0A\n     fmt.Prin\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-10_19-27-07",
+            "content": "@@ -38,16 +38,26 @@\n %22%0A%09%22os%22%0A\n+%09%22slices%22%0A\n )%0A%0Afunc \n@@ -74,19 +74,8 @@\n ual(\n-index int, \n veto\n@@ -110,52 +110,51 @@\n %09if \n-index %3E= len(vetor1) %7C%7C index %3E= len\n+slices.Equal(%5B%5Drune(vetor1), %5B%5Drune\n (vetor2)\n  %7B%0A \n@@ -149,27 +149,22 @@\n (vetor2)\n+)\n  %7B%0A\n-        \n+%09%09\n return %22\n@@ -175,181 +175,42 @@\n is%22%0A\n-    %7D%0A    if vetor1%5Bindex%5D != vetor2%5Bindex%5D %7B%0A        return %22diferentes%22%0A    %7D else %7B%0A        index++%0A        verificaIgual(index, vetor1, vetor2)%0A    %7D%0A    return %22iguais%22\n+%09%7D else %7B%0A%09%09return %22diferentes%22%0A%09%7D\n %0A%7D%0A%0A\n@@ -383,11 +383,8 @@\n ual(\n-0, \n veto\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-10_19-37-11",
+            "content": "@@ -103,16 +103,97 @@\n tring %7B%0A\n+%09if index %3E= len(vetor1) %7C%7C index %3E= len(vetor2) %7B%0A        return %22iguais%22%0A    %7D%0A\n     if v\n@@ -225,38 +225,8 @@\n dex%5D\n- %7C%7C len(vetor1) != len(vetor2)\n  %7B%0A \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-38-42",
+            "content": "@@ -107,68 +107,8 @@\n g %7B%0A\n-    if index == len(vetor1) %7B%0A        return %22iguais%22%0A    %7D%0A\n     \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-10_19-39-26",
+            "content": "@@ -155,17 +155,16 @@\n  %22iguais\n-1\n %22%0A    %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-41-47",
+            "content": "@@ -155,16 +155,17 @@\n  %22iguais\n+1\n %22%0A    %7D%0A\n@@ -354,25 +354,21 @@\n return %22\n-diferente\n+iguai\n s%22%0A%7D%0A%0Afu\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-42-03",
+            "content": "@@ -353,17 +353,26 @@\n return %22\n-k\n+diferentes\n %22%0A%7D%0A%0Afun\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-42-26",
+            "content": "@@ -353,22 +353,17 @@\n return %22\n-iguais\n+k\n %22%0A%7D%0A%0Afun\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-42-36",
+            "content": "@@ -103,17 +103,80 @@\n tring %7B%0A\n-%09\n+    if index == len(vetor1) %7B%0A        return %22iguais%22%0A    %7D%0A    \n if vetor\n@@ -233,18 +233,24 @@\n tor2) %7B%0A\n-%09%09\n+        \n return %22\n@@ -261,17 +261,20 @@\n rentes%22%0A\n-%09\n+    \n %7D else %7B\n@@ -278,20 +278,32 @@\n e %7B%0A\n-%09%09index++%0A%09%09\n+        index++%0A        \n veri\n@@ -339,12 +339,18 @@\n r2)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n retu\n@@ -459,17 +459,20 @@\n .Text()%0A\n-%09\n+    \n scanner.\n@@ -504,17 +504,20 @@\n .Text()%0A\n-%09\n+    \n fmt.Prin\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-43-46",
+            "content": "@@ -107,117 +107,9 @@\n g %7B%0A\n-    if index == len(vetor1) %7B%0A        return %22iguais%22%0A    %7D%0A    fmt.Println(vetor1%5Bindex%5D,vetor2%5Bindex%5D)%0A    \n+%09\n if v\n@@ -170,24 +170,18 @@\n tor2) %7B%0A\n-        \n+%09%09\n return %22\n@@ -192,20 +192,17 @@\n rentes%22%0A\n-    \n+%09\n %7D else %7B\n@@ -206,32 +206,20 @@\n e %7B%0A\n-        index++%0A        \n+%09%09index++%0A%09%09\n veri\n@@ -255,18 +255,12 @@\n r2)%0A\n-    %7D%0A    \n+%09%7D%0A%09\n retu\n@@ -369,20 +369,17 @@\n .Text()%0A\n-    \n+%09\n scanner.\n@@ -415,12 +415,9 @@\n t()%0A\n-    \n+%09\n fmt.\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-10_19-45-31",
+            "content": "@@ -197,14 +197,8 @@\n ex%5D,\n- %22 %22 ,\n veto\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-45-42",
+            "content": "@@ -255,51 +255,11 @@\n dex%5D\n-%7B%0A        return %22diferentes%22%0A    %7D else if\n+ %7C%7C\n  len\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-49-14",
+            "content": "@@ -255,11 +255,51 @@\n dex%5D\n- %7C%7C\n+%7B%0A        return %22diferentes%22%0A    %7D else if\n  len\n@@ -447,44 +447,16 @@\n urn \n-verificaIgual(index, vetor1, vetor2)\n+%22iguais%22\n %0A%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-10_19-50-44",
+            "content": "@@ -171,10 +171,8 @@\n     \n-//\n fmt.\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-50-58",
+            "content": "@@ -405,24 +405,52 @@\n  return \n-%22iguais%22\n+verificaIgual(index, vetor1, vetor2)\n %0A%7D%0A%0Afunc\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-52-21",
+            "content": "@@ -163,24 +163,26 @@\n %22%0A    %7D%0A    \n+//\n fmt.Println(\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-52-36",
+            "content": "@@ -171,10 +171,8 @@\n     \n-//\n fmt.\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-52-50",
+            "content": "@@ -163,24 +163,26 @@\n %22%0A    %7D%0A    \n+//\n fmt.Println(\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-52-56",
+            "content": "@@ -171,10 +171,8 @@\n     \n-//\n fmt.\n@@ -349,21 +349,12 @@\n     \n-%7D%0A\n     \n-return \n veri\n@@ -386,16 +386,42 @@\n vetor2)%0A\n+    %7D%0A    return %22iguais%22%0A\n %7D%0A%0Afunc \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-53-35",
+            "content": "@@ -323,21 +323,32 @@\n    %7D\n-%0A\n+ else %7B%0A  \n     \n+  \n index++%0A\n     \n@@ -343,16 +343,22 @@\n index++%0A\n+    %7D%0A\n     retu\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-53-45",
+            "content": "@@ -103,17 +103,20 @@\n tring %7B%0A\n-%09\n+    \n if index\n@@ -133,18 +133,24 @@\n tor1) %7B%0A\n-%09%09\n+        \n return %22\n@@ -157,20 +157,28 @@\n iguais%22%0A\n-%09%7D%0A%09\n+    %7D%0A    //\n fmt.Prin\n@@ -199,18 +199,18 @@\n ex%5D, %22 %22\n-,\n  \n+,\n vetor2%5Bi\n@@ -216,17 +216,20 @@\n index%5D)%0A\n-%09\n+    \n if vetor\n@@ -290,34 +290,16 @@\n ) %7B%0A\n-%09%09fmt.Println(%22Entrou%22)%0A%09%09\n+        \n retu\n@@ -318,20 +318,26 @@\n es%22%0A\n-%09%7D%0A%09\n+    %7D%0A    \n index++%0A\n %09ret\n@@ -332,17 +332,20 @@\n index++%0A\n-%09\n+    \n return v\n@@ -478,17 +478,20 @@\n .Text()%0A\n-%09\n+    \n scanner.\n@@ -523,17 +523,20 @@\n .Text()%0A\n-%09\n+    \n fmt.Prin\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-10_19-54-29",
+            "content": "@@ -332,24 +332,52 @@\n %09return \n-%22iguais%22\n+verificaIgual(index, vetor1, vetor2)\n %0A%7D%0A%0Afunc\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-54-50",
+            "content": "@@ -328,46 +328,8 @@\n x++%0A\n-%09verificaIgual(index, vetor1, vetor2)%0A\n %09ret\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-55-08",
+            "content": "@@ -152,18 +152,16 @@\n is%22%0A%09%7D%0A%09\n-//\n fmt.Prin\n@@ -272,10 +272,8 @@\n %7B%0A%09%09\n-//\n fmt.\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-56-41",
+            "content": "@@ -151,16 +151,66 @@\n ais%22%0A%09%7D%0A\n+%09//fmt.Println(vetor1%5Bindex%5D, %22 %22, vetor2%5Bindex%5D)%0A\n %09if veto\n@@ -264,24 +264,50 @@\n n(vetor2) %7B%0A\n+%09%09//fmt.Println(%22Entrou%22)%0A\n %09%09return %22di\n@@ -333,17 +333,8 @@\n ++%0A%09\n-%0A%09return \n veri\n@@ -366,16 +366,33 @@\n vetor2)%0A\n+%09return %22iguais%22%0A\n %7D%0A%0Afunc \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-10_19-57-36",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc verificaIgual(index int, vetor1, vetor2 string) string {\n\tif index == len(vetor1) {\n\t\treturn \"iguais\"\n\t}\n\tif vetor1[index] != vetor2[index] || len(vetor1) != len(vetor2) {\n\t\treturn \"diferentes\"\n\t}\n\tindex++\n\t\n\treturn verificaIgual(index, vetor1, vetor2)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvetor1 := scanner.Text()\n\tscanner.Scan()\n\tvetor2 := scanner.Text()\n\tfmt.Println(verificaIgual(0, vetor1, vetor2))\n}\n",
+            "lines": "28"
+        }
+    ]
+}
