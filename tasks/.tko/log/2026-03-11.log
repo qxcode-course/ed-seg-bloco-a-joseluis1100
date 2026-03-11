@@ -1,0 +1,7 @@
+2026-03-11 02:11:06, MOVE, v:1, k:ed@priminhos, mode:PICK
+2026-03-11 02:11:44, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:25, size:47
+2026-03-11 02:14:32, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:45
+2026-03-11 02:14:40, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:0, size:45
+2026-03-11 02:14:41, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:100
+2026-03-11 02:14:43, MOVE, v:1, k:ed@priminhos, mode:BACK
+2026-03-11 02:14:51, SELF, v:1, k:ed@priminhos, self:1, rate:100, study:5

@@ -158,3 +158,7 @@
 2026-03-10 19:57:59, MOVE, v:1, k:ed@priminhos, mode:DOWN
 2026-03-10 19:57:59, MOVE, v:1, k:ed@priminhos, mode:PICK
 2026-03-10 19:58:01, MOVE, v:1, k:ed@priminhos, mode:BACK
+2026-03-10 19:58:43, MOVE, v:1, k:ed@priminhos, mode:PICK
+2026-03-10 19:59:21, MOVE, v:1, k:ed@priminhos, mode:BACK
+2026-03-10 20:00:13, MOVE, v:1, k:ed@priminhos, mode:PICK
+2026-03-10 20:00:14, EXEC, v:1, k:ed@priminhos, mode:FULL, rate:25, size:43

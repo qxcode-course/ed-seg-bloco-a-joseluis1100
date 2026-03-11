@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_20-00-14",
+            "content": "@@ -523,34 +523,8 @@\n %0A%7D%0A%0A\n-func formatar() %7B%0A    %0A%7D%0A%0A\n func\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-11_02-11-44",
+            "content": "@@ -35,30 +35,8 @@\n th%22%0A\n-%09%22strconv%22%0A%09%22strings%22%0A\n )%0A%0Av\n@@ -49,22 +49,19 @@\n mos = %5B%5D\n-str\n in\n-g\n+t\n %7B%7D%0A%0Afunc\n@@ -410,28 +410,14 @@\n os, \n-strconv.Itoa(\n valor)\n-)\n %0A   \n@@ -515,24 +515,50 @@\n valor+1)%0A%7D%0A%0A\n+func formatar() %7B%0A    %0A%7D%0A%0A\n func main() \n@@ -631,37 +631,17 @@\n rint\n-f(%22%5B%25s%5D%22, strings.Joi\n+l\n n(primos\n , %22,\n@@ -640,15 +640,8 @@\n imos\n-, %22, %22)\n )%0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-11_02-14-32",
+            "content": "@@ -651,10 +651,8 @@\n %5B%25s%5D\n-%5Cn\n %22, s\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-11_02-14-40",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nvar primos = []string{}\n\nfunc eh_primo(x int, div int) bool {\n\tif x == 2 {\n\t\treturn true\n\t}\n\tif x % div == 0 || x == 1 {\n\t\treturn false\n\t}\n\tif div < int(math.Sqrt(float64(x))) {\n\t\treturn eh_primo(x, div+1)\n\t}\n\treturn true\n}\n\nfunc procurarPrimo(n, valor int) {\n    if n == 0 {\n        return\n    }\n    for {\n        if eh_primo(valor, 2) {\n            primos = append(primos, strconv.Itoa(valor))\n            break\n        } else {\n            valor++\n        }\n    }\n    procurarPrimo(n-1, valor+1)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    procurarPrimo(n, 2)\n    fmt.Printf(\"[%s]\\n\", strings.Join(primos, \", \"))\n}\n",
+            "lines": "45"
+        }
+    ]
+}
