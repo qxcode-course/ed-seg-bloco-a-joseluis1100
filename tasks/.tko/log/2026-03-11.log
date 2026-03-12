@@ -98,3 +98,16 @@
 2026-03-11 22:54:34, EXEC, v:1, k:ed@especiais, mode:FULL, rate:62, size:239
 2026-03-11 22:55:57, EXEC, v:1, k:ed@especiais, mode:FULL, rate:62, size:239
 2026-03-11 22:56:07, EXEC, v:1, k:ed@especiais, mode:FULL, rate:100, size:239
+2026-03-11 22:56:44, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-03-11 22:57:10, SELF, v:1, k:ed@especiais, self:1, rate:100, study:90, refactor:1
+2026-03-11 22:58:18, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-03-11 22:58:20, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-03-11 23:04:40, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:49
+2026-03-11 23:05:43, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:49
+2026-03-11 23:05:44, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0
+2026-03-11 23:06:36, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:49
+2026-03-11 23:06:39, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-03-11 23:06:45, SELF, v:1, k:ed@queimada, self:1, rate:100, study:8
+2026-03-11 23:07:11, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-03-11 23:07:12, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-03-11 23:07:16, MOVE, v:1, k:ed@ilhas, mode:BACK

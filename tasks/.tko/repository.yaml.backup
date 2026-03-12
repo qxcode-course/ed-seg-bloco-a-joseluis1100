@@ -33,6 +33,7 @@ tasks:
   ed@princesa: '{self:1, rate:100, study:120, concept:1}'
   ed@apagando: '{self:1, rate:100, study:30}'
   ed@manipulacao: '{self:1, rate:100, study:50}'
+  ed@especiais: '{self:1, rate:100, study:90, refactor:1}'
   ed@buscas: '{self:1, rate:100, study:20}'
   ed@rotacoes: '{self:1, rate:100, study:20}'
   ed@alternando: '{self:1, rate:100, study:60}'
@@ -44,6 +45,7 @@ tasks:
   ed@enesimo: '{self:1, rate:100, study:60}'
   ed@vetequals: '{self:1, rate:100, study:75}'
   ed@priminhos: '{self:1, rate:100, study:5}'
+  ed@queimada: '{self:1, rate:100, study:8}'
 flags:
   painel: 2
   quests: 0
@@ -52,4 +54,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@especiais
+selected: ed@ilhas
