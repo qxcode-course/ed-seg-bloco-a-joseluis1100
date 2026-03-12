@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-19-53",
+            "content": "@@ -34,16 +34,54 @@\n ath%22%0A)%0A%0A\n+func ler(x *float64) %7B%0A%09fmt.Scan(x)%0A%7D%0A\n func her\n@@ -241,25 +241,30 @@\n 64%0A%09\n-fmt.Scan(&a, &b, \n+ler(&a)%0A%09ler(&b)%0A%09ler(\n &c)%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_20-36-07",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc heron(a float64, b float64, c float64) float64 {\n\tp := (a + b + c) / 2\n\treturn math.Sqrt(p * (p - a) * (p - b) * (p - c))\n}\nfunc main() {\n\tvar a, b, c float64\n\tfmt.Scan(&a, &b, &c)\n\tfmt.Printf(\"%.2f\\n\", heron(a, b, c))\n}\n",
+            "lines": "16"
+        }
+    ]
+}

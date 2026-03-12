@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-39-29",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"slices\"\n)\n\ntype Gomo struct {\n\tx, y int\n}\n\nvar movimentos = map[string]Gomo{\n\t\"U\": {0, -1},\n\t\"D\": {0, 1},\n\t\"L\": {-1, 0},\n\t\"R\": {1, 0},\n}\n\nfunc escanearGomos(cobra []Gomo) {\n\tfor i := range cobra {\n\t\tfmt.Scan(&cobra[i].x, &cobra[i].y)\n\t}\n}\n\nfunc avancar(direcao string, cobra []Gomo) []Gomo {\n\tmudaX, mudaY := movimentos[direcao].x, movimentos[direcao].y\n\tcobra = slices.Insert(cobra, 0, Gomo{x: cobra[0].x + mudaX, y: cobra[0].y + mudaY})\n\treturn slices.Delete(cobra, len(cobra)-1, len(cobra))\n}\n\nfunc imprimirSlice(cobra []Gomo) {\n\tfor _, gomo := range cobra {\n\t\tfmt.Printf(\"%d %d\\n\", gomo.x, gomo.y)\n\t}\n}\n\nfunc main() {\n\tvar quantidade int\n\tvar direcao string\n\tfmt.Scan(&quantidade, &direcao)\n\tcobra := make([]Gomo, quantidade)\n\tescanearGomos(cobra)\n\timprimirSlice(avancar(direcao, cobra))\n}\n",
+            "lines": "44"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-39-07",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc adicionarFigurinhas(quantidade int, figurinhas map[int]int, repetidas *[]string) {\n\tfor range quantidade {\n\t\tvar figurinha int\n\t\tfmt.Scan(&figurinha)\n\t\tfigurinhas[figurinha]++\n\t\tif figurinhas[figurinha] > 1 {\n\t\t\t*repetidas = append(*repetidas, strconv.Itoa(figurinha))\n\t\t}\n\t}\n}\n\nfunc encontrarFaltando(total int, figurinhas map[int]int, faltando *[]string) {\n\tfor i := 1; i <= total; i++ {\n\t\tif figurinhas[i] == 0 {\n\t\t\t*faltando = append(*faltando, strconv.Itoa(i))\n\t\t}\n\t}\n}\n\nfunc resultados(vetor []string) {\n\tif len(vetor) == 0 {\n\t\tfmt.Println(\"N\")\n\t\treturn\n\t}\n\tfmt.Println(strings.Join(vetor, \" \"))\n}\n\nfunc main() {\n\tvar total, quantidade int\n\tfmt.Scan(&total, &quantidade)\n\tfigurinhas := make(map[int]int)\n\trepetidas := make([]string, 0)\n\tfaltando := make([]string, 0)\n\tadicionarFigurinhas(quantidade, figurinhas, &repetidas)\n\tencontrarFaltando(total, figurinhas, &faltando)\n\tresultados(repetidas)\n\tresultados(faltando)\n}\n",
+            "lines": "46"
+        }
+    ]
+}

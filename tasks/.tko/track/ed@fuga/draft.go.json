@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-24-13",
+            "content": "@@ -241,17 +241,17 @@\n a(H, P, \n-F, D\n+D, F\n ))%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_20-34-12",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc fuga(H, P, F, D int) string {\n\tfor {\n\t\tF = (F + D + 16) % 16\n\t\tif F == H {\n\t\t\treturn \"S\"\n\t\t}\n\t\tif F == P {\n\t\t\treturn \"N\"\n\t\t}\n\t}\n}\n\nfunc main() {\n\tvar H, P, F, D int\n\tfmt.Scan(&H, &P, &F, &D)\n\tfmt.Println(fuga(H, P, F, D))\n}\n",
+            "lines": "21"
+        }
+    ]
+}

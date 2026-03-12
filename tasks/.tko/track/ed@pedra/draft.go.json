@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-37-23",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n\t\"strconv\"\n)\n\ntype Pessoa struct {\n\tA, B         int\n\tclassificado bool\n}\n\nfunc ler(x *int) {\n\tfmt.Scan(x)\n}\n\nfunc adicionarPessoa() Pessoa {\n\tvar pessoa Pessoa\n\tler(&pessoa.A)\n\tler(&pessoa.B)\n\tif pessoa.A < 10 || pessoa.B < 10 {\n\t\tpessoa.classificado = false\n\t} else {\n\t\tpessoa.classificado = true\n\t}\n\treturn pessoa\n}\n\nfunc atualizarMelhor(pessoa1 Pessoa, pessoa2 Pessoa) bool {\n\tif math.Abs(float64(pessoa1.A-pessoa1.B)) < math.Abs(float64(pessoa2.A-pessoa2.B)) {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc definirMelhor(repeticoes int, pessoas []Pessoa) string {\n\tmelhor := -1\n\tfor i := range repeticoes {\n\t\tpessoas[i] = adicionarPessoa()\n\t\tif melhor == -1 && pessoas[i].classificado {\n\t\t\tmelhor = i\n\t\t}\n\t\tif pessoas[i].classificado && atualizarMelhor(pessoas[i], pessoas[melhor]) {\n\t\t\tmelhor = i\n\t\t}\n\t}\n\tif melhor == -1 {\n\t\treturn \"sem ganhador\"\n\t} else {\n\t\treturn strconv.Itoa(melhor)\n\t}\n}\n\nfunc main() {\n\tvar repeticoes int\n\tler(&repeticoes)\n\tpessoas := make([]Pessoa, repeticoes)\n\tfmt.Println(definirMelhor(repeticoes, pessoas))\n}\n",
+            "lines": "60"
+        }
+    ]
+}

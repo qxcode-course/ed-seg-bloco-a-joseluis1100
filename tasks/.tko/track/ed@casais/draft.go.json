@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-38-42",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc adicionarAnimal(animais map[int]int) int {\n\tvar animal int\n\tfmt.Scan(&animal)\n\tif animais[-animal] > 0 {\n\t\tanimais[-animal]--\n\t\treturn 1\n\t} else {\n\t\tanimais[animal]++\n\t\treturn 0\n\t}\n}\n\nfunc main() {\n\tvar n, casais int\n\tanimais := make(map[int]int)\n\tfmt.Scan(&n)\n\tfor range n {\n\t\tcasais += adicionarAnimal(animais)\n\t}\n\tfmt.Println(casais)\n}\n",
+            "lines": "25"
+        }
+    ]
+}
