@@ -48,6 +48,7 @@ tasks:
   ed@ilhas: '{self:1, rate:100, study:90, concept:1}'
   ed@cercado: '{self:1, rate:100, study:55, concept:1}'
   ed@labirinto: '{self:1, rate:100, study:20, concept:1}'
+  ed@pintura: '{self:1, rate:100, study:10}'
 flags:
   painel: 2
   quests: 0
@@ -56,4 +57,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@ilhas
+selected: ed@longest

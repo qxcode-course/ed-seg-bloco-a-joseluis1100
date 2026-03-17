@@ -52,3 +52,17 @@
 2026-03-16 23:10:01, SELF, v:1, k:ed@labirinto, self:1, rate:100, study:20, concept:1
 2026-03-16 23:10:21, SELF, v:1, k:ed@cercado, self:1, rate:100, study:55, concept:1
 2026-03-16 23:10:28, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:90, concept:1
+2026-03-16 23:16:48, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-03-16 23:16:49, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-03-16 23:20:15, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-03-16 23:20:17, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-03-16 23:24:55, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-03-16 23:27:19, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-03-16 23:27:21, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-03-16 23:27:21, EXEC, v:1, k:ed@pintura, mode:FULL, size:65, fail:COMP
+2026-03-16 23:27:22, EXEC, v:1, k:ed@pintura, mode:FULL, fail:COMP
+2026-03-16 23:27:23, EXEC, v:1, k:ed@pintura, mode:FULL, fail:COMP
+2026-03-16 23:30:01, EXEC, v:1, k:ed@pintura, mode:FULL, rate:0, size:70
+2026-03-16 23:33:27, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100, size:70
+2026-03-16 23:35:08, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-03-16 23:35:25, SELF, v:1, k:ed@pintura, self:1, rate:100, study:10
