@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_22-55-13",
+            "content": "@@ -355,17 +355,17 @@\n tartPos.\n-l\n+c\n  - 1, st\n@@ -363,33 +363,33 @@\n c - 1, startPos.\n-c\n+l\n %7D, endPos)%0A%09sear\n@@ -410,17 +410,17 @@\n tartPos.\n-l\n+c\n  + 1, st\n@@ -426,17 +426,17 @@\n tartPos.\n-c\n+l\n %7D, endPo\n@@ -457,33 +457,33 @@\n d, Pos%7BstartPos.\n-l\n+c\n , startPos.c - 1\n@@ -473,25 +473,25 @@\n c, startPos.\n-c\n+l\n  - 1%7D, endPo\n@@ -520,17 +520,17 @@\n tartPos.\n-l\n+c\n , startP\n@@ -528,25 +528,25 @@\n c, startPos.\n-c\n+l\n  + 1%7D, endPo\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_22-57-14",
+            "content": "@@ -255,37 +255,32 @@\n %5D == '#' %7C%7C \n-grid%5B\n startPos\n .c%5D%5BstartPos\n@@ -271,30 +271,18 @@\n tPos\n-.c%5D%5BstartPos.l%5D == '.'\n+ == endPos\n  %7B%0A%09\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_22-58-29",
+            "content": "@@ -226,33 +226,33 @@\n %7C grid%5BstartPos.\n-l\n+c\n %5D%5BstartPos.c%5D ==\n@@ -242,25 +242,25 @@\n c%5D%5BstartPos.\n-c\n+l\n %5D == '#' %7C%7C \n@@ -273,17 +273,17 @@\n tartPos.\n-l\n+c\n %5D%5BstartP\n@@ -285,17 +285,17 @@\n tartPos.\n-c\n+l\n %5D == '.'\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_22-59-11",
+            "content": "@@ -136,17 +136,17 @@\n tartPos.\n-l\n+c\n  %3C 0 %7C%7C \n@@ -146,33 +146,33 @@\n %3C 0 %7C%7C startPos.\n-c\n+l\n  %3C 0 %7C%7C startPos\n@@ -172,17 +172,17 @@\n tartPos.\n-l\n+c\n  %3E= len(\n@@ -191,33 +191,33 @@\n id) %7C%7C startPos.\n-c\n+l\n  %3E= len(grid%5B0%5D)\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_23-00-09",
+            "content": "@@ -316,33 +316,33 @@\n %0A%09grid%5BstartPos.\n-l\n+c\n %5D%5BstartPos.c%5D = \n@@ -336,17 +336,17 @@\n tartPos.\n-c\n+l\n %5D = '.'%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_23-00-39",
+            "content": "@@ -349,45 +349,8 @@\n '.'%0A\n-%09if startPos == endPos %7B%0A%09%09return%0A%09%7D%0A\n %09sea\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_23-01-26",
+            "content": "@@ -124,13 +124,8 @@\n Pos)\n- bool\n  %7B%0A%09\n@@ -305,22 +305,16 @@\n %09%09return\n- false\n %0A%09%7D%0A%09gri\n@@ -382,21 +382,13 @@\n turn\n- true\n %0A%09%7D%0A%09\n-if \n sear\n@@ -428,36 +428,34 @@\n tPos.c%7D, endPos)\n- %7C%7C \n+%0A%09\n search(grid, Pos\n@@ -483,36 +483,34 @@\n tPos.c%7D, endPos)\n- %7C%7C \n+%0A%09\n search(grid, Pos\n@@ -546,20 +546,18 @@\n  endPos)\n- %7C%7C \n+%0A%09\n search(g\n@@ -605,77 +605,8 @@\n Pos)\n- %7B%0A%09%09return true%0A%09%7D%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = ' '%0A%09return false\n %0A%7D%0A%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-16_23-08-44",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc search(grid [][]rune, startPos, endPos Pos) bool {\n\tif startPos.l < 0 || startPos.c < 0 || startPos.l >= len(grid) || startPos.c >= len(grid[0]) || grid[startPos.l][startPos.c] == '#' || grid[startPos.l][startPos.c] == '.' {\n\t\treturn false\n\t}\n\tgrid[startPos.l][startPos.c] = '.'\n\tif startPos == endPos {\n\t\treturn true\n\t}\n\tif search(grid, Pos{startPos.l - 1, startPos.c}, endPos) || search(grid, Pos{startPos.l + 1, startPos.c}, endPos) || search(grid, Pos{startPos.l, startPos.c - 1}, endPos) || search(grid, Pos{startPos.l, startPos.c + 1}, endPos) {\n\t\treturn true\n\t}\n\tgrid[startPos.l][startPos.c] = ' '\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(grid, startPos, endPos)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "63"
+        }
+    ]
+}
