@@ -46,6 +46,7 @@ tasks:
   ed@priminhos: '{self:1, rate:100, study:5}'
   ed@queimada: '{self:1, rate:100, study:8}'
   ed@ilhas: '{self:1, rate:100, study:90, concept:1, problem:1}'
+  ed@cercado: '{self:1, rate:100, study:55, concept:1, debug:1}'
 flags:
   painel: 2
   quests: 0

@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_21-57-41",
+            "content": "@@ -45,75 +45,8 @@\n %0A)%0A%0A\n-type Pos struct %7B%0A%09x, y int%0A%7D%0A%0Avar visitados = make(map%5BPos%5Dbool)%0A%0A\n func\n@@ -47,30 +47,24 @@\n %0A%0Afunc busca\n-Bordas\n (board %5B%5D%5B%5Db\n@@ -181,48 +181,32 @@\n %09%7D%0A%09\n-visitados%5BPos%7Bx, y%7D%5D = true\n+board%5Bx%5D%5By%5D = 'X'\n %0A%09busca\n-Bordas\n (boa\n@@ -215,38 +215,32 @@\n , x-1, y)%0A%09busca\n-Bordas\n (board, x+1, y)%0A\n@@ -237,38 +237,32 @@\n , x+1, y)%0A%09busca\n-Bordas\n (board, x, y+1)%0A\n@@ -263,30 +263,24 @@\n  y+1)%0A%09busca\n-Bordas\n (board, x, y\n@@ -414,227 +414,8 @@\n %5D %7B%0A\n-%09%09%09if i == 0 %7C%7C j == 0 %7C%7C i == len(board)-1 %7C%7C j == len(board%5B0%5D)-1 %7B%0A%09%09%09%09buscaBordas(board, i, j)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09for i := range board %7B%0A%09%09for j := range board%5B0%5D %7B%0A%09%09%09if !visitados%5BPos%7Bi, j%7D%5D %7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-16_22-19-25",
+            "content": "@@ -689,30 +689,8 @@\n %09%09if\n- board%5Bi%5D%5Bj%5D == 'O' &&\n  !vi\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_22-21-19",
+            "content": "@@ -495,101 +495,106 @@\n %7B%0A%09%09\n-buscaBordas(board, i, 0)%0A%09%09buscaBordas(board, i, len(board%5B0%5D)-1)%0A%09%7D%0A%09for i := range board\n+for j := range board%5B0%5D %7B%0A%09%09%09if i == 0 %7C%7C j == 0 %7C%7C i == len(board)-1 %7C%7C j == len(board%5B0%5D)-1\n  %7B%0A\n+%09%09\n %09%09bu\n@@ -614,51 +614,22 @@\n rd, \n-0, i\n+i, j\n )%0A%09%09\n-buscaBordas(board, len(board)-1, i)\n+%09%7D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-16_22-25-59",
+            "content": "@@ -577,27 +577,24 @@\n  range board\n-%5B0%5D\n  %7B%0A%09%09buscaBo\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_22-28-52",
+            "content": "@@ -238,32 +238,8 @@\n  'X'\n- %7C%7C visitados%5BPos%7Bx, y%7D%5D\n  %7B%0A%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_22-29-37",
+            "content": "@@ -76,44 +76,61 @@\n %0A%7D%0A%0A\n-func buscaBordas(mapa map%5BPos%5Dbool, \n+var visitados = make(map%5BPos%5Dbool)%0A%0Afunc buscaBordas(\n boar\n@@ -238,20 +238,25 @@\n  'X' %7C%7C \n-mapa\n+visitados\n %5BPos%7Bx, \n@@ -274,20 +274,25 @@\n urn%0A%09%7D%0A%09\n-mapa\n+visitados\n %5BPos%7Bx, \n@@ -307,38 +307,32 @@\n ue%0A%09buscaBordas(\n-mapa, \n board, x-1, y)%0A%09\n@@ -335,38 +335,32 @@\n y)%0A%09buscaBordas(\n-mapa, \n board, x+1, y)%0A%09\n@@ -363,38 +363,32 @@\n y)%0A%09buscaBordas(\n-mapa, \n board, x, y+1)%0A%09\n@@ -403,14 +403,8 @@\n das(\n-mapa, \n boar\n@@ -493,41 +493,8 @@\n ) %7B%0A\n-%09visitados := make(map%5BPos%5Dbool)%0A\n %09for\n@@ -523,35 +523,24 @@\n buscaBordas(\n-visitados, \n board, i, 0)\n@@ -550,35 +550,24 @@\n buscaBordas(\n-visitados, \n board, i, le\n@@ -621,35 +621,24 @@\n buscaBordas(\n-visitados, \n board, 0, i)\n@@ -656,19 +656,8 @@\n das(\n-visitados, \n boar\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-16_22-36-22",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tx, y int\n}\n\nfunc buscaBordas(mapa map[Pos]bool, board [][]byte, x, y int) {\n\tif x < 0 || y < 0 || x >= len(board) || y >= len(board[0]) || board[x][y] == 'X' || mapa[Pos{x, y}] {\n\t\treturn\n\t}\n\tmapa[Pos{x, y}] = true\n\tbuscaBordas(mapa, board, x-1, y)\n\tbuscaBordas(mapa, board, x+1, y)\n\tbuscaBordas(mapa, board, x, y+1)\n\tbuscaBordas(mapa, board, x, y-1)\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tvisitados := make(map[Pos]bool)\n\tfor i := range board {\n\t\tbuscaBordas(visitados, board, i, 0)\n\t\tbuscaBordas(visitados, board, i, len(board[0])-1)\n\t}\n\tfor i := range board[0] {\n\t\tbuscaBordas(visitados, board, 0, i)\n\t\tbuscaBordas(visitados, board, len(board)-1, i)\n\t}\n\tfor i := range board {\n\t\tfor j := range board[0] {\n\t\t\tif board[i][j] == 'O' && !visitados[Pos{i, j}] {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "59"
+        }
+    ]
+}
