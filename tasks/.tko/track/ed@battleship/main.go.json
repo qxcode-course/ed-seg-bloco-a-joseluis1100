@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_19-16-45",
+            "content": "@@ -148,30 +148,8 @@\n %5B0%5D)\n- %7C%7C board%5Bx%5D%5By%5D == '.'\n  %7B%0A%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-23_19-17-38",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc buscaBarco(board [][]byte, x, y int) {\n\tif x < 0 || y < 0 || x >= len(board) || y >= len(board[0]) || board[x][y] == '.' {\n\t\treturn\n\t}\n\tboard[x][y] = '.'\n\tbuscaBarco(board, x-1, y)\n\tbuscaBarco(board, x+1, y)\n\tbuscaBarco(board, x, y-1)\n\tbuscaBarco(board, x, y+1)\n}\t\n\n// Fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode\nfunc countBattleships(board [][]byte) int {\n\tcontador := 0\n\tfor i := range board {\n\t\tfor j := range board[0] {\n\t\t\tif board[i][j] == 'X' {\n\t\t\t\tcontador++\n\t\t\t\tbuscaBarco(board, i, j)\n\t\t\t}\n\t\t}\n\t}\n\treturn contador\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\n\tboard := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\n\tresult := countBattleships(board)\n\tfmt.Println(result)\n}\n",
+            "lines": "50"
+        }
+    ]
+}

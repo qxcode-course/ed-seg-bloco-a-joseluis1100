@@ -13,14 +13,21 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@main-quest
-- ed@busca-em-profundidade
-- sandbox@student_sandbox_alias:00_rascunhos
-- ed@revisão
-- ed@recursão
-- ed@análise
-- ed@recursão-extra
 - ed@pilha-e-fila
+- ed@árvore
+- ed@busca-em-profundidade
+- ed@busca-em-largura
+- ed@revisão
+- ed@main-quest
+- ed@recursão
+- ed@deque-pilha-e-fila
+- ed@backtracking
+- ed@side-quests
+- ed@vetor
+- ed@recursão-extra
+- ed@lista
+- ed@análise
+- sandbox@student_sandbox_alias:00_rascunhos
 tasks:
   ed@pintando: '{self:1, rate:100}'
   ed@mumia: '{self:1, rate:100}'
@@ -49,6 +56,7 @@ tasks:
   ed@cercado: '{self:1, rate:100, study:55, concept:1}'
   ed@labirinto: '{self:1, rate:100, study:20, concept:1}'
   ed@pintura: '{self:1, rate:100, study:10}'
+  ed@battleship: '{rate:100}'
 flags:
   painel: 2
   quests: 0
@@ -57,4 +65,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@longest
+selected: ed@labirinto

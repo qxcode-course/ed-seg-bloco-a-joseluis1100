@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_18-57-03",
+            "content": "@@ -103,20 +103,11 @@\n  y, \n-valAnt, cont\n+seq\n  int\n@@ -139,17 +139,16 @@\n 0 %7C%7C x %3E\n-=\n  len(mat\n@@ -158,17 +158,16 @@\n ) %7C%7C y %3E\n-=\n  len(mat\n@@ -199,40 +199,329 @@\n %09if \n-valAnt %3C matrix%5Bx%5D%5By%5D %7B%0A%09%09cont++\n+maiorPos(matrix, x-1, y, seq) %3E seq%7B%0A%09%09seq = maiorPos(matrix, x-1, y, seq)%0A%09%7D %0A%09if maiorPos(matrix, x+1, y, seq) %3E seq%7B%0A%09%09seq = maiorPos(matrix, x+1, y, seq)%0A%09%7D%0A%09if maiorPos(matrix, x, y-1, seq) %3E seq%7B%0A%09%09seq = maiorPos(matrix, x, y-1, seq)%0A%09%7D%0A%09if maiorPos(matrix, x, y+1, seq) %3E seq%7B%0A%09%09seq = maiorPos(matrix, x, y+1, seq)\n %0A%09%7D%0A\n@@ -532,12 +532,11 @@\n urn \n-cont\n+seq\n %0A%7D%0A%0A\n@@ -653,16 +653,19 @@\n 0%5D %7B%0A%09%09%09\n+if \n maiorPos\n@@ -683,24 +683,63 @@\n  j, \n-matrix%5Bi%5D%5Bj%5D, 0)\n+0) %3E maior %7B%0A%09%09%09%09maior = maiorPos(matrix, i, j, 0)%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-03-17_19-09-53",
+            "content": "@@ -120,20 +120,12 @@\n int)\n- (bool,\n  int\n-)\n  %7B%0A%09\n@@ -189,365 +189,61 @@\n 0%5D) \n-%7C%7C valAnt %3E matrix%5Bx%5D%5By%5D %7B%0A%09%09return false, cont%0A%09%7D%0A%09cont++%0A%09esquerda, _ := maiorPos(matrix, x-1, y, matrix%5Bx%5D%5By%5D, cont)%0A%09direita, _ := maiorPos(matrix, x+1, y, matrix%5Bx%5D%5By%5D, cont)%0A%09cima, _ := maiorPos(matrix, x, y-1, matrix%5Bx%5D%5By%5D, cont)%0A%09baixo, _ := maiorPos(matrix, x, y+1, matrix%5Bx%5D%5By%5D, cont)%0A%09if esquerda %7C%7C direita %7C%7C cima %7C%7C baixo %7B%0A%09%09return true, \n+%7B%0A%09%09return -1%0A%09%7D%0A%09if valAnt %3C matrix%5Bx%5D%5By%5D %7B%0A%09%09\n cont\n+++\n %0A%09%7D%0A\n@@ -253,14 +253,8 @@\n turn\n- true,\n  con\n@@ -377,12 +377,8 @@\n %5D %7B%0A\n-%09%09%09%0A\n %09%09%09m\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-17_19-23-43",
+            "content": "@@ -698,25 +698,12 @@\n %0A%09%09%09\n-_, maiorIndex := \n+%0A%09%09%09\n maio\n@@ -742,63 +742,8 @@\n  0)%0A\n-%09%09%09if maiorIndex %3E maior %7B%0A%09%09%09%09maior = maiorIndex%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-03-17_19-24-41",
+            "content": "@@ -204,17 +204,16 @@\n valAnt %3E\n-=\n  matrix%5B\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-03-17_19-27-12",
+            "content": "@@ -225,29 +225,8 @@\n %5D %7B%0A\n-%09%09fmt.Print(%22vish %22)%0A\n %09%09re\n@@ -249,27 +249,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(%22boa %22)%0A\n %09con\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-03-17_19-29-39",
+            "content": "@@ -196,17 +196,16 @@\n %5B0%5D) %7C%7C \n-(\n valAnt %3E\n@@ -222,29 +222,8 @@\n %5D%5By%5D\n- && x != 0 && y != 0)\n  %7B%0A%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-17_19-33-57",
+            "content": "@@ -617,36 +617,35 @@\n cont%0A%09%7D%0A%09return \n-fals\n+tru\n e, cont%0A%7D%0A%0Afunc \n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-23_19-06-11",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc maiorPos(matrix [][]int, x, y, valAnt, cont int) (bool, int) {\n\tif x < 0 || y < 0 || x >= len(matrix) || y >= len(matrix[0]) || (valAnt >= matrix[x][y] && x != 0 && y != 0) {\n\t\tfmt.Print(\"vish \")\n\t\treturn false, cont\n\t}\n\tfmt.Print(\"boa \")\n\tcont++\n\tesquerda, _ := maiorPos(matrix, x-1, y, matrix[x][y], cont)\n\tdireita, _ := maiorPos(matrix, x+1, y, matrix[x][y], cont)\n\tcima, _ := maiorPos(matrix, x, y-1, matrix[x][y], cont)\n\tbaixo, _ := maiorPos(matrix, x, y+1, matrix[x][y], cont)\n\tif esquerda || direita || cima || baixo {\n\t\treturn true, cont\n\t}\n\treturn false, cont\n}\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\tmaior := 0\n\tfor i := range matrix {\n\t\tfor j := range matrix[0] {\n\t\t\t_, maiorIndex := maiorPos(matrix, i, j, matrix[i][j], 0)\n\t\t\tif maiorIndex > maior {\n\t\t\t\tmaior = maiorIndex\n\t\t\t}\n\t\t}\n\t}\n\treturn maior\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "lines": "70"
+        }
+    ]
+}
