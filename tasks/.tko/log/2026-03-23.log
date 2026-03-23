@@ -17,3 +17,19 @@
 2026-03-23 19:19:30, MOVE, v:1, k:ed@rotten, mode:PICK
 2026-03-23 19:19:31, EXEC, v:1, k:ed@rotten, mode:FREE, size:5
 2026-03-23 19:23:23, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-03-23 19:27:27, MOVE, v:1, k:ed@escada, mode:DOWN
+2026-03-23 19:27:29, MOVE, v:1, k:ed@escada, mode:PICK
+2026-03-23 19:27:32, EXEC, v:1, k:ed@escada, mode:FREE, size:5
+2026-03-23 19:31:44, MOVE, v:1, k:ed@escada, mode:BACK
+2026-03-23 19:31:54, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-03-23 19:34:59, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-03-23 19:35:08, MOVE, v:1, k:ed@escada, mode:PICK
+2026-03-23 19:35:11, EXEC, v:1, k:ed@escada, mode:FREE
+2026-03-23 19:44:00, EXEC, v:1, k:ed@escada, mode:FULL, rate:100, size:18
+2026-03-23 19:44:21, MOVE, v:1, k:ed@escada, mode:BACK
+2026-03-23 19:44:30, MOVE, v:1, k:ed@binomiais, mode:DOWN
+2026-03-23 19:44:32, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-03-23 19:44:34, EXEC, v:1, k:ed@binomiais, mode:FREE, size:5
+2026-03-23 19:45:03, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-03-23 19:46:43, SELF, v:1, k:ed@escada, self:1, rate:100, study:13
+2026-03-23 19:46:58, SELF, v:1, k:ed@battleship, self:1, rate:100, study:5

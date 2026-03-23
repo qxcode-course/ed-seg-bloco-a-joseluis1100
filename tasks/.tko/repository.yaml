@@ -56,7 +56,8 @@ tasks:
   ed@cercado: '{self:1, rate:100, study:55, concept:1}'
   ed@labirinto: '{self:1, rate:100, study:20, concept:1}'
   ed@pintura: '{self:1, rate:100, study:10}'
-  ed@battleship: '{rate:100}'
+  ed@battleship: '{self:1, rate:100, study:5}'
+  ed@escada: '{self:1, rate:100, study:13}'
 flags:
   painel: 2
   quests: 0
@@ -65,4 +66,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@labirinto
+selected: ed@escada

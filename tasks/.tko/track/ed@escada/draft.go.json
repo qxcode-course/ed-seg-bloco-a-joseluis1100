@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_19-27-32",
+            "content": "@@ -23,236 +23,53 @@\n mt%22%0A\n-%0Afunc escadas(n int) int %7B%0A    if n == 1 %7C%7C n == 2 %7B%0A        return 1%0A    %7D%0A    if n == 3 %7B%0A        return 2%0A    %7D%0A    return escadas(n-1) + escadas(n-3)%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A    fmt.Println(escadas(n)\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-23_19-44-00",
+            "content": "package main\nimport \"fmt\"\n\nfunc escadas(n int) int {\n    if n == 1 || n == 2 {\n        return 1\n    }\n    if n == 3 {\n        return 2\n    }\n    return escadas(n-1) + escadas(n-3)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    fmt.Println(escadas(n))\n}\n",
+            "lines": "18"
+        }
+    ]
+}
