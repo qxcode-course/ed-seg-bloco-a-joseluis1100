@@ -32,3 +32,28 @@
 2026-03-24 19:01:56, EXEC, v:1, k:ed@padroes2, mode:FULL, rate:100, size:13
 2026-03-24 19:01:59, MOVE, v:1, k:ed@padroes2, mode:BACK
 2026-03-24 19:02:08, SELF, v:1, k:ed@padroes2, self:1, rate:100, study:1
+2026-03-24 19:02:30, MOVE, v:1, k:ed@padroes3, mode:DOWN
+2026-03-24 19:02:32, MOVE, v:1, k:ed@padroes3, mode:PICK
+2026-03-24 19:10:53, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:15
+2026-03-24 19:16:40, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:17:18, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:23:26, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:15
+2026-03-24 19:26:03, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:15
+2026-03-24 19:26:37, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:26:46, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:15
+2026-03-24 19:27:45, EXEC, v:1, k:ed@padroes3, mode:FULL, size:15, fail:COMP
+2026-03-24 19:27:48, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:29:54, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:30:07, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:33:59, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:34:05, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:20, size:15
+2026-03-24 19:39:06, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:16
+2026-03-24 19:39:32, EXEC, v:1, k:ed@padroes3, mode:FULL, size:16, fail:COMP
+2026-03-24 19:39:35, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:16
+2026-03-24 19:41:59, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:16
+2026-03-24 19:42:17, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:16
+2026-03-24 19:43:18, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:16
+2026-03-24 19:44:54, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:10, size:15
+2026-03-24 19:44:57, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:100
+2026-03-24 19:45:06, MOVE, v:1, k:ed@padroes3, mode:BACK
+2026-03-24 19:45:16, SELF, v:1, k:ed@padroes3, self:1, rate:100, study:40
