@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-03-23_19-44-34",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -23,218 +23,53 @@\n mt%22%0A\n-%0Afunc binomio(n, k int) int %7B%0A    if k == 0 %7C%7C k == n %7B%0A        return 1%0A    %7D%0A    return binomio(n-1, k-1) + binomio(n-1, k)%0A%7D%0A%0Afunc main() %7B%0A    var n, k int%0A    fmt.Scan(&n, &k)%0A    fmt.Println(binomio(n, k)\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-03-23_19-50-13",
+            "content": "package main\nimport \"fmt\"\n\nfunc binomio(n, k int) int {\n    if k == 0 || k == n {\n        return 1\n    }\n    return binomio(n-1, k-1) + binomio(n-1, k)\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n    fmt.Println(binomio(n, k))\n}\n",
+            "lines": "15"
         }
     ]
 }

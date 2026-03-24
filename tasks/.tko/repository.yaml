@@ -13,21 +13,15 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@pilha-e-fila
-- ed@árvore
-- ed@busca-em-profundidade
-- ed@busca-em-largura
-- ed@revisão
-- ed@main-quest
-- ed@recursão
-- ed@deque-pilha-e-fila
-- ed@backtracking
-- ed@side-quests
-- ed@vetor
-- ed@recursão-extra
-- ed@lista
-- ed@análise
+- ed@revisao-basic-basic
+- '@ed@a-consertar-x_sem_quest'
+- '@ed@recursao-recursion-rec-basic_sem_quest'
+- ed@a-consertar-x
+- ed@analise-map_set-map_set-basic
 - sandbox@student_sandbox_alias:00_rascunhos
+- '@ed@analise-map_set-map_set-basic_sem_quest'
+- ed@recursao-recursion-rec-basic
+- '@ed@revisao-basic-basic_sem_quest'
 tasks:
   ed@pintando: '{self:1, rate:100}'
   ed@mumia: '{self:1, rate:100}'
@@ -51,13 +45,15 @@ tasks:
   ed@enesimo: '{self:1, rate:100, study:60}'
   ed@vetequals: '{self:1, rate:100, study:75}'
   ed@priminhos: '{self:1, rate:100, study:5}'
+  ed@escada: '{self:1, rate:100, study:13}'
+  ed@binomiais: '{self:1, rate:100, study:3}'
+  ed@diagonal: '{self:1, rate:100, study:15}'
   ed@queimada: '{self:1, rate:100, study:8}'
   ed@ilhas: '{self:1, rate:100, study:90, concept:1}'
   ed@cercado: '{self:1, rate:100, study:55, concept:1}'
   ed@labirinto: '{self:1, rate:100, study:20, concept:1}'
   ed@pintura: '{self:1, rate:100, study:10}'
   ed@battleship: '{self:1, rate:100, study:5}'
-  ed@escada: '{self:1, rate:100, study:13}'
 flags:
   painel: 2
   quests: 0
@@ -66,4 +62,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@escada
+selected: ed@sufixos

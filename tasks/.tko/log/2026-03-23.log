@@ -33,3 +33,12 @@
 2026-03-23 19:45:03, MOVE, v:1, k:ed@binomiais, mode:BACK
 2026-03-23 19:46:43, SELF, v:1, k:ed@escada, self:1, rate:100, study:13
 2026-03-23 19:46:58, SELF, v:1, k:ed@battleship, self:1, rate:100, study:5
+2026-03-23 19:47:26, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-03-23 19:47:27, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:0
+2026-03-23 19:50:13, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:15
+2026-03-23 19:50:31, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-03-23 19:50:39, SELF, v:1, k:ed@binomiais, self:1, rate:100, study:3
+2026-03-23 19:51:27, MOVE, v:1, k:ed@diagonal, mode:DOWN
+2026-03-23 19:51:28, MOVE, v:1, k:ed@diagonal, mode:PICK
+2026-03-23 19:57:15, EXEC, v:1, k:ed@diagonal, mode:FULL, rate:0, size:19
+2026-03-23 20:04:55, MOVE, v:1, k:ed@diagonal, mode:BACK

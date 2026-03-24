@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_19-57-15",
+            "content": "@@ -162,21 +162,13 @@\n tln(\n-string(\n s%5B0%5D)\n-)\n %0A   \n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-03-24_18-45-29",
+            "content": "package main\nimport \"fmt\"\n\nfunc imprimir(s string, k int) {\n    if len(s) == 0 {\n        return\n    }\n    for range k {\n        fmt.Print(\" \")\n    }\n    fmt.Println(string(s[0]))\n    imprimir(s[1:], k+1)\n}\n\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n    imprimir(palavra, 0)\n}\n",
+            "lines": "19"
+        }
+    ]
+}
