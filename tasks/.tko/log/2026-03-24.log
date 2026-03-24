@@ -20,3 +20,9 @@
 2026-03-24 18:55:10, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100, size:17
 2026-03-24 18:55:12, MOVE, v:1, k:ed@sufixos, mode:BACK
 2026-03-24 18:55:21, SELF, v:1, k:ed@sufixos, self:1, rate:100, study:6
+2026-03-24 18:55:45, MOVE, v:1, k:ed@padroes1, mode:DOWN
+2026-03-24 18:55:46, MOVE, v:1, k:ed@padroes1, mode:PICK
+2026-03-24 18:55:47, EXEC, v:1, k:ed@padroes1, mode:FREE, size:5
+2026-03-24 18:59:59, EXEC, v:1, k:ed@padroes1, mode:FULL, rate:100, size:13
+2026-03-24 19:00:03, MOVE, v:1, k:ed@padroes1, mode:BACK
+2026-03-24 19:00:12, SELF, v:1, k:ed@padroes1, self:1, rate:100, study:4

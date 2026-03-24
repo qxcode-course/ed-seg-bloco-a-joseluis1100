@@ -49,6 +49,7 @@ tasks:
   ed@binomiais: '{self:1, rate:100, study:3}'
   ed@diagonal: '{self:1, rate:100, study:15}'
   ed@sufixos: '{self:1, rate:100, study:6}'
+  ed@padroes1: '{self:1, rate:100, study:4}'
   ed@queimada: '{self:1, rate:100, study:8}'
   ed@ilhas: '{self:1, rate:100, study:90, concept:1}'
   ed@cercado: '{self:1, rate:100, study:55, concept:1}'
