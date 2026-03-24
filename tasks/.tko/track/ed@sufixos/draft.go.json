@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_18-48-52",
+            "content": "@@ -23,209 +23,53 @@\n mt%22%0A\n-%0A\n func \n-imprimir(s string, i int) %7B%0A    if i == 0 %7B%0A        return%0A    %7D%0A    fmt.Println(s%5B:i%5D)%0A    imprimir(s, i+1)%0A%7D%0A%0Afunc main() %7B%0A    var palavra string%0A    fmt.Scan(&palavra)%0A    imprimir(palavra, 0\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-24_18-53-26",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -53,17 +53,20 @@\n  int) %7B%0A\n-%09\n+    \n if i == \n@@ -73,21 +73,33 @@\n 0 %7B%0A\n-%09%09return%0A%09%7D%0A%09\n+        return%0A    %7D%0A    \n fmt.\n@@ -113,17 +113,20 @@\n (s%5B:i%5D)%0A\n-%09\n+    \n imprimir\n@@ -151,17 +151,20 @@\n ain() %7B%0A\n-%09\n+    \n var pala\n@@ -174,17 +174,20 @@\n  string%0A\n-%09\n+    \n fmt.Scan\n@@ -201,9 +201,12 @@\n ra)%0A\n-%09\n+    \n impr\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-24_18-53-36",
+            "content": "@@ -93,16 +93,20 @@\n rintln(s\n+%5B:i%5D\n )%0A%09impri\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-53-53",
+            "content": "@@ -67,14 +67,9 @@\n  == \n-len(s)\n+0\n  %7B%0A%09\n@@ -97,12 +97,8 @@\n ln(s\n-%5B:i%5D\n )%0A%09i\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-54-12",
+            "content": "@@ -67,9 +67,14 @@\n  == \n-0\n+len(s)\n  %7B%0A%09\n@@ -122,9 +122,9 @@\n s, i\n--\n++\n 1)%0A%7D\n@@ -202,20 +202,9 @@\n ra, \n-len(palavra)\n+0\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-54-36",
+            "content": "@@ -98,10 +98,10 @@\n n(s%5B\n-i\n :\n+i\n %5D)%0A%09\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-54-51",
+            "content": "@@ -205,14 +205,12 @@\n palavra)\n--1\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-55-02",
+            "content": "@@ -63,18 +63,17 @@\n if i == \n--1\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_18-55-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir(s string, i int) {\n\tif i == -1 {\n\t\treturn\n\t}\n\tfmt.Println(s[i:])\n\timprimir(s, i-1)\n}\n\nfunc main() {\n\tvar palavra string\n\tfmt.Scan(&palavra)\n\timprimir(palavra, len(palavra)-1)\n}\n",
+            "lines": "17"
+        }
+    ]
+}

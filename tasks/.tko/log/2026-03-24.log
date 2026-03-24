@@ -5,3 +5,18 @@
 2026-03-24 18:45:29, EXEC, v:1, k:ed@diagonal, mode:FULL, rate:100, size:19
 2026-03-24 18:45:31, MOVE, v:1, k:ed@diagonal, mode:BACK
 2026-03-24 18:46:19, SELF, v:1, k:ed@diagonal, self:1, rate:100, study:15
+2026-03-24 18:48:45, MOVE, v:1, k:ed@sufixos, mode:DOWN
+2026-03-24 18:48:49, MOVE, v:1, k:ed@sufixos, mode:PICK
+2026-03-24 18:48:52, EXEC, v:1, k:ed@sufixos, mode:FREE, size:5
+2026-03-24 18:53:26, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:16
+2026-03-24 18:53:30, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0
+2026-03-24 18:53:36, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:53:53, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:53:54, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0
+2026-03-24 18:54:12, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:54:36, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:54:51, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:55:02, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-03-24 18:55:10, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100, size:17
+2026-03-24 18:55:12, MOVE, v:1, k:ed@sufixos, mode:BACK
+2026-03-24 18:55:21, SELF, v:1, k:ed@sufixos, self:1, rate:100, study:6
