@@ -37,8 +37,123 @@
         },
         {
             "label": "2026-03-23_19-06-11",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc maiorPos(matrix [][]int, x, y, valAnt, cont int) (bool, int) {\n\tif x < 0 || y < 0 || x >= len(matrix) || y >= len(matrix[0]) || (valAnt >= matrix[x][y] && x != 0 && y != 0) {\n\t\tfmt.Print(\"vish \")\n\t\treturn false, cont\n\t}\n\tfmt.Print(\"boa \")\n\tcont++\n\tesquerda, _ := maiorPos(matrix, x-1, y, matrix[x][y], cont)\n\tdireita, _ := maiorPos(matrix, x+1, y, matrix[x][y], cont)\n\tcima, _ := maiorPos(matrix, x, y-1, matrix[x][y], cont)\n\tbaixo, _ := maiorPos(matrix, x, y+1, matrix[x][y], cont)\n\tif esquerda || direita || cima || baixo {\n\t\treturn true, cont\n\t}\n\treturn false, cont\n}\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\tmaior := 0\n\tfor i := range matrix {\n\t\tfor j := range matrix[0] {\n\t\t\t_, maiorIndex := maiorPos(matrix, i, j, matrix[i][j], 0)\n\t\t\tif maiorIndex > maior {\n\t\t\t\tmaior = maiorIndex\n\t\t\t}\n\t\t}\n\t}\n\treturn maior\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "content": "@@ -67,153 +67,98 @@\n %0A)%0A%0A\n-type Pos struct %7B%0A%09x, y int%0A%7D%0A%0Afunc maxlenpath(matrix %5B%5D%5B%5Dint, posAtual, posAnterior Pos)\n+func maiorPos(matrix %5B%5D%5B%5Dint, x, y, valAnt, cont int) (bool,\n  int\n+)\n  %7B%0A%09if \n-posAtual.x %3C 0 %7C%7C posAtual.y %3C 0 %7C%7C posAtual.\n+x %3C 0 %7C%7C y %3C 0 %7C%7C \n x %3E=\n@@ -173,25 +173,16 @@\n rix) %7C%7C \n-posAtual.\n y %3E= len\n@@ -197,550 +197,365 @@\n 0%5D) \n-%7B%0A%09%09fmt.Println(%22perdi a linha%22)%0A%09%09return 0%0A%09%7D%0A%09maior := 1%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3E= matrix%5BposAnterior.x%5D%5BposAnterior.y%5D %7B%0A%09%09fmt.Println(%22deu menor%22)%0A%09%09return maior%0A%09%7D%0A%09dir := 0%0A%09cima := maxlenpath(matrix, Pos%7BposAtual.x-1, posAtual.y%7D, posAtual)%0A%09baixo := maxlenpath(matrix, Pos%7BposAtual.x+1, posAtual.y%7D, posAtual)%0A%09esquerda := maxlenpath(matrix, Pos%7BposAtual.x, posAtual.y-1%7D, posAtual)%0A%09direita := maxlenpath(matrix, Pos%7BposAtual.x, posAtual.\n+%7C%7C (valAnt %3E= matrix%5Bx%5D%5By%5D && x != 0 && y != 0) %7B%0A%09%09fmt.Print(%22vish %22)%0A%09%09return false, cont%0A%09%7D%0A%09fmt.Print(%22boa %22)%0A%09cont++%0A%09esquerda, _ := maiorPos(matrix, x-1, y, matrix%5Bx%5D%5By%5D, cont)%0A%09direita, _ := maiorPos(matrix, x+1, y, matrix%5Bx%5D%5By%5D, cont)%0A%09cima, _ := maiorPos(matrix, x, y-1, matrix%5Bx%5D%5By%5D, cont)%0A%09baixo, _ := maiorPos(matrix, x, \n y+1\n-%7D\n , \n-posAtual)%0A%09if cima %3E dir %7B%0A%09%09dir = cima%0A%09%7D%0A%09if baixo %3E dir %7B%0A%09%09dir = baixo%0A%09%7D\n+matrix%5Bx%5D%5By%5D, cont)\n %0A%09if\n@@ -568,119 +568,80 @@\n rda \n-%3E\n+%7C%7C\n  dir\n- %7B%0A%09%09dir = esquerda%0A%09%7D%0A%09if direita %3E dir %7B%0A%09%09dir = direita%0A%09%7D%0A%09fmt.Println(maior, dir)%0A%09return maior + dir\n+eita %7C%7C cima %7C%7C baixo %7B%0A%09%09return true, cont%0A%09%7D%0A%09return false, cont\n %0A%7D%0A%0A\n@@ -699,17 +699,17 @@\n aior := \n-1\n+0\n %0A%09for i \n@@ -762,29 +762,33 @@\n %0A%09%09%09\n-caminho := maxlenpath\n+_, maiorIndex := maiorPos\n (mat\n@@ -796,42 +796,47 @@\n ix, \n-Pos%7B\n i, j\n-%7D\n , \n-Pos%7Bi,j%7D)%0A%09%09%09if caminho\n+matrix%5Bi%5D%5Bj%5D, 0)%0A%09%09%09if maiorIndex\n  %3E m\n@@ -858,15 +858,18 @@\n r = \n-caminho\n+maiorIndex\n %0A%09%09%09\n",
             "lines": "70"
+        },
+        {
+            "label": "2026-03-30_15-32-17",
+            "content": "@@ -1095,13 +1095,11 @@\n Pos%7B\n--1,-1\n+i,j\n %7D)%0A%09\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-03-30_15-34-04",
+            "content": "@@ -1095,11 +1095,13 @@\n Pos%7B\n-0,0\n+-1,-1\n %7D)%0A%09\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-03-30_15-34-39",
+            "content": "@@ -255,24 +255,55 @@\n atrix%5B0%5D) %7B%0A\n+%09%09fmt.Println(%22perdi a linha%22)%0A\n %09%09return 0%0A%09\n@@ -393,16 +393,43 @@\n or.y%5D %7B%0A\n+%09%09fmt.Println(%22deu menor%22)%0A\n %09%09return\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-03-30_15-35-18",
+            "content": "@@ -818,24 +818,49 @@\n  direita%0A%09%7D%0A\n+%09fmt.Println(maior, dir)%0A\n %09return maio\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-03-30_15-35-28",
+            "content": "@@ -363,70 +363,8 @@\n r.y%5D\n- && posAnterior.x != posAtual.x && posAnterior.y != posAtual.y\n  %7B%0A%09\n@@ -1012,11 +1012,11 @@\n Pos%7B\n-i,j\n+0,0\n %7D)%0A%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_18-53-03",
+            "content": "@@ -359,16 +359,78 @@\n erior.y%5D\n+ && posAnterior.x != posAtual.x && posAnterior.y != posAtual.y\n  %7B%0A%09%09ret\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-07-44",
+            "content": "@@ -363,70 +363,8 @@\n r.y%5D\n- && posAnterior.x != posAtual.x && posAnterior.y != posAtual.y\n  %7B%0A%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-10-44",
+            "content": "@@ -134,16 +134,29 @@\n posAtual\n+, posAnterior\n  Pos) in\n@@ -290,55 +290,44 @@\n  1%0A%09\n-var cima, baixo, esquerda, direita, dir int%0A%09if\n+if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3E=\n  mat\n@@ -330,36 +330,39 @@\n  matrix%5BposA\n-tual\n+nterior\n .x%5D%5BposA\n tual.y%5D %3C ma\n@@ -353,39 +353,70 @@\n posA\n-tual.y%5D %3C matrix%5BposAtual.x-1%5D%5B\n+nterior.y%5D && posAnterior.x != posAtual.x && posAnterior.y != \n posA\n@@ -425,19 +425,46 @@\n al.y\n-%5D\n  %7B%0A%09\n+%09return maior%0A%09%7D%0A%09dir := 0%0A\n %09cima \n+:\n = ma\n@@ -513,93 +513,28 @@\n l.y%7D\n-)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x+1%5D%5BposAtual.y%5D %7B%0A%09\n+, posAtual)%0A\n %09baixo \n+:\n = ma\n@@ -583,86 +583,20 @@\n l.y%7D\n-)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x%5D%5BposAtual.y-1%5D %7B%0A%09\n+, posAtual)%0A\n %09esq\n@@ -601,16 +601,17 @@\n squerda \n+:\n = maxlen\n@@ -656,86 +656,20 @@\n y-1%7D\n-)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x%5D%5BposAtual.y+1%5D %7B%0A%09\n+, posAtual)%0A\n %09dir\n@@ -673,16 +673,17 @@\n direita \n+:\n = maxlen\n@@ -728,12 +728,19 @@\n y+1%7D\n-)%0A%09%7D\n+, posAtual)\n %0A%09if\n@@ -1062,16 +1062,26 @@\n  Pos%7Bi, \n+j%7D, Pos%7Bi,\n j%7D)%0A%09%09%09i\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-21-33",
+            "content": "@@ -277,224 +277,566 @@\n  1%0A%09\n-dir := %5B%5D%5B%5Dint%7B%7B1, 0%7D, %7B-1, 0%7D, %7B0, 1%7D, %7B0, -1%7D%7D%0A%09%09for _, d := range dir %7B%0A%09%09%09x := posAtual.x + d%5B0%5D%0A%09%09%09y := posAtual.y + d%5B1%5D%0A%09%09%09if x %3E= 0 && y %3E= 0 && x %3C len(matrix) && y %3C len(matrix%5Bx%5D) && matrix%5Bx%5D%5By%5D %3E matrix%5B\n+var cima, baixo, esquerda, direita, dir int%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x-1%5D%5BposAtual.y%5D %7B%0A%09%09cima = maxlenpath(matrix, Pos%7BposAtual.x-1, posAtual.y%7D)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x+1%5D%5BposAtual.y%5D %7B%0A%09%09baixo = maxlenpath(matrix, Pos%7BposAtual.x+1, posAtual.y%7D)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x%5D%5BposAtual.y-1%5D %7B%0A%09%09esquerda = maxlenpath(matrix, Pos%7BposAtual.x, posAtual.y-1%7D)%0A%09%7D%0A%09if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3C matrix%5BposAtual.x%5D%5BposAtual.y+1%5D %7B%0A%09%09direita = maxlenpath(matrix, Pos%7B\n posA\n@@ -833,34 +833,34 @@\n , Pos%7BposAtual.x\n-%5D%5B\n+, \n posAtual.y%5D %7B%0A%09%09\n@@ -857,41 +857,161 @@\n al.y\n-%5D %7B%0A%09%09%09%09return maior +\n++1%7D)%0A%09%7D%0A%09if cima %3E dir %7B%0A%09%09dir = cima%0A%09%7D%0A%09if baixo %3E dir %7B%0A%09%09dir = baixo%0A%09%7D%0A%09if esquerda %3E\n  dir\n+ %7B\n %0A%09%09\n-%09%7D%0A%09\n+dir = esquerda%0A%09%7D%0A%09if direita %3E dir %7B%0A%09%09dir = direita%0A\n %09%7D%0A%09\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-03-30_19-27-05",
+            "content": "@@ -523,15 +523,26 @@\n %09%09%09%09\n-maior++\n+return maior + dir\n %0A%09%09%09\n@@ -563,16 +563,19 @@\n maior + \n+dir\n %0A%7D%0A%0Afunc\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-03-30_19-28-12",
+            "content": "@@ -545,24 +545,27 @@\n return maior\n+ + \n %0A%7D%0A%0Afunc lon\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-03-30_19-28-13",
+            "content": "@@ -142,28 +142,16 @@\n  Pos\n-, ax, ay int\n ) int %7B%0A\n %09if \n@@ -146,16 +146,16 @@\n ) int %7B%0A\n+\n %09if posA\n@@ -277,348 +277,224 @@\n  1%0A%09\n-if matrix%5BposAtual.x%5D%5BposAtual.y%5D %3E= matrix%5BposAtual.x+ax%5D%5BposAtual.y+ay%5D %7B%0A%09%09return maior%0A%09%7D%0A%09dir := 0%0A%09cima := maxlenpath(matrix, Pos%7BposAtual.x-1, posAtual.y%7D, 1, 0)%0A%09baixo := maxlenpath(matrix, Pos%7BposAtual.x+1, posAtual.y%7D, -1, 0)%0A%09esquerda := maxlenpath(matrix, Pos%7BposAtual.x, posAtual.y-1%7D, 0, 1)%0A%09direita := maxlenpath(matrix, Pos%7B\n+dir := %5B%5D%5B%5Dint%7B%7B1, 0%7D, %7B-1, 0%7D, %7B0, 1%7D, %7B0, -1%7D%7D%0A%09%09for _, d := range dir %7B%0A%09%09%09x := posAtual.x + d%5B0%5D%0A%09%09%09y := posAtual.y + d%5B1%5D%0A%09%09%09if x %3E= 0 && y %3E= 0 && x %3C len(matrix) && y %3C len(matrix%5Bx%5D) && matrix%5Bx%5D%5By%5D %3E matrix%5B\n posA\n@@ -499,18 +499,18 @@\n sAtual.x\n-, \n+%5D%5B\n posAtual\n@@ -515,165 +515,30 @@\n al.y\n-+1%7D, 0, -1)%0A%09if cima %3E dir %7B%0A%09%09dir = cima%0A%09%7D%0A%09if baixo %3E dir %7B%0A%09%09dir = baixo%0A%09%7D%0A%09if esquerda %3E dir %7B%0A%09%09dir = esquerda%0A%09%7D%0A%09if direita %3E dir %7B%0A%09%09dir = direita%0A\n+%5D %7B%0A%09%09%09%09maior++%0A%09%09%09%7D%0A%09\n %09%7D%0A%09\n@@ -553,14 +553,8 @@\n aior\n- + dir\n %0A%7D%0A%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-03-30_19-34-47",
+            "content": "@@ -991,14 +991,8 @@\n , j%7D\n-, 0, 0\n )%0A%09%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-34-59",
+            "content": "@@ -362,30 +362,8 @@\n +ay%5D\n- && ax != 0 && ay != 0\n  %7B%0A%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-40-57",
+            "content": "@@ -362,17 +362,16 @@\n +ay%5D && \n-(\n ax != 0 \n@@ -380,17 +380,16 @@\n  ay != 0\n-)\n  %7B%0A%09%09ret\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-42-41",
+            "content": "@@ -291,32 +291,8 @@\n %0A%09if\n- (ax != 0 && ay != 0) &&\n  mat\n@@ -358,16 +358,40 @@\n al.y+ay%5D\n+ && (ax != 0 && ay != 0)\n  %7B%0A%09%09ret\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-45-43",
+            "content": "@@ -403,16 +403,26 @@\n aior%0A%09%7D%0A\n+%09dir := 0%0A\n %09cima :=\n@@ -688,56 +688,112 @@\n 1)%0A%09\n-return maior + max(cima, max(baixo, max(\n+if cima %3E dir %7B%0A%09%09dir = cima%0A%09%7D%0A%09if baixo %3E dir %7B%0A%09%09dir = baixo%0A%09%7D%0A%09if esquerda %3E dir %7B%0A%09%09dir = \n esquerda\n , di\n@@ -792,17 +792,23 @@\n erda\n-,\n+%0A%09%7D%0A%09if\n  direita\n )))%0A\n@@ -807,11 +807,55 @@\n eita\n-)))\n+ %3E dir %7B%0A%09%09dir = direita%0A%09%7D%0A%09return maior + dir\n %0A%7D%0A%0A\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-30_19-52-21",
+            "content": "@@ -138,25 +138,24 @@\n tual\n-, posAnterior Pos\n+ Pos, ax, ay int\n ) in\n@@ -262,39 +262,8 @@\n ) %7B%0A\n-%09%09fmt.Println(%22perdi a linha%22)%0A\n %09%09re\n@@ -287,16 +287,40 @@\n := 1%0A%09if\n+ (ax != 0 && ay != 0) &&\n  matrix%5B\n@@ -361,62 +361,35 @@\n posA\n-nterior.x%5D%5BposAnterior.y%5D %7B%0A%09%09fmt.Println(%22deu menor%22)\n+tual.x+ax%5D%5BposAtual.y+ay%5D %7B\n %0A%09%09r\n@@ -407,18 +407,8 @@\n %0A%09%7D%0A\n-%09dir := 0%0A\n %09cim\n@@ -462,24 +462,20 @@\n ual.y%7D, \n-posAtual\n+1, 0\n )%0A%09baixo\n@@ -528,24 +528,21 @@\n ual.y%7D, \n-posAtual\n+-1, 0\n )%0A%09esque\n@@ -598,24 +598,20 @@\n l.y-1%7D, \n-posAtual\n+0, 1\n )%0A%09direi\n@@ -670,123 +670,64 @@\n 1%7D, \n-posAtual)%0A%09if cima %3E dir %7B%0A%09%09dir = cima%0A%09%7D%0A%09if baixo %3E dir %7B%0A%09%09dir = baixo%0A%09%7D%0A%09if esquerda %3E dir %7B%0A%09%09dir = \n+0, -1)%0A%09return maior + max(cima, max(baixo, max(\n esquerda\n %0A%09%7D%0A\n@@ -726,23 +726,17 @@\n erda\n-%0A%09%7D%0A%09if\n+,\n  direita\n  %3E d\n@@ -735,80 +735,11 @@\n eita\n- %3E dir %7B%0A%09%09dir = direita%0A%09%7D%0A%09fmt.Println(maior, dir)%0A%09return maior + dir\n+)))\n %0A%7D%0A%0A\n@@ -901,16 +901,12 @@\n j%7D, \n-Pos%7Bi,j%7D\n+0, 0\n )%0A%09%09\n@@ -1560,12 +1560,13 @@\n h(matrix))%0A%7D\n+%0A\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-03-31_14-15-17",
+            "content": "@@ -255,24 +255,55 @@\n atrix%5B0%5D) %7B%0A\n+%09%09fmt.Println(%22perdi a linha%22)%0A\n %09%09return 0%0A%09\n@@ -393,16 +393,43 @@\n or.y%5D %7B%0A\n+%09%09fmt.Println(%22deu menor%22)%0A\n %09%09return\n@@ -876,24 +876,49 @@\n  direita%0A%09%7D%0A\n+%09fmt.Println(maior, dir)%0A\n %09return maio\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-03-31_14-15-44",
+            "content": "@@ -138,24 +138,25 @@\n tual\n- Pos, valAnt int\n+, posAnterior Pos\n ) in\n@@ -257,18 +257,47 @@\n rix%5B0%5D) \n-%7C%7C\n+%7B%0A%09%09return 0%0A%09%7D%0A%09maior := 1%0A%09if\n  matrix%5B\n@@ -324,18 +324,47 @@\n .y%5D \n-%3C= valAnt \n+%3E= matrix%5BposAnterior.x%5D%5BposAnterior.y%5D\n  %7B%0A%09\n@@ -367,25 +367,29 @@\n  %7B%0A%09%09return \n-0\n+maior\n %0A%09%7D%0A%09dir := \n@@ -445,39 +445,32 @@\n osAtual.y%7D, \n-matrix%5B\n posAtual\n .x%5D%5BposAtual\n@@ -457,31 +457,16 @@\n posAtual\n-.x%5D%5BposAtual.y%5D\n )%0A%09baixo\n@@ -519,31 +519,24 @@\n ual.y%7D, \n-matrix%5B\n posAtual\n .x%5D%5BposA\n@@ -527,31 +527,16 @@\n posAtual\n-.x%5D%5BposAtual.y%5D\n )%0A%09esque\n@@ -588,39 +588,32 @@\n Atual.y-1%7D, \n-matrix%5B\n posAtual\n .x%5D%5BposAtual\n@@ -604,24 +604,8 @@\n tual\n-.x%5D%5BposAtual.y%5D%5D\n )%0A%09d\n@@ -664,31 +664,24 @@\n l.y+1%7D, \n-matrix%5B\n posAtual\n .x%5D%5BposA\n@@ -672,31 +672,16 @@\n posAtual\n-.x%5D%5BposAtual.y%5D\n )%0A%09if ci\n@@ -830,17 +830,21 @@\n %09return \n-1\n+maior\n  + dir%0A%7D\n@@ -1004,17 +1004,24 @@\n %7Bi, j%7D, \n-0\n+Pos%7Bi,j%7D\n )%0A%09%09%09if \n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-03-31_14-22-56",
+            "content": "@@ -603,16 +603,17 @@\n Atual.y%5D\n+%5D\n )%0A%09direi\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-31_14-23-12",
+            "content": "@@ -317,16 +317,26 @@\n rn 0%0A%09%7D%0A\n+%09dir := 0%0A\n %09cima :=\n@@ -704,20 +704,40 @@\n %5D)%0A%09\n+if cima %3E dir %7B%0A%09%09\n dir \n-:\n = cima%0A\n+%09%7D%0A\n %09if \n@@ -1025,18 +1025,17 @@\n %7Bi, j%7D, \n--1\n+0\n )%0A%09%09%09if \n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-31_18-36-13",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pos struct {\n\tx, y int\n}\n\nfunc maxlenpath(matrix [][]int, posAtual Pos, valAnt int) int {\n\tif posAtual.x < 0 || posAtual.y < 0 || posAtual.x >= len(matrix) || posAtual.y >= len(matrix[0]) || matrix[posAtual.x][posAtual.y] <= valAnt  {\n\t\treturn 0\n\t}\n\tcima := maxlenpath(matrix, Pos{posAtual.x-1, posAtual.y}, matrix[posAtual.x][posAtual.y])\n\tbaixo := maxlenpath(matrix, Pos{posAtual.x+1, posAtual.y}, matrix[posAtual.x][posAtual.y])\n\tesquerda := maxlenpath(matrix, Pos{posAtual.x, posAtual.y-1}, matrix[posAtual.x][posAtual.y])\n\tdireita := maxlenpath(matrix, Pos{posAtual.x, posAtual.y+1}, matrix[posAtual.x][posAtual.y])\n\tdir := cima\n\tif baixo > dir {\n\t\tdir = baixo\n\t}\n\tif esquerda > dir {\n\t\tdir = esquerda\n\t}\n\tif direita > dir {\n\t\tdir = direita\n\t}\n\treturn 1 + dir\n}\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\tmaior := 1\n\tfor i := range matrix {\n\t\tfor j := range matrix[0] {\n\t\t\tcaminho := maxlenpath(matrix, Pos{i, j}, -1)\n\t\t\tif caminho > maior {\n\t\t\t\tmaior = caminho\n\t\t\t}\n\t\t}\n\t}\n\treturn maior\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}",
+            "lines": "78"
         }
     ]
 }

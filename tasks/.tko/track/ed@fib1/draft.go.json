@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_19-05-14",
+            "content": "@@ -106,16 +106,14 @@\n     \n-pares :=\n+return\n  coe\n@@ -147,25 +147,8 @@\n  k)%0A\n-    return pares%0A\n %7D%0A%0Af\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-31_19-07-51",
+            "content": "@@ -114,12 +114,8 @@\n s :=\n- k *\n  coe\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-08-27",
+            "content": "@@ -132,20 +132,16 @@\n -1, k) +\n- k *\n  coelhos\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-08-59",
+            "content": "@@ -115,17 +115,16 @@\n  := k * \n-(\n coelhos(\n@@ -132,16 +132,20 @@\n -1, k) +\n+ k *\n  coelhos\n@@ -152,17 +152,16 @@\n (n-2, k)\n-)\n %0A    ret\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-11-11",
+            "content": "@@ -115,16 +115,17 @@\n  := k * \n+(\n coelhos(\n@@ -149,16 +149,17 @@\n (n-2, k)\n+)\n %0A    ret\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-11-56",
+            "content": "@@ -110,16 +110,20 @@\n pares :=\n+ k *\n  coelhos\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-16-27",
+            "content": "@@ -114,12 +114,8 @@\n s :=\n- k *\n  coe\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-24-20",
+            "content": "@@ -115,17 +115,16 @@\n  := k * \n-(\n coelhos(\n@@ -148,17 +148,16 @@\n (n-2, k)\n-)\n %0A    ret\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_19-24-35",
+            "content": "package main\nimport \"fmt\"\n\nfunc coelhos(n, k int) int {\n    if n == 1 || n == 2 {\n        return 1\n    }\n    pares := k * (coelhos(n-1, k) + coelhos(n-2, k))\n    return pares\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n    fmt.Println(coelhos(n, k))\n}\n",
+            "lines": "16"
+        }
+    ]
+}

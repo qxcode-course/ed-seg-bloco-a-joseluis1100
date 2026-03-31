@@ -8,30 +8,38 @@ import (
 	"strings"
 )
 
-func maiorPos(matrix [][]int, x, y, valAnt, cont int) (bool, int) {
-	if x < 0 || y < 0 || x >= len(matrix) || y >= len(matrix[0]) || (valAnt >= matrix[x][y] && x != 0 && y != 0) {
-		fmt.Print("vish ")
-		return false, cont
+type Pos struct {
+	x, y int
+}
+
+func maxlenpath(matrix [][]int, posAtual Pos, valAnt int) int {
+	if posAtual.x < 0 || posAtual.y < 0 || posAtual.x >= len(matrix) || posAtual.y >= len(matrix[0]) || matrix[posAtual.x][posAtual.y] <= valAnt  {
+		return 0
 	}
-	fmt.Print("boa ")
-	cont++
-	esquerda, _ := maiorPos(matrix, x-1, y, matrix[x][y], cont)
-	direita, _ := maiorPos(matrix, x+1, y, matrix[x][y], cont)
-	cima, _ := maiorPos(matrix, x, y-1, matrix[x][y], cont)
-	baixo, _ := maiorPos(matrix, x, y+1, matrix[x][y], cont)
-	if esquerda || direita || cima || baixo {
-		return true, cont
+	cima := maxlenpath(matrix, Pos{posAtual.x-1, posAtual.y}, matrix[posAtual.x][posAtual.y])
+	baixo := maxlenpath(matrix, Pos{posAtual.x+1, posAtual.y}, matrix[posAtual.x][posAtual.y])
+	esquerda := maxlenpath(matrix, Pos{posAtual.x, posAtual.y-1}, matrix[posAtual.x][posAtual.y])
+	direita := maxlenpath(matrix, Pos{posAtual.x, posAtual.y+1}, matrix[posAtual.x][posAtual.y])
+	dir := cima
+	if baixo > dir {
+		dir = baixo
 	}
-	return false, cont
+	if esquerda > dir {
+		dir = esquerda
+	}
+	if direita > dir {
+		dir = direita
+	}
+	return 1 + dir
 }
 
 func longestIncreasingPath(matrix [][]int) int {
-	maior := 0
+	maior := 1
 	for i := range matrix {
 		for j := range matrix[0] {
-			_, maiorIndex := maiorPos(matrix, i, j, matrix[i][j], 0)
-			if maiorIndex > maior {
-				maior = maiorIndex
+			caminho := maxlenpath(matrix, Pos{i, j}, -1)
+			if caminho > maior {
+				maior = caminho
 			}
 		}
 	}

@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_19-34-16",
+            "content": "@@ -23,205 +23,53 @@\n mt%22%0A\n-%0A\n func m\n-ilagre(n, c float64) %7B%0A    if n == 0 %7B%0A        return%0A    %7D%0A    c = c/2 + c%0A    fmt.Println(c)%0A    milagre(n-1, c)%0A%7D%0A%0Afunc main() %7B%0A    var n, c float64%0A    fmt.Scan(&n, &c)%0A    milagre(n, c\n+ain() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-31_19-42-15",
+            "content": "@@ -46,24 +46,16 @@\n float64)\n- float64\n  %7B%0A    i\n@@ -94,19 +94,10 @@\n     \n-resultado :\n+c \n = c/\n@@ -118,25 +118,17 @@\n Println(\n-resultado\n+c\n )%0A    mi\n@@ -145,29 +145,8 @@\n  c)%0A\n-    return resultado%0A\n %7D%0A%0Af\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-45-53",
+            "content": "@@ -87,18 +87,16 @@\n   return\n- 0\n %0A    %7D%0A \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-31_19-46-08",
+            "content": "@@ -37,23 +37,16 @@\n gre(n, c\n-, valor\n  float64\n@@ -57,16 +57,16 @@\n oat64 %7B%0A\n+\n     if n\n@@ -104,14 +104,19 @@\n     \n-valor \n+resultado :\n = c/\n@@ -141,48 +141,59 @@\n tln(\n-valor)%0A    return milagre(n-1, c, valor)\n+resultado)%0A    milagre(n-1, c)%0A    return resultado\n %0A%7D%0A%0A\n@@ -248,16 +248,16 @@\n &n, &c)%0A\n+\n     mila\n@@ -266,11 +266,8 @@\n e(n,\n- c,\n  c)%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-31_19-47-44",
+            "content": "@@ -53,16 +53,24 @@\n float64)\n+ float64\n  %7B%0A    i\n@@ -94,16 +94,18 @@\n   return\n+ 0\n %0A    %7D%0A \n@@ -146,24 +146,31 @@\n (valor)%0A    \n+return \n milagre(n-1,\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-47-55",
+            "content": "@@ -105,21 +105,17 @@\n valor = \n-valor\n+c\n /2 + c%0A \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-48-22",
+            "content": "@@ -76,37 +76,8 @@\n 0 %7B%0A\n-        fmt.Println(valor/2)%0A\n     \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-50-01",
+            "content": "@@ -68,17 +68,17 @@\n if n == \n-1\n+0\n  %7B%0A     \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-31_19-50-20",
+            "content": "@@ -146,16 +146,39 @@\n r/2 + c%0A\n+    fmt.Println(valor)%0A\n     mila\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-31_19-50-30",
+            "content": "@@ -93,18 +93,11 @@\n rint\n-f(%22%25.2f%22, \n+ln(\n valo\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-50-54",
+            "content": "@@ -100,10 +100,8 @@\n %25.2f\n-%5Cn\n %22, v\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-31_19-51-00",
+            "content": "package main\nimport \"fmt\"\n\nfunc milagre(n, c, valor float64) {\n    if n == 1 {\n        fmt.Printf(\"%.2f\\n\", valor/2)\n        return\n    }\n    valor = valor/2 + c\n    milagre(n-1, c, valor)\n}\n\nfunc main() {\n    var n, c float64\n    fmt.Scan(&n, &c)\n    milagre(n, c, c)\n}\n",
+            "lines": "17"
+        }
+    ]
+}

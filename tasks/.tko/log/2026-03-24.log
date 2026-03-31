@@ -57,3 +57,11 @@
 2026-03-24 19:44:57, EXEC, v:1, k:ed@padroes3, mode:FULL, rate:100
 2026-03-24 19:45:06, MOVE, v:1, k:ed@padroes3, mode:BACK
 2026-03-24 19:45:16, SELF, v:1, k:ed@padroes3, self:1, rate:100, study:40
+2026-03-24 19:45:38, MOVE, v:1, k:ed@quadrado, mode:DOWN
+2026-03-24 19:45:41, MOVE, v:1, k:ed@quadrado, mode:PICK
+2026-03-24 19:45:43, EXEC, v:1, k:ed@quadrado, mode:FREE, size:5
+2026-03-24 19:51:21, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:17
+2026-03-24 19:51:33, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:17
+2026-03-24 19:51:43, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:17
+2026-03-24 19:51:46, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5
+2026-03-24 19:52:25, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:17
