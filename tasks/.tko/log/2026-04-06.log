@@ -1,0 +1,63 @@
+2026-04-06 18:53:05, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-04-06 18:53:08, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100
+2026-04-06 18:53:09, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-04-06 18:53:46, MOVE, v:1, k:ed@bitcoin, mode:PICK
+2026-04-06 18:54:25, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0
+2026-04-06 18:57:37, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0, size:27
+2026-04-06 18:59:30, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:14, size:27
+2026-04-06 19:01:40, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0, size:28
+2026-04-06 19:01:54, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0, size:28
+2026-04-06 19:02:54, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0, size:28
+2026-04-06 19:02:55, EXEC, v:1, k:ed@bitcoin, mode:FULL, fail:COMP
+2026-04-06 19:07:50, MOVE, v:1, k:ed@bitcoin, mode:BACK
+2026-04-06 19:07:52, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-06 19:08:35, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-06 19:10:37, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:14:18, EXEC, v:1, k:fractais_png@go, mode:FREE
+2026-04-06 19:35:40, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:38:24, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:38:42, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:39:16, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:39:29, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:39:59, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:40:18, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-06 19:40:50, EXEC, v:1, k:fractais_png@go, mode:FREE, size:124
+2026-04-06 19:41:07, EXEC, v:1, k:fractais_png@go, mode:FREE, size:124
+2026-04-06 19:43:05, EXEC, v:1, k:fractais_png@go, mode:FREE, size:126
+2026-04-06 19:43:16, EXEC, v:1, k:fractais_png@go, mode:FREE, size:126
+2026-04-06 19:43:46, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:44:05, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:44:45, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:45:20, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:45:49, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:46:59, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:47:46, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:48:07, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:48:25, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:48:41, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:49:01, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:49:12, EXEC, v:1, k:fractais_png@go, mode:FREE, size:128
+2026-04-06 19:50:09, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:50:24, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:50:35, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:50:43, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:50:56, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:51:16, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:51:40, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:51:49, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:52:03, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:52:13, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:52:26, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:53:47, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:54:01, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:54:16, EXEC, v:1, k:fractais_png@go, mode:FREE, size:130
+2026-04-06 19:55:07, EXEC, v:1, k:fractais_png@go, mode:FREE, size:137
+2026-04-06 19:56:38, EXEC, v:1, k:fractais_png@go, mode:FREE, size:134
+2026-04-06 19:57:32, EXEC, v:1, k:fractais_png@go, mode:FREE, size:134
+2026-04-06 19:58:32, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 19:58:41, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 19:59:04, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 19:59:51, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 20:00:33, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 20:01:23, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135
+2026-04-06 20:01:40, EXEC, v:1, k:fractais_png@go, mode:FREE, size:135

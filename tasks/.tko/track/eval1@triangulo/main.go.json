@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_19-22-11",
+            "content": "@@ -434,176 +434,23 @@\n al%0A%09\n-vetString := make(%5B%5Dstring, 0)%0A%09for _, valor := range vet %7B%0A%09%09vetString = append(vetString, strconv.Itoa(valor))%0A%09%7D%0A%09fmt.Println(%22%5B %22strings.Join(vetString, %22 %22) + %22 %5D%22\n+fmt.Println(vet\n )%0A%7D%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_19-24-28",
+            "content": "@@ -563,19 +563,16 @@\n tln(%22%5B %22\n- + \n strings.\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-13_19-24-40",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\t_ = vet;\n\t// 1. defina o ponto de parada\n\tif len(vet) == 0 {\n\t\treturn\n\t}\n\t// 2. monte o vetor auxiliar com os resultados das somas\n\taux := make([]int, 0)\n\tfor i := range len(vet)-1 {\n\t\taux = append(aux, vet[i]+vet[i+1])\n\t}\n\t// 3. chame recursivamente a fun\u00e7\u00e3o processa para o vetor auxiliar\n\tprocessa(aux)\n\t// 4. imprima o vetor original\n\tvetString := make([]string, 0)\n\tfor _, valor := range vet {\n\t\tvetString = append(vetString, strconv.Itoa(valor))\n\t}\n\tfmt.Println(\"[ \" + strings.Join(vetString, \" \") + \" ]\")\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "60"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_19-05-14",
+            "content": "@@ -321,16 +321,43 @@\n  string%0A\n+%09fila := make(%5B%5Dstring, n)%0A\n %09removid\n@@ -400,35 +400,8 @@\n &n)%0A\n-%09fila := make(%5B%5Dstring, n)%0A\n %09for\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_19-06-23",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -133,25 +133,32 @@\n ng, 0)%0A%09for \n-i\n+_, valor\n  := range fi\n@@ -180,23 +180,13 @@\n ido%5B\n-strconv.Itoa(i)\n+valor\n %5D ==\n@@ -223,23 +223,21 @@\n String, \n-fila%5Bi%5D\n+valor\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_19-08-46",
+            "content": "@@ -23,16 +23,27 @@\n %0A%09%22fmt%22%0A\n+%09%22strconv%22%0A\n %09%22string\n@@ -152,16 +152,9 @@\n for \n-_, valor\n+i\n  := \n@@ -180,21 +180,31 @@\n emovido%5B\n-valor\n+strconv.Itoa(i)\n %5D == 0 %7B\n@@ -241,13 +241,15 @@\n ng, \n-valor\n+fila%5Bi%5D\n )%0A%09%09\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_19-09-52",
+            "content": "@@ -194,40 +194,8 @@\n 0 %7B%0A\n-%09%09%09fmt.Println(removido%5Bvalor%5D)%0A\n %09%09%09v\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_19-10-29",
+            "content": "@@ -190,16 +190,48 @@\n  == 0 %7B%0A\n+%09%09%09fmt.Println(removido%5Bvalor%5D)%0A\n %09%09%09vetSt\n@@ -266,51 +266,8 @@\n or)%0A\n-%09%09%7D else %7B%0A%09%09%09fmt.Println(removido%5Bvalor%5D)%0A\n %09%09%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_19-10-46",
+            "content": "@@ -230,16 +230,59 @@\n  valor)%0A\n+%09%09%7D else %7B%0A%09%09%09fmt.Println(removido%5Bvalor%5D)%0A\n %09%09%7D%0A%09%7D%0A%09\n@@ -523,17 +523,16 @@\n mt.Scan(\n-&\n aux)%0A%09%09r\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_19-11-14",
+            "content": "@@ -548,14 +548,8 @@\n ido)\n- + %22 %22\n )%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_19-11-34",
+            "content": "@@ -41,289 +41,8 @@\n %0A)%0A%0A\n-func montaFila(n int) %5B%5Dint %7B%0A%09fila := make(%5B%5Dint, n)%0A%09for i := range n %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%09return fila%0A%7D%0A%0Afunc montaRemovidos(m int) map%5Bstring%5Dint %7B%0A%09var aux string%0A%09removido := make(map%5Bstring%5Dint)%0A%09for range m %7B%0A%09%09fmt.Scan(&aux)%0A%09%09removido%5Baux%5D++%0A%09%7D%0A%09return removido%0A%7D%0A%0A\n func\n@@ -310,87 +310,208 @@\n nt%0A%09\n-fmt.Scan(&n)%0A%09fila := montaFila(n)%0A%09fmt.Scan(&m)%0A%09removido := montaRemovidos(m)\n+var aux string%0A%09removido := make(map%5Bstring%5Dint)%0A%09fmt.Scan(&n)%0A%09fila := make(%5B%5Dstring, n)%0A%09for i := range n %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%09fmt.Scan(&m)%0A%09for range m %7B%0A%09%09fmt.Scan(&aux)%0A%09%09removido%5Baux%5D++%0A%09%7D\n %0A%09fm\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_19-42-19",
+            "content": "@@ -61,22 +61,19 @@\n  int) %5B%5D\n-str\n in\n-g\n+t\n  %7B%0A%09fila\n@@ -83,22 +83,19 @@\n  make(%5B%5D\n-str\n in\n-g\n+t\n , n)%0A%09fo\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_19-42-56",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc montaFila(n int) []string {\n\tfila := make([]string, n)\n\tfor i := range n {\n\t\tfmt.Scan(&fila[i])\n\t}\n\treturn fila\n}\n\nfunc montaRemovidos(m int) map[string]int {\n\tvar aux string\n\tremovido := make(map[string]int)\n\tfor range m {\n\t\tfmt.Scan(&aux)\n\t\tremovido[aux]++\n\t}\n\treturn removido\n}\n\nfunc toString(fila []string, removido map[string]int) string {\n\tvetString := make([]string, 0)\n\tfor _, valor := range fila {\n\t\tif removido[valor] == 0 {\n\t\t\tvetString = append(vetString, valor)\n\t\t}\n\t}\n\treturn strings.Join(vetString, \" \")\n}\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n)\n\tfila := montaFila(n)\n\tfmt.Scan(&m)\n\tremovido := montaRemovidos(m)\n\tfmt.Println(toString(fila, removido) + \" \")\n}\n",
+            "lines": "43"
+        }
+    ]
+}

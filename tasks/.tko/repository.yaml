@@ -2,65 +2,36 @@ version: '0.2'
 sources:
 - name: sandbox
   target: sandbox
+  index: README.md
   type: local
   writeable: true
   quests: null
   tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
+  index: README.md
+  type: git
+  writeable: false
+  quests: null
+  tasks: null
+- name: eval1
+  target: https://github.com/senapk/eval_26_ed_1
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
 expanded:
+- eval1@teste-1
 - ed@rec
-- ed@bfs
 - ed@dfs
-tasks:
-  ed@pintando: '{self:1, rate:100}'
-  ed@mumia: '{self:1, rate:100}'
-  ed@fuga: '{self:1, rate:100}'
-  ed@pedra: '{self:1, rate:100}'
-  ed@casais: '{self:1, rate:100}'
-  ed@baruel: '{self:1, rate:100}'
-  ed@gomos: '{self:1, rate:100}'
-  ed@princesa: '{self:1, rate:100, study:120, concept:1}'
-  ed@apagando: '{self:1, rate:100, study:30}'
-  ed@manipulacao: '{self:1, rate:100, study:50}'
-  ed@especiais: '{self:1, rate:100, study:90, refactor:1}'
-  ed@buscas: '{self:1, rate:100, study:20}'
-  ed@rotacoes: '{self:1, rate:100, study:20}'
-  ed@alternando: '{self:1, rate:100, study:60}'
-  ed@triangulo: '{self:1, rate:100, study:10}'
-  ed@treinando: '{self:1, rate:100, study:50, concept:1}'
-  ed@resto: '{self:1, rate:100, study:7}'
-  ed@mdc: '{self:1, rate:100, study:10}'
-  ed@queimada: '{self:1, rate:100, study:8}'
-  ed@labirinto: '{self:1, rate:100, study:20, concept:1}'
-  ed@eh_primo: '{self:1, rate:100, study:15}'
-  ed@enesimo: '{self:1, rate:100, study:60}'
-  ed@vetequals: '{self:1, rate:100, study:75}'
-  ed@priminhos: '{self:1, rate:100, study:5}'
-  ed@escada: '{self:1, rate:100, study:13}'
-  ed@binomiais: '{self:1, rate:100, study:3}'
-  ed@diagonal: '{self:1, rate:100, study:15}'
-  ed@sufixos: '{self:1, rate:100, study:6}'
-  ed@padroes1: '{self:1, rate:100, study:4}'
-  ed@padroes2: '{self:1, rate:100, study:1}'
-  ed@padroes3: '{self:1, rate:100, study:40}'
-  ed@quadrado: '{self:1, rate:100, study:15}'
-  ed@fib1: '{rate:28}'
-  ed@santo: '{self:1, rate:100, study:15}'
-  ed@ilhas: '{self:1, rate:100, study:90, concept:1}'
-  ed@cercado: '{self:1, rate:100, study:55, concept:1}'
-  ed@pintura: '{self:1, rate:100, study:10}'
-  ed@longest: '{self:1, rate:100, study:240, concept:1}'
-  ed@battleship: '{self:1, rate:100, study:5}'
+- ed@backtrack
+- ed@bfs
 flags:
-  panel: 0
-  inbox: 1
-  show_panel: 1
-  task_graph_mode: 0
-  show_time: 0
+  inbox: inbox
+  panel: help
+  show_panel: 'true'
+  task_graph_mode: executions
+  show_time: 'true'
 lang: go
-selected: ed@santo
+selected: eval1@queimada

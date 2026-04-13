@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_19-29-34",
+            "content": "@@ -23,35 +23,19 @@\n mt%22%0A\n-%0A\n func \n-contaPares(n int) int\n+main()\n  %7B%0A \n@@ -40,16 +40,19 @@\n %0A    var\n+ n,\n  aux, pa\n@@ -89,16 +89,33 @@\n nt%5Dint)%0A\n+    fmt.Scan(&n)%0A\n     for \n@@ -282,78 +282,8 @@\n   %7D%0A\n-    return pares%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A    %0A\n     \n@@ -298,21 +298,13 @@\n tln(\n-contaP\n+p\n ares\n-(n)\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-13_19-45-44",
+            "content": "package main\nimport \"fmt\"\n\nfunc contaPares(n int) int {\n    var aux, pares int\n    mapa := make(map[int]int)\n    for range n {\n        fmt.Scan(&aux)\n        if mapa[-aux] != 0 {\n            mapa[-aux]--\n            pares++\n        } else {\n            mapa[aux]++\n        }\n    }\n    return pares\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    \n    fmt.Println(contaPares(n))\n}\n",
+            "lines": "24"
+        }
+    ]
+}

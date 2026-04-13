@@ -1,0 +1,294 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_19-10-37",
+            "content": "@@ -221,17 +221,17 @@\n RGB(\n-0\n+255\n , 0, \n-255\n+0\n )   \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-35-40",
+            "content": "@@ -445,18 +445,16 @@\n pixels%0A%09\n-//\n pen.Left\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-38-24",
+            "content": "@@ -506,18 +506,16 @@\n querda%0A%09\n-//\n pen.Walk\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-38-42",
+            "content": "@@ -550,26 +550,24 @@\n 100 pixels%0A%09\n-//\n pen.DrawCirc\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-39-16",
+            "content": "@@ -616,18 +616,16 @@\n aio 50%0A%09\n-//\n pen.Righ\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-39-29",
+            "content": "@@ -675,18 +675,16 @@\n  graus%0A%09\n-//\n pen.Walk\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-39-59",
+            "content": "@@ -292,18 +292,18 @@\n on(250, \n-2\n 5\n+0\n 0) // mo\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-40-18",
+            "content": "@@ -692,16 +692,227 @@\n k(150)%0A%09\n+for range 10 %7B%0A%09%09pen.Up()%0A%09%09pen.Walk(30) // anda sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.DrawCircle(10) //desenha um circulo pequeno%0A%0A%09%09pen.Up()%0A%09%09pen.Walk(-30) // volta sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.Left(36) // gira%0A%09%7D\n %0A%0A%09pen.S\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_19-40-50",
+            "content": "@@ -352,10 +352,9 @@\n ing(\n-18\n+9\n 0)  \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-06_19-41-07",
+            "content": "@@ -449,90 +449,8 @@\n els%0A\n-%09pen.SetHeading(180)        // coloca o pincel apontando para cima%0A%09pen.Walk(100)%0A\n %09//p\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-06_19-43-05",
+            "content": "@@ -461,17 +461,18 @@\n Heading(\n-3\n+18\n 0)      \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-06_19-43-16",
+            "content": "@@ -530,89 +530,8 @@\n 00)%0A\n-%09pen.SetHeading(30)        // coloca o pincel apontando para cima%0A%09pen.Walk(100)%0A\n %09//p\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-06_19-43-46",
+            "content": "@@ -542,17 +542,17 @@\n Heading(\n-6\n+3\n 0)      \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-44-05",
+            "content": "@@ -348,16 +348,18 @@\n Heading(\n+18\n 0)      \n@@ -521,17 +521,18 @@\n en.Walk(\n-5\n+10\n 0)%0A%09pen.\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-44-45",
+            "content": "@@ -463,10 +463,9 @@\n ing(\n-21\n+3\n 0)  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-45-20",
+            "content": "@@ -516,26 +516,25 @@\n a%0A%09pen.Walk(\n-10\n+5\n 0)%0A%09pen.SetH\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-45-49",
+            "content": "@@ -545,10 +545,9 @@\n ing(\n-12\n+6\n 0)  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-46-59",
+            "content": "@@ -546,9 +546,9 @@\n ng(1\n-8\n+2\n 0)  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-47-46",
+            "content": "@@ -533,34 +533,34 @@\n %09pen.SetHeading(\n-2\n 1\n+8\n 0)        // col\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-48-07",
+            "content": "@@ -541,17 +541,18 @@\n Heading(\n-3\n+21\n 0)      \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-48-25",
+            "content": "@@ -545,10 +545,10 @@\n ing(\n-45\n+30\n )   \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-48-41",
+            "content": "@@ -545,10 +545,10 @@\n ing(\n-90\n+45\n )   \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-49-01",
+            "content": "@@ -541,17 +541,17 @@\n Heading(\n-6\n+9\n 0)      \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-49-12",
+            "content": "@@ -610,90 +610,8 @@\n 00)%0A\n-%09pen.SetHeading(120)        // coloca o pincel apontando para cima%0A%09pen.Walk(100)%0A\n %09//p\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_19-50-09",
+            "content": "@@ -614,33 +614,34 @@\n %09pen.SetHeading(\n-6\n+12\n 0)        // col\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-50-24",
+            "content": "@@ -622,17 +622,17 @@\n Heading(\n-3\n+6\n 0)      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-50-35",
+            "content": "@@ -614,34 +614,33 @@\n %09pen.SetHeading(\n-21\n+3\n 0)        // col\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-50-43",
+            "content": "@@ -626,10 +626,10 @@\n ing(\n-1\n 2\n+1\n 0)  \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-50-56",
+            "content": "@@ -627,9 +627,9 @@\n ng(1\n-8\n+2\n 0)  \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-51-16",
+            "content": "@@ -622,17 +622,18 @@\n Heading(\n-3\n+18\n 0)      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-51-40",
+            "content": "@@ -614,32 +614,33 @@\n %09pen.SetHeading(\n+3\n 0)        // col\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-51-49",
+            "content": "@@ -626,10 +626,8 @@\n ing(\n-33\n 0)  \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-52-03",
+            "content": "@@ -623,17 +623,17 @@\n eading(3\n-0\n+3\n 0)      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-52-13",
+            "content": "@@ -626,10 +626,10 @@\n ing(\n-27\n+30\n 0)  \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-52-26",
+            "content": "@@ -545,10 +545,10 @@\n ing(\n-45\n+60\n )   \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-53-47",
+            "content": "@@ -545,10 +545,10 @@\n ing(\n-90\n+45\n )   \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-54-01",
+            "content": "@@ -541,17 +541,17 @@\n Heading(\n-6\n+9\n 0)      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-54-16",
+            "content": "@@ -20,253 +20,263 @@\n t (%0A\n-    \n+%09\n %22fmt%22%0A\n-)%0A%0Afunc main() %7B%0A    pen := NewPen(500, 500)   %0A    pen.SetRGB(255, 215, 0)   // Cor dourada para a estrela%0A    %0A    // Posi%C3%A7%C3%A3o inicial para a estrela ficar centralizada%0A    // Ajustamos o X e Y para que o desenho n%C3%A3o saia da tela%0A    \n+%09%22math/rand%22%0A)%0A%0Afunc randInt(min, max int) int %7B%0A%09return min + rand.Intn(max-min+1)%0A%7D%0A%0Afunc main() %7B%0A%09pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(0, 0, 255)     // muda a cor do pincel para vermelho%0A%09\n pen.\n@@ -291,152 +291,165 @@\n ion(\n-1\n+2\n 50, 2\n-00) %0A    %0A    // Uma estrela de 5 pontas tem 5 linhas.%0A    // O %C3%A2ngulo de %22giro%22 entre cada linha %C3%A9 de 144 graus.%0A\n+50) // move o pincel para x 250, y 500%0A%09pen.SetHeading(0)        // coloca o pincel apontando para cima%0A%09pen.Walk(100)     \n     \n-%0A\n     // \n-Ponta 1%0A    \n+anda 100 pixels%0A%09\n pen.\n@@ -463,10 +463,11 @@\n ing(\n-7\n 2\n+10\n )   \n@@ -463,37 +463,72 @@\n ing(210)        \n-%0A    \n+// coloca o pincel apontando para cima%0A%09\n pen.Walk(200)%0A  \n@@ -524,37 +524,14 @@\n alk(\n-2\n+1\n 00)%0A\n-    %0A    // Ponta 2%0A    \n+%09\n pen.\n@@ -545,19 +545,18 @@\n ing(\n-21\n 6\n+0\n )       \n %0A   \n@@ -543,37 +543,73 @@\n ading(60)       \n-%0A    \n+ // coloca o pincel apontando para cima%0A%09\n pen.Walk(200)%0A  \n@@ -605,37 +605,14 @@\n alk(\n-2\n+1\n 00)%0A\n-    %0A    // Ponta 3%0A    \n+%09\n pen.\n@@ -614,32 +614,34 @@\n %09pen.SetHeading(\n+27\n 0)         %0A    \n@@ -630,30 +630,64 @@\n 270)        \n- %0A    \n+// coloca o pincel apontando para cima%0A%09\n pen.Walk(200\n@@ -687,63 +687,97 @@\n alk(\n-2\n+1\n 00)%0A\n-    %0A    // Ponta 4%0A    pen.SetHeading(144\n+%09//pen.Left(30)              // dobra 30 graus para esquerda%0A%09//pen.Walk(100\n )       \n %0A   \n@@ -776,95 +776,118 @@\n     \n-%0A\n+ \n     \n-pen.Walk(20\n+ // anda 100 pixels%0A%09//pen.DrawCircle(5\n 0)\n-%0A\n     \n-%0A\n     // \n-Ponta 5 (Fecha a estrela)%0A    pen.SetHeading(288\n+desenha um c%C3%ADrculo de raio 50%0A%09//pen.Right(60\n )       \n %0A   \n@@ -886,32 +886,65 @@\n     \n-%0A\n+  \n     \n-pen.Walk(200)%0A%0A    \n+// gira para direita 60 graus%0A%09//pen.Walk(150)%0A%09%0A%0A%09\n pen.\n@@ -956,26 +956,20 @@\n NG(%22\n-es\n tre\n-la\n+e\n .png%22)%0A\n-    \n+%09\n fmt.\n@@ -981,43 +981,39 @@\n ln(%22\n-Estrela dourada criada com\n+PNG file created\n  suc\n+c\n ess\n-o!\n+fully.\n %22)%0A%7D\n+%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-06_19-55-07",
+            "content": "@@ -20,263 +20,253 @@\n t (%0A\n-%09\n+    \n %22fmt%22%0A\n-%09%22math/rand%22%0A)%0A%0Afunc randInt(min, max int) int %7B%0A%09return min + rand.Intn(max-min+1)%0A%7D%0A%0Afunc main() %7B%0A%09pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(0, 0, 255)\n+)%0A%0Afunc main() %7B%0A    pen := NewPen(500, 500)   %0A    pen.SetRGB(255, 215, 0)   // Cor dourada para a estrela%0A  \n   \n+%0A\n    \n+ \n // \n-muda a cor do pincel para vermelho%0A%09\n+Posi%C3%A7%C3%A3o inicial para a estrela ficar centralizada%0A    // Ajustamos o X e Y para que o desenho n%C3%A3o saia da tela%0A    \n pen.\n@@ -281,54 +281,137 @@\n ion(\n-2\n+1\n 50, 2\n-50) // move o pincel para x 250, y 500%0A%09\n+00) %0A    %0A    // Uma estrela de 5 pontas tem 5 linhas.%0A    // O %C3%A2ngulo de %22giro%22 entre cada linha %C3%A9 de 144 graus.%0A    %0A    \n // P\n@@ -760,17 +760,21 @@\n lk(200)%0A\n-%09\n+%0A    \n pen.Save\n@@ -782,20 +782,26 @@\n NG(%22\n+es\n tre\n-e\n+la\n .png%22)%0A\n-%09\n+    \n fmt.\n@@ -813,39 +813,43 @@\n ln(%22\n-PNG file created\n+Estrela dourada criada com\n  suc\n-c\n ess\n-fully.\n+o!\n %22)%0A%7D\n-%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-06_19-56-38",
+            "content": "@@ -367,24 +367,12 @@\n ing(\n-252) // 72 + 180\n+72) \n     \n@@ -436,42 +436,19 @@\n ing(\n-36)  // 216 + 180 (396 - 360)\n+216)   \n     \n- \n %0A   \n@@ -505,31 +505,19 @@\n ing(\n-18\n 0) \n-// 0 + 180\n+ \n        \n- \n %0A   \n@@ -574,25 +574,13 @@\n ing(\n-324) // 144 + 180\n+144) \n     \n@@ -619,16 +619,34 @@\n  Ponta 5\n+ (Fecha a estrela)\n %0A    pen\n@@ -661,37 +661,13 @@\n ing(\n-108) // 288 + 180 (468 - 360)\n+288) \n     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-06_19-57-32",
+            "content": "@@ -293,17 +293,17 @@\n n(250, 2\n-0\n+5\n 0) // mo\n@@ -367,16 +367,32 @@\n ing(252)\n+ // 72 + 180    \n    %0A    \n@@ -449,16 +449,45 @@\n ng(36)  \n+// 216 + 180 (396 - 360)     \n %0A    pen\n@@ -540,16 +540,33 @@\n ing(180)\n+ // 0 + 180      \n   %0A    p\n@@ -622,16 +622,34 @@\n ng(324) \n+// 144 + 180      \n %0A    pen\n@@ -702,16 +702,43 @@\n ing(108)\n+ // 288 + 180 (468 - 360)  \n     %0A   \n@@ -752,17 +752,16 @@\n lk(200)%0A\n-%0A\n %09pen.Sav\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-06_19-58-32",
+            "content": "@@ -296,10 +296,10 @@\n 50, \n-15\n+20\n 0) /\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_19-58-41",
+            "content": "@@ -223,17 +223,19 @@\n B(0, 0, \n-0\n+255\n )     //\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_19-59-04",
+            "content": "@@ -374,33 +374,33 @@\n   %0A    pen.Walk(\n-3\n+2\n 00)%0A    %0A    // \n@@ -437,33 +437,33 @@\n   %0A    pen.Walk(\n-3\n+2\n 00)%0A    %0A    // \n@@ -501,33 +501,33 @@\n   %0A    pen.Walk(\n-3\n+2\n 00)%0A    %0A    // \n@@ -568,25 +568,25 @@\n    pen.Walk(\n-3\n+2\n 00)%0A    %0A   \n@@ -638,17 +638,17 @@\n en.Walk(\n-3\n+2\n 00)%0A%0A%09pe\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_19-59-51",
+            "content": "@@ -291,17 +291,17 @@\n n(250, 1\n-0\n+5\n 0) // mo\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_20-00-33",
+            "content": "@@ -374,33 +374,33 @@\n   %0A    pen.Walk(\n-5\n+3\n 00)%0A    %0A    // \n@@ -437,33 +437,33 @@\n   %0A    pen.Walk(\n-5\n+3\n 00)%0A    %0A    // \n@@ -501,33 +501,33 @@\n   %0A    pen.Walk(\n-5\n+3\n 00)%0A    %0A    // \n@@ -568,25 +568,25 @@\n    pen.Walk(\n-5\n+3\n 00)%0A    %0A   \n@@ -638,17 +638,17 @@\n en.Walk(\n-5\n+3\n 00)%0A%0A%09pe\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_20-01-23",
+            "content": "@@ -290,16 +290,18 @@\n on(250, \n+10\n 0) // mo\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_20-01-40",
+            "content": "@@ -443,17 +443,17 @@\n en.Walk(\n-6\n+5\n 00)%0A    \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-55-01",
+            "content": "@@ -435,33 +435,33 @@\n   %0A    pen.Walk(\n-5\n+6\n 00)%0A    %0A    // \n@@ -499,33 +499,33 @@\n   %0A    pen.Walk(\n-6\n+5\n 00)%0A    %0A    // \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-55-19",
+            "content": "@@ -499,33 +499,33 @@\n   %0A    pen.Walk(\n-5\n+6\n 00)%0A    %0A    // \n@@ -562,33 +562,33 @@\n ) %0A    pen.Walk(\n-6\n+5\n 00)%0A    %0A    // \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-55-35",
+            "content": "@@ -574,10 +574,10 @@\n alk(\n-55\n+60\n 0)%0A \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-55-50",
+            "content": "@@ -637,17 +637,17 @@\n n.Walk(5\n-5\n+0\n 0)%0A%0A%09pen\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-56-06",
+            "content": "@@ -500,33 +500,33 @@\n  %0A    pen.Walk(5\n-5\n+0\n 0)%0A    %0A    // P\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-56-30",
+            "content": "@@ -436,33 +436,33 @@\n  %0A    pen.Walk(5\n-5\n+0\n 0)%0A    %0A    // P\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-56-38",
+            "content": "@@ -436,33 +436,33 @@\n  %0A    pen.Walk(5\n-0\n+5\n 0)%0A    %0A    // P\n@@ -500,33 +500,33 @@\n  %0A    pen.Walk(5\n-0\n+5\n 0)%0A    %0A    // P\n@@ -563,33 +563,33 @@\n  %0A    pen.Walk(5\n-0\n+5\n 0)%0A    %0A    // P\n@@ -637,17 +637,17 @@\n n.Walk(5\n-0\n+5\n 0)%0A%0A%09pen\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-56-54",
+            "content": "@@ -289,10 +289,10 @@\n ion(\n-30\n+25\n 0, 0\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-57-06",
+            "content": "@@ -289,14 +289,13 @@\n ion(\n-25\n+30\n 0, \n-1\n 0) /\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_19-57-17",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(0, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 10) // move o pincel para x 250, y 500\n\t// Ponta 1\n    pen.SetHeading(252)   \n    pen.Walk(500)\n    \n    // Ponta 2\n    pen.SetHeading(36)  \n    pen.Walk(500)\n    \n    // Ponta 3\n    pen.SetHeading(180)  \n    pen.Walk(500)\n    \n    // Ponta 4\n    pen.SetHeading(324) \n    pen.Walk(500)\n    \n    // Ponta 5\n    pen.SetHeading(108)    \n    pen.Walk(500)\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "38"
+        }
+    ]
+}

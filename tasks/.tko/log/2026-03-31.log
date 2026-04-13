@@ -44,3 +44,7 @@
 2026-03-31 19:51:00, EXEC, v:1, k:ed@santo, mode:FULL, rate:100, size:17
 2026-03-31 19:51:01, MOVE, v:1, k:ed@santo, mode:BACK
 2026-03-31 19:51:16, SELF, v:1, k:ed@santo, self:1, rate:100, study:15
+2026-03-31 19:51:49, MOVE, v:1, k:ed@bitcoin, mode:DOWN
+2026-03-31 19:51:51, MOVE, v:1, k:ed@bitcoin, mode:PICK
+2026-03-31 19:51:52, EXEC, v:1, k:ed@bitcoin, mode:FREE, size:5
+2026-03-31 20:08:04, EXEC, v:1, k:ed@bitcoin, mode:FULL, rate:0, size:27

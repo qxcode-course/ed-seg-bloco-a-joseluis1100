@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_18-45-16",
+            "content": "@@ -288,12 +288,8 @@\n tal \n-+ 1 \n %7B%0A  \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_18-45-42",
+            "content": "@@ -10,200 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22strconv%22%0A)%0A%0Afunc toString(vetor %5B%5Dint) string %7B%0A    vetString := %22%22%0A    for _, valor := range vetor %7B%0A        vetString += strconv.Itoa(valor)%0A    %7D%0A    return vetString%0A%7D%0A%0A\n func\n@@ -503,25 +503,16 @@\n Println(\n-toString(\n repetida\n@@ -513,17 +513,16 @@\n petidas)\n-)\n %0A    fmt\n@@ -534,18 +534,16 @@\n tln(\n-toString()\n+faltando\n )%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_18-49-08",
+            "content": "@@ -728,21 +728,13 @@\n oString(\n-faltando\n ))%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_18-49-10",
+            "content": "@@ -38,19 +38,8 @@\n nv%22%0A\n-%09%22strings%22%0A\n )%0A%0Af\n@@ -94,34 +94,10 @@\n  := \n-make(%5B%5Dstring, len(vetor))\n+%22%22\n %0A   \n@@ -149,27 +149,10 @@\n ing \n++\n =\n- append(vetString,\n  str\n@@ -167,18 +167,16 @@\n a(valor)\n-) \n %0A    %7D%0A \n@@ -189,21 +189,8 @@\n urn \n-strings.Join(\n vetS\n@@ -198,14 +198,8 @@\n ring\n-, %22 %22)\n %0A%7D%0A%0A\n@@ -294,22 +294,19 @@\n ake(map%5B\n-str\n in\n-g\n+t\n %5Dint)%0A  \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_18-52-22",
+            "content": "@@ -367,19 +367,22 @@\n ake(map%5B\n+str\n in\n-t\n+g\n %5Dint)%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-52-35",
+            "content": "@@ -116,17 +116,26 @@\n string, \n-0\n+len(vetor)\n )%0A    fo\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-53-29",
+            "content": "@@ -746,16 +746,25 @@\n Println(\n+toString(\n repetida\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-53-47",
+            "content": "@@ -756,16 +756,17 @@\n petidas)\n+)\n %0A    fmt\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-53-48",
+            "content": "@@ -119,33 +119,40 @@\n ing, 0)%0A    for \n-i\n+_, valor\n  := range vetor \n@@ -209,15 +209,12 @@\n oa(v\n-etor%5Bi%5D\n+alor\n )) %0A\n@@ -746,25 +746,16 @@\n Println(\n-toString(\n repetida\n@@ -756,17 +756,16 @@\n petidas)\n-)\n %0A    fmt\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-54-43",
+            "content": "@@ -131,16 +131,9 @@\n for \n-_, valor\n+i\n  := \n@@ -202,12 +202,15 @@\n oa(v\n-alor\n+etor%5Bi%5D\n )) %0A\n@@ -552,11 +552,12 @@\n %5Bi%5D \n-%3E 1\n+!= 0\n  %7B%0A \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-55-20",
+            "content": "@@ -591,11 +591,8 @@\n a%5Bi%5D\n- -1\n  %7B%0A \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-55-33",
+            "content": "@@ -675,24 +675,8 @@\n lse \n-if mapa%5Bi%5D == 0 \n %7B%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-55-53",
+            "content": "@@ -688,18 +688,8 @@\n %5D ==\n- 0 && i !=\n  0 %7B\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-56-23",
+            "content": "@@ -88,58 +88,8 @@\n g %7B%0A\n-    if len(vetor) == 0 %7B%0A        return %22N%22%0A    %7D%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_18-56-54",
+            "content": "@@ -52,25 +52,8 @@\n %0A)%0A%0A\n-func verifica()%0A%0A\n func\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_19-32-04",
+            "content": "@@ -66,59 +66,349 @@\n ica(\n-total, possui int) (%5B%5Dint, %5B%5Dint) %7B%0A    var aux int\n+)%0A%0Afunc toString(vetor %5B%5Dint) string %7B%0A    if len(vetor) == 0 %7B%0A        return %22N%22%0A    %7D%0A    vetString := make(%5B%5Dstring, 0)%0A    for _, valor := range vetor %7B%0A        vetString = append(vetString, strconv.Itoa(valor)) %0A    %7D%0A    return strings.Join(vetString, %22 %22)%0A%7D%0A%0Afunc main() %7B%0A    var total, possui, aux int%0A    fmt.Scan(&total, &possui)\n %0A   \n@@ -823,433 +823,14 @@\n   %7D%0A\n+\n     %7D%0A\n-    return repetidas, faltando%0A%7D%0A%0Afunc toString(vetor %5B%5Dint) string %7B%0A    if len(vetor) == 0 %7B%0A        return %22N%22%0A    %7D%0A    vetString := make(%5B%5Dstring, 0)%0A    for _, valor := range vetor %7B%0A        vetString = append(vetString, strconv.Itoa(valor)) %0A    %7D%0A    return strings.Join(vetString, %22 %22)%0A%7D%0A%0Afunc main() %7B%0A    var total, possui int%0A    fmt.Scan(&total, &possui)%0A    repetidas, faltando := verifica(total, possui)%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_19-34-48",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc verifica(total, possui int) ([]int, []int) {\n    var aux int\n    mapa := make(map[int]int)\n    repetidas := make([]int, 0)\n    faltando := make([]int, 0)\n    for range possui {\n        fmt.Scan(&aux)\n        mapa[aux]++\n    }\n    for i := range total + 1 {\n        if mapa[i] > 1 {\n            for range mapa[i] -1 {\n                repetidas = append(repetidas, i)\n            }\n        } else if mapa[i] == 0 && i != 0 {\n            faltando = append(faltando, i)\n        }\n    }\n    return repetidas, faltando\n}\n\nfunc toString(vetor []int) string {\n    if len(vetor) == 0 {\n        return \"N\"\n    }\n    vetString := make([]string, 0)\n    for _, valor := range vetor {\n        vetString = append(vetString, strconv.Itoa(valor)) \n    }\n    return strings.Join(vetString, \" \")\n}\n\nfunc main() {\n    var total, possui int\n    fmt.Scan(&total, &possui)\n    repetidas, faltando := verifica(total, possui)\n    fmt.Println(toString(repetidas))\n    fmt.Println(toString(faltando))\n}\n",
+            "lines": "47"
+        }
+    ]
+}
