@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_19-05-38",
+            "content": "@@ -25,16 +25,31 @@\n %22bufio%22%0A\n+%09%22crypto/rand%22%0A\n %09%22fmt%22%0A%09\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-14_19-05-46",
+            "content": "@@ -188,52 +188,8 @@\n %0A%09%7D%0A\n-%09if index == len(word)-1 %7B%0A%09%09return true%0A%09%7D%0A\n %09if \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-14_19-08-28",
+            "content": "@@ -202,24 +202,26 @@\n == len(word)\n+-1\n  %7B%0A%09%09return \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_19-09-12",
+            "content": "@@ -168,18 +168,39 @@\n %3C 0 \n-%7C%7C\n+%7B%0A%09%09return false%0A%09%7D%0A%09if\n  index \n-%3E\n+=\n = le\n@@ -210,36 +210,35 @@\n ord) %7B%0A%09%09return \n-fals\n+tru\n e%0A%09%7D%0A%09if grid%5Bx%5D\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_19-11-56",
+            "content": "@@ -168,39 +168,18 @@\n %3C 0 \n-%7B%0A%09%09return false%0A%09%7D%0A%09if\n+%7C%7C\n  index \n-=\n+%3E\n = le\n@@ -197,19 +197,20 @@\n %09return \n-tru\n+fals\n e%0A%09%7D%0A%09if\n@@ -408,34 +408,8 @@\n ) %7B%0A\n-%09%09%09fmt.Println(%22deu bom%22)%0A\n %09%09%09r\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-14_19-14-43",
+            "content": "@@ -476,33 +476,8 @@\n %0A%09%7D%0A\n-%09fmt.Println(%22deu ruim%22)%0A\n %09ret\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-14_19-15-10",
+            "content": "@@ -439,27 +439,25 @@\n Println(\n-word%5Bindex%5D\n+%22deu bom%22\n )%0A%09%09%09ret\n@@ -464,32 +464,57 @@\n urn true%0A%09%09%7D%0A%09%7D%0A\n+%09fmt.Println(%22deu ruim%22)%0A\n %09return false%0A%7D%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_19-16-58",
+            "content": "@@ -443,15 +443,8 @@\n tln(\n-string(\n word\n@@ -451,17 +451,16 @@\n %5Bindex%5D)\n-)\n %0A%09%09%09retu\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-14_19-17-22",
+            "content": "@@ -110,50 +110,8 @@\n l %7B%0A\n-%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A\n %09if \n@@ -189,92 +189,80 @@\n %09%7D%0A%09\n-var temp byte%0A%09if grid%5Bx%5D%5By%5D == word%5Bindex%5D %7B%0A%09%09temp = grid%5Bx%5D%5By%5D%0A%09%09grid%5Bx%5D%5By%5D = ' '\n+if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%09if grid%5Bx%5D%5By%5D == word%5Bindex%5D %7B\n %0A%09%09i\n@@ -486,27 +486,8 @@\n %0A%09%7D%0A\n-%09grid%5Bx%5D%5By%5D = temp%0A\n %09ret\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-14_19-27-30",
+            "content": "@@ -478,16 +478,52 @@\n  y+1) %7B%0A\n+%09%09%09fmt.Println(string(word%5Bindex%5D))%0A\n %09%09%09retur\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-14_19-27-47",
+            "content": "@@ -206,18 +206,54 @@\n %7C y %3C 0 \n-%7C%7C\n+%7B%0A%09%09return false%0A%09%7D%0A%09var temp byte%0A%09if\n  grid%5Bx%5D\n@@ -260,9 +260,9 @@\n %5By%5D \n-!\n+=\n = wo\n@@ -278,32 +278,14 @@\n  %7B%0A%09\n-%09return false%0A%09%7D%0A\n %09temp \n-:\n = gr\n@@ -293,16 +293,17 @@\n d%5Bx%5D%5By%5D%0A\n+%09\n %09grid%5Bx%5D\n@@ -312,16 +312,17 @@\n %5D = ' '%0A\n+%09\n %09if seeN\n@@ -397,16 +397,17 @@\n , y) %7C%7C%0A\n+%09\n %09seeNext\n@@ -476,24 +476,25 @@\n x, y+1) %7B%0A%09%09\n+%09\n return true%0A\n@@ -493,19 +493,22 @@\n rn true%0A\n+%09\n %09%7D%0A\n+%09%7D\n %0A%09grid%5Bx\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_19-30-20",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc seeNext(grid [][]byte, word string, index, x, y int) bool {\n\tif index == len(word) {\n\t\treturn true\n\t}\n\tif x >= len(grid) || x < 0 || y >= len(grid[0]) || y < 0 || grid[x][y] != word[index] {\n\t\treturn false\n\t}\n\ttemp := grid[x][y]\n\tgrid[x][y] = ' '\n\tif seeNext(grid, word, index+1, x-1, y) || seeNext(grid, word, index+1, x+1, y) ||\n\tseeNext(grid, word, index+1, x, y-1) || seeNext(grid, word, index+1, x, y+1) {\n\t\treturn true\n\t}\n\n\tgrid[x][y] = temp\n\treturn false\n}\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tfor i := range grid {\n\t\tfor j := range grid[0] {\n\t\t\tif seeNext(grid, word, 0, i, j) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "53"
+        }
+    ]
+}

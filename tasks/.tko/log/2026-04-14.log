@@ -1,0 +1,65 @@
+2026-04-14 18:48:06, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-04-14 18:48:08, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-04-14 18:48:06, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 18:57:33, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:01:42, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:05:38, EXEC, v:1, k:ed@wordsearch, mode:FULL, size:82, fail:COMP
+2026-04-14 19:05:46, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:81
+2026-04-14 19:07:29, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:05:46, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:08:28, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:84
+2026-04-14 19:08:32, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75
+2026-04-14 19:09:12, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:84
+2026-04-14 19:09:13, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75
+2026-04-14 19:11:56, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:81
+2026-04-14 19:11:55, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:11:56, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:14:43, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:85
+2026-04-14 19:15:10, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:86
+2026-04-14 19:16:58, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:85
+2026-04-14 19:17:22, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:85
+2026-04-14 19:17:21, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:17:22, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:27:30, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:89
+2026-04-14 19:27:47, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:88
+2026-04-14 19:27:47, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:27:47, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:30:20, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:86
+2026-04-14 19:30:31, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:30:20, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-04-14 19:33:46, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-04-14 19:34:04, SELF, v:1, k:ed@wordsearch, self:1, rate:100, study:30
+2026-04-14 19:34:11, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-04-14 19:34:13, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-04-14 19:34:11, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:34:11, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:37:45, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:41:35, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:44:49, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:28
+2026-04-14 19:46:24, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:32
+2026-04-14 19:46:25, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:46:50, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-04-14 19:46:51, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:46:53, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-04-14 19:46:54, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-04-14 19:47:02, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:34, fail:COMP
+2026-04-14 19:47:03, EXEC, v:1, k:ed@subset_sum, mode:FULL, fail:COMP
+2026-04-14 19:47:23, EXEC, v:1, k:ed@subset_sum, mode:FULL, fail:COMP
+2026-04-14 19:47:24, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:32
+2026-04-14 19:47:27, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:47:31, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-04-14 19:47:33, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:47:37, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:34
+2026-04-14 19:47:35, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:47:37, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:48:05, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-04-14 19:48:06, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:48:07, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:48:11, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:34
+2026-04-14 19:48:28, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0
+2026-04-14 19:48:29, EXEC, v:1, k:ed@subset_sum, mode:FREE
+2026-04-14 19:48:56, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-04-14 19:49:21, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:28, size:33
+2026-04-14 19:52:46, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:28, size:29
+2026-04-14 19:52:46, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-04-14 19:52:46, MOVE, v:1, k:ed@subset_sum, mode:EDIT

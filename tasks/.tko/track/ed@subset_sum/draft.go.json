@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_19-44-49",
+            "content": "@@ -468,19 +468,24 @@\n (n)%0A    \n-if \n+println(\n busca(nu\n@@ -497,77 +497,8 @@\n , k)\n- %7B%0A        println(%22true%22)%0A    %7D else %7B%0A        println(%22false%22)%0A    %7D\n+)\n %0A%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_19-46-24",
+            "content": "@@ -468,26 +468,8 @@\n (n)%0A\n-    println(%22oi%22)%0A\n     \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-14_19-46-50",
+            "content": "@@ -479,21 +479,16 @@\n ntln(%22oi\n-%0A    \n %22)%0A    i\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_19-47-02",
+            "content": "@@ -464,16 +464,39 @@\n near(n)%0A\n+    println(%22oi%0A    %22)%0A\n     if b\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_19-47-24",
+            "content": "@@ -468,26 +468,8 @@\n (n)%0A\n-    println(%22oi%22)%0A\n     \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-14_19-47-31",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -48,17 +48,20 @@\n %5B%5Dint %7B%0A\n-%09\n+    \n vetor :=\n@@ -76,17 +76,20 @@\n int, n)%0A\n-%09\n+    \n for i :=\n@@ -103,18 +103,24 @@\n vetor %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -130,20 +130,26 @@\n tor%5Bi%5D)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n return v\n@@ -196,17 +196,20 @@\n  bool %7B%0A\n-%09\n+    \n for i :=\n@@ -225,18 +225,24 @@\n meros %7B%0A\n-%09%09\n+        \n for j :=\n@@ -264,19 +264,28 @@\n i+1:%5D %7B%0A\n-%09%09%09\n+            \n if numer\n@@ -312,37 +312,70 @@\n k %7B%0A\n-%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+                return true%0A            %7D%0A        %7D%0A    %7D%0A    \n retu\n@@ -400,17 +400,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, k\n@@ -417,17 +417,20 @@\n , k int%0A\n-%09\n+    \n fmt.Scan\n@@ -438,17 +438,20 @@\n &n, &k)%0A\n-%09\n+    \n numeros \n@@ -464,17 +464,20 @@\n near(n)%0A\n-%09\n+    \n println(\n@@ -482,17 +482,20 @@\n n(%22oi%22)%0A\n-%09\n+    \n if busca\n@@ -509,18 +509,24 @@\n s, k) %7B%0A\n-%09%09\n+        \n println(\n@@ -533,17 +533,20 @@\n %22true%22)%0A\n-%09\n+    \n %7D else %7B\n@@ -550,10 +550,16 @@\n e %7B%0A\n-%09%09\n+        \n prin\n@@ -575,9 +575,12 @@\n e%22)%0A\n-%09\n+    \n %7D%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_19-47-37",
+            "content": "@@ -109,17 +109,16 @@\n mt.Scan(\n-&\n vetor%5Bi%5D\n@@ -387,16 +387,31 @@\n near(n)%0A\n+%09println(%22oi%22)%0A\n %09if busc\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_19-48-05",
+            "content": "@@ -392,23 +392,8 @@\n (n)%0A\n-%09println(%22oi%22)%0A\n %09if \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_19-48-11",
+            "content": "@@ -388,16 +388,31 @@\n near(n)%0A\n+%09println(%22oi%22)%0A\n %09if busc\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_19-48-56",
+            "content": "@@ -410,29 +410,25 @@\n ros, k) %7B%0A%09%09\n-fmt.P\n+p\n rintln(%22true\n@@ -446,13 +446,9 @@\n %7B%0A%09%09\n-fmt.P\n+p\n rint\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_19-49-21",
+            "content": "@@ -393,20 +393,11 @@\n n)%0A%09\n-fmt.Println(\n+if \n busc\n@@ -409,12 +409,71 @@\n eros, k)\n-)\n+ %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_19-52-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc scanear(n int) []int {\n\tvetor := make([]int, n)\n\tfor i := range vetor {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\treturn vetor\n}\n\nfunc busca(numeros []int, k int) bool {\n\tfor i := range numeros {\n\t\tfor j := range numeros[i+1:] {\n\t\t\tif numeros[i]+numeros[j] == k {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tnumeros := scanear(n)\n\tfmt.Println(busca(numeros, k))\n}\n",
+            "lines": "29"
+        }
+    ]
+}
