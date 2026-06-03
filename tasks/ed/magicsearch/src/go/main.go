@@ -8,9 +8,32 @@ import (
 	"strings"
 )
 
+func BetterSearch(slice []int, value int) (bool, int) {
+	low, high := 0, len(slice)-1
+	for low <= high {
+		mid := low + (high-low)/2
+		if slice[mid] == value {
+			return true, mid
+		} else if slice[mid] > value {
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
+	}
+	return false, low
+}
+
+
 func MagicSearch(slice []int, value int) int {
-	_, _ = slice, value
-	return 0
+	ok, index := BetterSearch(slice, value)
+	if ok {
+		for i := range slice {
+			if slice[len(slice)-i-1] == value {
+				return len(slice)-i-1
+			}
+		}
+	}
+	return index
 }
 
 func main() {

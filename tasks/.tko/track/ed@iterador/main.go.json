@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-27_18-59-42",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype MyList struct {\n\tdata []int\n}\n\ntype Iterator struct {\n\tdata  []int\n\tindex int\n}\n\nfunc NewMyList(values []int) *MyList {\n\treturn &MyList{data: values}\n}\n\nfunc (l *MyList) Iterator() *Iterator {\n\treturn &Iterator{data: l.data, index: -1}\n}\n\nfunc (i *Iterator) HasNext() bool {\n\treturn i.index < len(i.data)-1\n}\n\nfunc (i *Iterator) Next() int {\n\tif i.index == len(i.data) {\n\t\tpanic(fmt.Errorf(\"No more elements\"))\n\t}\n\ti.index += 1\n\treturn i.data[i.index]\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tmylist := NewMyList([]int{})\n\tfor scanner.Scan() {\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tfor i := 1; i < len(args); i++ {\n\t\t\t\tslice := make([]int, len(args)-1)\n\t\t\t\tfor i, value := range args[1:] {\n\t\t\t\t\tslice[i], _ = strconv.Atoi(value)\n\t\t\t\t}\n\t\t\t\tmylist = NewMyList(slice)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Print(\"[ \")\n\t\t\tfor it := mylist.Iterator(); it.HasNext(); {\n\t\t\t\tfmt.Printf(\"%v \", it.Next())\n\t\t\t}\n\t\t\tfmt.Println(\"]\")\n\t\tcase \"reverse\":\n\t\t\t// fmt.Print(\"[ \")\n\t\t\t// for it := mylist.ReverseIterator(); it.HasNext(); {\n\t\t\t// \tfmt.Printf(\"%v \", it.Next())\n\t\t\t// }\n\t\t\t// fmt.Println(\"]\")\n\t\tcase \"cyclic\":\n\t\t\t// qtd, _ := strconv.Atoi(args[1])\n\t\t\t// fmt.Print(\"[ \")\n\t\t\t// it := mylist.CyclicIterator()\n\t\t\t// for range qtd {\n\t\t\t// \tfmt.Printf(\"%v \", it.Next())\n\t\t\t// }\n\t\t\t// fmt.Println(\"]\")\n\t\t}\n\t}\n\n}\n",
+            "lines": "82"
+        }
+    ]
+}

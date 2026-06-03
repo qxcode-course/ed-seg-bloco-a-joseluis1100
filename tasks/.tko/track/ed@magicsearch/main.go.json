@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-27_18-45-41",
+            "content": "@@ -322,20 +322,19 @@\n %09return \n-high\n+low\n %0A%7D%0A%0Afunc\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-27_18-46-40",
+            "content": "@@ -322,19 +322,20 @@\n %09return \n-low\n+high\n %0A%7D%0A%0Afunc\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-27_18-46-49",
+            "content": "@@ -68,22 +68,21 @@\n )%0A%0Afunc \n-Better\n+Magic\n Search(s\n@@ -107,20 +107,12 @@\n int)\n- (bool,\n  int\n-)\n  %7B%0A%09\n@@ -227,14 +227,8 @@\n turn\n- true,\n  mid\n@@ -326,209 +326,11 @@\n urn \n-false, low%0A%7D%0A%0A%0Afunc MagicSearch(slice %5B%5Dint, value int) int %7B%0A%09ok, index := BetterSearch(slice, value)%0A%09if ok %7B%0A%09%09for i := range slice %7B%0A%09%09%09if slice%5Bi%5D == value %7B%0A%09%09%09%09return i%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return index\n+low\n %0A%7D%0A%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-27_18-52-28",
+            "content": "@@ -490,22 +490,9 @@\n ice%5B\n-len(slice)-i-1\n+i\n %5D ==\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-27_18-52-51",
+            "content": "@@ -524,30 +524,17 @@\n %09return \n-len(slice)-i-1\n+i\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-27_18-53-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tlow, high := 0, len(slice)-1\n\tfor low <= high {\n\t\tmid := low + (high-low)/2\n\t\tif slice[mid] == value {\n\t\t\treturn true, mid\n\t\t} else if slice[mid] > value {\n\t\t\thigh = mid - 1\n\t\t} else {\n\t\t\tlow = mid + 1\n\t\t}\n\t}\n\treturn false, low\n}\n\n\nfunc MagicSearch(slice []int, value int) int {\n\tok, index := BetterSearch(slice, value)\n\tif ok {\n\t\tfor i := range slice {\n\t\t\tif slice[len(slice)-i-1] == value {\n\t\t\t\treturn len(slice)-i-1\n\t\t\t}\n\t\t}\n\t}\n\treturn index\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "53"
+        }
+    ]
+}
