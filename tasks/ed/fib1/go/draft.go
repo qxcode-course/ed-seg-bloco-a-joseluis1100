@@ -5,7 +5,7 @@ func coelhos(n, k int) int {
     if n == 1 || n == 2 {
         return 1
     }
-    pares := coelhos(n-1, k) + coelhos(n-2, k)
+    pares := coelhos(n-1, k) + k * coelhos(n-2, k)
     return pares
 }
 

@@ -32,8 +32,23 @@
         },
         {
             "label": "2026-04-06_19-02-54",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc ativos(n, k, partes int) int {\n    if n <= k {\n        return 0\n    }\n    var p1, p2 int\n    if n % 2 == 0 {\n        partes += 2\n        p1 = ativos(n/2, k, partes)\n    } else {\n        partes += 4\n        p1 = ativos(int(math.Ceil(float64(n)/2)), k, partes)\n        p2 = ativos(int(math.Floor(float64(n)/2)), k, partes)\n    }\n    return partes\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n    fmt.Println(ativos(n, k, 0))\n}\n",
+            "content": "@@ -105,20 +105,34 @@\n urn \n-partes%0A    %7D\n+0%0A    %7D%0A    var p1, p2 int\n %0A   \n@@ -148,38 +148,56 @@\n  == 0 %7B%0A        \n-return\n+partes += 2%0A        p1 =\n  ativos(n/2, k,p\n@@ -195,24 +195,23 @@\n (n/2, k,\n+ \n partes\n-+2\n )%0A    %7D \n@@ -225,22 +225,40 @@\n         \n-return\n+partes += 4%0A        p1 =\n  ativos(\n@@ -300,13 +300,22 @@\n rtes\n-+2) +\n+)%0A        p2 =\n  ati\n@@ -362,18 +362,16 @@\n rtes\n-+2\n )%0A    %7D%0A\n %7D%0A%0Af\n@@ -366,16 +366,34 @@\n )%0A    %7D%0A\n+    return partes%0A\n %7D%0A%0Afunc \n",
             "lines": "28"
+        },
+        {
+            "label": "2026-06-03_02-16-38",
+            "content": "@@ -46,24 +46,32 @@\n  ativos(n, k\n+, partes\n  int) int %7B%0A\n@@ -105,20 +105,101 @@\n urn \n-1%0A    %7D%0A\n+partes%0A    %7D%0A    if n %25 2 == 0 %7B%0A        return ativos(n/2, k,partes+2)%0A    %7D else %7B%0A \n     \n+   \n retu\n@@ -239,16 +239,26 @@\n )/2)), k\n+, partes+2\n ) + ativ\n@@ -292,17 +292,33 @@\n )/2)), k\n-)\n+, partes+2)%0A    %7D\n %0A%7D%0A%0Afunc\n@@ -392,12 +392,16 @@\n vos(n, k\n+, 0)\n )%0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-06-03_02-20-06",
+            "content": "@@ -278,12 +278,11 @@\n os(n, k)\n-)\n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-06-03_02-20-20",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc ativos(n, k int) int {\n    if n <= k {\n        return 1\n    }\n    return ativos(int(math.Ceil(float64(n)/2)), k) + ativos(int(math.Floor(float64(n)/2)), k)\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n    fmt.Println(ativos(n, k))\n}\n",
+            "lines": "19"
         }
     ]
 }

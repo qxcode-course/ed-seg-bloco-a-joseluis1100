@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func scanear(n int) []int {
 	vetor := make([]int, n)
@@ -10,20 +13,20 @@ func scanear(n int) []int {
 	return vetor
 }
 
-func busca(numeros []int, k int) bool {
-	for i := range numeros {
-		for j := range numeros[i+1:] {
-			if numeros[i]+numeros[j] == k {
-				return true
-			}
-		}
+func busca(numeros []int, k, i, sum int) bool {
+	if sum == k {
+		return true
 	}
-	return false
+	if i == len(numeros) || sum > k {
+		return false
+	}
+	return busca(numeros, k, i+1, sum + numeros[i]) || busca(numeros, k, i+1, sum)
 }
 
 func main() {
 	var n, k int
 	fmt.Scan(&n, &k)
 	numeros := scanear(n)
-	fmt.Println(busca(numeros, k))
+	slices.Sort(numeros)
+	fmt.Println(busca(numeros, k, 0, 0))
 }

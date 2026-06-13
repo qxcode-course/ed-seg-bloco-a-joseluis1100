@@ -19,7 +19,7 @@ type LList struct {
 }
 
 func NewLList() *LList {
-	return &LList{&Node{}}
+	return &LList{root: nil}
 }
 
 func (ll *LList) Size() int {
@@ -31,8 +31,7 @@ func (ll *LList) Size() int {
 }
 
 func (ll *LList) Clear() {
-	ll.root.next = nil
-	ll.root.prev = nil
+	ll.root = nil
 }
 
 func (ll *LList) PushFront(value int) {
@@ -44,6 +43,10 @@ func (ll *LList) PushFront(value int) {
 }
 
 func (ll *LList) PushBack(value int) {
+	if ll.root == nil {
+		ll.root = &Node{Value: value, next: nil, prev: ll.root}
+		return
+	}
 	curr := ll.root
 	for curr.next != nil {
 		curr = curr.next
@@ -56,15 +59,34 @@ func (ll *LList) PopFront() {
 		return
 	}
 	ll.root = ll.root.next
-	ll.root.prev = nil
+	if ll.root != nil {
+		ll.root.prev = nil
+	}
 }
 
 func (ll *LList) PopBack() {
+	if ll.root == nil || ll.root.next == nil {
+		ll.Clear()
+		return
+	}
 	curr := ll.root
 	for curr.next != nil {
 		curr = curr.next
 	}
 	curr.prev.next = nil
+}
+
+func (ll *LList) String() string {
+	str, curr := "[", ll.root
+	for curr != nil {
+		str += strconv.Itoa(curr.Value)
+		if curr.next != nil {
+			str += ", "
+		}
+		curr = curr.next
+	}
+	str += "]"
+	return str
 }
 
 func main() {

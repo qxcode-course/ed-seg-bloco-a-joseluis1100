@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-04_17-38-15",
+            "content": "@@ -125,21 +125,23 @@\n == byte(\n-valor\n+l + '0'\n ) %7C%7C lin\n@@ -158,21 +158,23 @@\n == byte(\n-valor\n+l + '0'\n ) %7B%0A    \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-04_17-41-22",
+            "content": "package main\nimport \"fmt\"\n\nfunc pode(linha string, l, pos, valor int) bool {\n    for i := range l {\n        if linha[pos+i] == byte(valor) || linha[pos-i] == byte(valor) {\n            return false\n        }\n    }\n    return true\n}\n\nfunc processa(linha string, l int) string {\n    novalinha := []byte(linha)\n    for i := range linha {\n        if linha[i] == '.' {\n            for j := 0; j <= l; j++ {\n                if pode(linha, l, i, j){\n                    novalinha[i] = byte(j + '0')\n                    break\n                }\n            }\n        }\n    }\n    return string(novalinha)\n}\n\nfunc main() {\n    var linha string\n    var l int\n    fmt.Scan(linha, l)\n    println(processa(linha, l))\n}\n",
+            "lines": "33"
+        }
+    ]
+}

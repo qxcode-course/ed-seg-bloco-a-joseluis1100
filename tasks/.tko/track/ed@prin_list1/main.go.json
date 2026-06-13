@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-13_21-37-05",
+            "content": "@@ -28,20 +28,20 @@\n t%22%0A%09%22str\n-conv\n+ings\n %22%0A)%0A%0A// \n@@ -145,175 +145,17 @@\n  %7B%0A%09\n-curr := l.root%0A%09str := %22%5B %22%0A%09for ; curr != nil; curr = curr.next %7B%0A%09%09str += strconv.Itoa(curr.Value)%0A%09%09if curr == sword %7B%0A%09%09%09str += %22%3E%22%0A%09%09%7D%0A%09%09str += %22 %22%0A%09%7D%0A%09return str\n+return %22%22\n %0A%7D%0A%0A\n@@ -251,17 +251,8 @@\n %5D %7B%0A\n-%09curr :=%0A\n %09ret\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-13_21-47-52",
+            "content": "@@ -405,16 +405,25 @@\n %5Bint%5D %7B%0A\n+%09curr :=%0A\n %09return \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_21-48-02",
+            "content": "@@ -410,40 +410,18 @@\n  %7B%0A%09\n-l.Erase(it.next)%0A%09return it.next\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-13_21-51-40",
+            "content": "@@ -184,22 +184,19 @@\n curr != \n-l.root\n+nil\n ; curr =\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_22-00-18",
+            "content": "@@ -304,20 +304,8 @@\n %0A%09%7D%0A\n-%09str += %22%5D%22%0A\n %09ret\n@@ -505,16 +505,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_22-01-19",
+            "content": "@@ -155,21 +155,16 @@\n = l.root\n-.next\n %0A%09str :=\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_22-02-07",
+            "content": "@@ -425,16 +425,34 @@\n %5Bint%5D %7B%0A\n+%09l.Erase(it.next)%0A\n %09return \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_22-04-10",
+            "content": "@@ -430,12 +430,14 @@\n  %7B%0A%09\n-it =\n+return\n  it.\n@@ -445,19 +445,8 @@\n ext%0A\n-%09return it%0A\n %7D%0A%0Af\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-13_22-04-59",
+            "content": "@@ -443,45 +443,8 @@\n ext%0A\n-%09if it == l.root %7B%0A%09%09it = it.next%0A%09%7D%0A\n %09ret\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-13_22-07-06",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tcurr := l.root.next\n\tstr := \"[ \"\n\tfor ; curr != l.root; curr = curr.next {\n\t\tstr += strconv.Itoa(curr.Value)\n\t\tif curr == sword {\n\t\t\tstr += \">\"\n\t\t}\n\t\tstr += \" \"\n\t}\n\tstr += \"]\"\n\treturn str\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tit = it.next\n\tif it == l.root {\n\t\tit = it.next\n\t}\n\treturn it\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "49"
+        }
+    ]
+}

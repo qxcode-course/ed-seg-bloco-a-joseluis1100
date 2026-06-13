@@ -57,8 +57,88 @@
         },
         {
             "label": "2026-04-14_19-52-46",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc scanear(n int) []int {\n\tvetor := make([]int, n)\n\tfor i := range vetor {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\treturn vetor\n}\n\nfunc busca(numeros []int, k int) bool {\n\tfor i := range numeros {\n\t\tfor j := range numeros[i+1:] {\n\t\t\tif numeros[i]+numeros[j] == k {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tnumeros := scanear(n)\n\tfmt.Println(busca(numeros, k))\n}\n",
+            "content": "@@ -18,28 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22slices%22%0A)\n %0A%0Afu\n@@ -171,16 +171,8 @@\n t, k\n-, i, sum\n  int\n@@ -185,124 +185,103 @@\n  %7B%0A%09\n-if sum + i %3C k %7B%0A%09%09busca(numeros, k, i+1, sum+i)%0A%09%7D else if sum + i %3E k %7B%0A%09%09busca(numeros, k, i+1, sum-i)%0A%09%7D else\n+for i := range numeros %7B%0A%09%09for j := range numeros%5Bi+1:%5D %7B%0A%09%09%09if numeros%5Bi%5D+numeros%5Bj%5D == k\n  %7B%0A\n+%09%09\n %09%09re\n@@ -290,16 +290,25 @@\n rn true%0A\n+%09%09%09%7D%0A%09%09%7D%0A\n %09%7D%0A%09retu\n@@ -392,30 +392,8 @@\n (n)%0A\n-%09slices.Sort(numeros)%0A\n %09fmt\n@@ -421,14 +421,8 @@\n s, k\n-, 0, 0\n ))%0A%7D\n",
             "lines": "29"
+        },
+        {
+            "label": "2026-06-03_02-34-36",
+            "content": "@@ -213,26 +213,17 @@\n f sum + \n-numeros%5Bi%5D\n+i\n  %3C k %7B%0A%09\n@@ -250,26 +250,17 @@\n +1, sum+\n-numeros%5Bi%5D\n+i\n )%0A%09%7D els\n@@ -311,18 +311,9 @@\n sum-\n-numeros%5Bi%5D\n+i\n )%0A%09%7D\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-03_02-37-01",
+            "content": "@@ -288,26 +288,17 @@\n f sum + \n-numeros%5Bi%5D\n+i\n  %3E k %7B%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-03_02-37-14",
+            "content": "@@ -207,50 +207,8 @@\n l %7B%0A\n-%09if i == len(numeros) %7B%0A%09%09return false%0A%09%7D%0A\n %09if \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-03_02-39-55",
+            "content": "@@ -375,16 +375,27 @@\n i+1, sum\n+-numeros%5Bi%5D\n )%0A%09%7D els\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-03_02-41-02",
+            "content": "@@ -270,31 +270,24 @@\n %5Bi%5D %3C k %7B%0A%09%09\n-return \n busca(numero\n@@ -349,23 +349,16 @@\n %3E k %7B%0A%09%09\n-return \n busca(nu\n@@ -404,16 +404,30 @@\n true%0A%09%7D%0A\n+%09return false%0A\n %7D%0A%0Afunc \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-03_02-42-34",
+            "content": "@@ -228,32 +228,8 @@\n ros)\n- %7C%7C sum + numeros%5Bi%5D %3E k\n  %7B%0A%09\n@@ -266,18 +266,17 @@\n eros%5Bi%5D \n-==\n+%3C\n  k %7B%0A%09%09r\n@@ -285,20 +285,8 @@\n urn \n-true%0A%09%7D%0A%09if \n busc\n@@ -300,24 +300,24 @@\n os, k, i\n++1\n , sum\n- + \n++\n numeros%5B\n@@ -323,42 +323,19 @@\n %5Bi%5D)\n- %7B%0A%09%09return busca(numeros, k, i+1,\n+%0A%09%7D else if\n  sum\n@@ -347,25 +347,20 @@\n meros%5Bi%5D\n-)%0A%09%7D else\n+ %3E k\n  %7B%0A%09%09ret\n@@ -391,16 +391,40 @@\n 1, sum)%0A\n+%09%7D else %7B%0A%09%09return true%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-03_02-50-56",
+            "content": "@@ -310,24 +310,70 @@\n urn true%0A%09%7D%0A\n+%09if busca(numeros, k, i, sum + numeros%5Bi%5D) %7B%0A%09\n %09return busc\n@@ -408,19 +408,35 @@\n eros%5Bi%5D)\n- %7C%7C\n+%0A%09%7D else %7B%0A%09%09return\n  busca(n\n@@ -456,16 +456,19 @@\n 1, sum)%0A\n+%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-03_02-56-34",
+            "content": "@@ -523,21 +523,12 @@\n  k, \n-1, numeros%5B0%5D\n+0, 0\n ))%0A%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_02-57-17",
+            "content": "@@ -523,12 +523,21 @@\n  k, \n-0, 0\n+1, numeros%5B0%5D\n ))%0A%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_02-57-32",
+            "content": "@@ -253,36 +253,8 @@\n %3E k \n-%7C%7C k == 0 && numeros%5B0%5D %3E 0 \n %7B%0A%09%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_02-58-51",
+            "content": "@@ -249,16 +249,44 @@\n %5Bi%5D %3E k \n+%7C%7C k == 0 && numeros%5B0%5D %3E 0 \n %7B%0A%09%09retu\n@@ -323,26 +323,16 @@\n i%5D == k \n-%7C%7C k == 0 \n %7B%0A%09%09retu\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_03-00-05",
+            "content": "@@ -207,40 +207,8 @@\n l %7B%0A\n-%09if sum == k %7B%0A%09%09return true%0A%09%7D%0A\n %09if \n@@ -265,24 +265,79 @@\n rn false%0A%09%7D%0A\n+%09if sum + numeros%5Bi%5D == k %7C%7C k == 0 %7B%0A%09%09return true%0A%09%7D%0A\n %09return busc\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_03-01-33",
+            "content": "@@ -203,16 +203,48 @@\n  bool %7B%0A\n+%09if sum == k %7B%0A%09%09return true%0A%09%7D%0A\n %09if i ==\n@@ -305,40 +305,8 @@\n %0A%09%7D%0A\n-%09if sum == k %7B%0A%09%09return true%0A%09%7D%0A\n %09ret\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_03-01-57",
+            "content": "@@ -207,40 +207,8 @@\n l %7B%0A\n-%09if sum == k %7B%0A%09%09return true%0A%09%7D%0A\n %09if \n@@ -265,24 +265,56 @@\n rn false%0A%09%7D%0A\n+%09if sum == k %7B%0A%09%09return true%0A%09%7D%0A\n %09return busc\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_03-02-02",
+            "content": "@@ -263,16 +263,29 @@\n ) %7C%7C sum\n+ + numeros%5Bi%5D\n  %3E k %7B%0A%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-03_03-02-29",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"slices\"\n)\n\nfunc scanear(n int) []int {\n\tvetor := make([]int, n)\n\tfor i := range vetor {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\treturn vetor\n}\n\nfunc busca(numeros []int, k, i, sum int) bool {\n\tif sum == k {\n\t\treturn true\n\t}\n\tif i == len(numeros) || sum > k {\n\t\treturn false\n\t}\n\treturn busca(numeros, k, i+1, sum + numeros[i]) || busca(numeros, k, i+1, sum)\n}\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tnumeros := scanear(n)\n\tslices.Sort(numeros)\n\tfmt.Println(busca(numeros, k, 0, 0))\n}\n",
+            "lines": "32"
         }
     ]
 }

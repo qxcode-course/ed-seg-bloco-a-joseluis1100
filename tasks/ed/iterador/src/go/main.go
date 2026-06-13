@@ -35,6 +35,13 @@ func (l *MyList) Iterator() *Iterator {
 	return &Iterator{data: l.data, index: -1}
 }
 
+func (l *MyList) ReverseIterator() *ReverseIterator {
+	return &ReverseIterator{data: l.data, index: len(l.data)}
+}
+func (l *MyList) CyclicIterator() *CyclicIterator {
+	return &CyclicIterator{data: l.data, index: -1}
+}
+
 func (i *Iterator) HasNext() bool {
 	return i.index < len(i.data)-1
 }
@@ -47,6 +54,29 @@ func (i *Iterator) Next() int {
 	return i.data[i.index]
 }
 
+func (i *ReverseIterator) HasNext() bool {
+	return i.index > 0
+}
+
+func (i *ReverseIterator) Next() int {
+	if i.index == 0 {
+		panic(fmt.Errorf("No more elements"))
+	}
+	i.index -= 1
+	return i.data[i.index]
+}
+
+func (i *CyclicIterator) HasNext() bool {
+	return true
+}
+
+func (i *CyclicIterator) Next() int {
+	if i.index == len(i.data) - 1 {
+		i.index = -1
+	}
+	i.index += 1
+	return i.data[i.index]
+}
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	mylist := NewMyList([]int{})
@@ -73,19 +103,19 @@ func main() {
 			}
 			fmt.Println("]")
 		case "reverse":
-			// fmt.Print("[ ")
-			// for it := mylist.ReverseIterator(); it.HasNext(); {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for it := mylist.ReverseIterator(); it.HasNext(); {
+				fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		case "cyclic":
-			// qtd, _ := strconv.Atoi(args[1])
-			// fmt.Print("[ ")
-			// it := mylist.CyclicIterator()
-			// for range qtd {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			qtd, _ := strconv.Atoi(args[1])
+			fmt.Print("[ ")
+			it := mylist.CyclicIterator()
+			for range qtd {
+				fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		}
 	}
 
