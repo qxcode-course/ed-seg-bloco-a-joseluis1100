@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_14-52-54",
+            "content": "@@ -408,18 +408,11 @@\n rint\n-f(%22%25c%5Cn%22, \n+ln(\n joga\n@@ -430,14 +430,8 @@\n ue()\n- + 'a'\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-15_14-53-48",
+            "content": "@@ -441,9 +441,9 @@\n  + '\n-A\n+a\n ')%0A%7D\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-15_14-53-56",
+            "content": "@@ -117,14 +117,12 @@\n can(\n-&\n mm, \n-&\n mn)%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-15_14-55-32",
+            "content": "@@ -445,12 +445,8 @@\n  'A'\n- - 1\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-15_14-55-39",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tjogos := make([]int, 15)\n\tfor i := range jogos {\n\t\tvar mm, mn int\n\t\tfmt.Scan(&mm, &mn)\n\t\tjogos[i] = mm - mn\n\t}\n\tjogadores := NewQueue[int]()\n\tfor i := range 16 {\n\t\tjogadores.Enqueue(i+1)\n\t}\n\tfor i := range 15 {\n\t\tjog1, jog2 := jogadores.Dequeue(), jogadores.Dequeue()\n\t\tif jogos[i] > 0 {\n\t\t\tjogadores.Enqueue(jog1)\n\t\t} else {\n\t\t\tjogadores.Enqueue(jog2)\n\t\t}\n\t}\n\tfmt.Printf(\"%c\\n\", jogadores.Dequeue() + 'A' - 1)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

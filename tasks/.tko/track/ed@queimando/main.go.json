@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_16-05-42",
+            "content": "@@ -140,16 +140,95 @@\n %5BPos%5D()%0A\n+%09for i := range grid %7B%0A%09%09for j := range grid%5B0%5D %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == '#' %7B%0A%09%09%09\n %09stack.P\n@@ -248,16 +248,28 @@\n  c: c%7D)%0A\n+%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %09for %7B%0A%09\n@@ -359,112 +359,8 @@\n 'o'%0A\n-%09%09burnTrees(grid, l+1, c)%0A%09%09burnTrees(grid, l-1, c)%0A%09%09burnTrees(grid, l, c+1)%0A%09%09burnTrees(grid, l, c-1)%0A\n %09%7D%0A%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-15_16-13-16",
+            "content": "@@ -118,80 +118,8 @@\n ) %7B%0A\n-%09if l %3C 0 %7C%7C c %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return%0A%09%7D%0A\n %09sta\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-06-15_16-14-43",
+            "content": "@@ -250,9 +250,15 @@\n for \n-!\n+%7B%0A%09%09if \n stac\n@@ -271,16 +271,30 @@\n pty() %7B%0A\n+%09%09%09return%0A%09%09%7D%0A\n %09%09tree :\n@@ -342,341 +342,109 @@\n '%0A%09%09\n-if grid%5Btree.l+1%5D%5Btree.l%5D == '#' %7B%0A%09%09%09stack.Push(Pos%7Bl: tree.l+1, c: tree.c%7D)%0A%09%09%7D%0A%09%09if grid%5Btree.l-1%5D%5Btree.l%5D == '#' %7B%0A%09%09%09stack.Push(Pos%7Bl: tree.l-1, c: tree.c%7D)%0A%09%09%7D%0A%09%09if grid%5Btree.l%5D%5Btree.l+1%5D == '#' %7B%0A%09%09%09stack.Push(Pos%7Bl: tree.l, c: tree.\n+burnTrees(grid, l+1, c)%0A%09%09burnTrees(grid, l-1, c)%0A%09%09burnTrees(grid, l, \n c+1\n-%7D\n )%0A%09%09\n-%7D%0A%09%09if grid%5Btree.l%5D%5Btree.l+1%5D == '#' %7B%0A%09%09%09stack.Push(Pos%7Bl: tree.l, c: tree.c-1%7D)%0A%09%09%7D\n+burnTrees(grid, l, c-1)\n %0A%09%7D%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_16-23-45",
+            "content": "@@ -114,16 +114,88 @@\n  int) %7B%0A\n+%09if l %3C 0 %7C%7C c %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return%0A%09%7D%0A\n %09stack :\n@@ -324,29 +324,8 @@\n %09%09if\n- l + 1 %3C len(grid) &&\n  gri\n@@ -408,22 +408,8 @@\n %09%09if\n- l - 1 %3E -1 &&\n  gri\n@@ -492,32 +492,8 @@\n %09%09if\n- c + 1 %3C len(grid%5B0%5D) &&\n  gri\n@@ -576,22 +576,8 @@\n %09%09if\n- c - 1 %3E -1 &&\n  gri\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-15_16-25-31",
+            "content": "@@ -593,17 +593,17 @@\n %5D%5Btree.l\n--\n++\n 1%5D == '#\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-15_16-26-24",
+            "content": "@@ -282,33 +282,33 @@\n %5Btree.l+1%5D%5Btree.\n-c\n+l\n %5D == '#' %7B%0A%09%09%09st\n@@ -388,17 +388,17 @@\n 1%5D%5Btree.\n-c\n+l\n %5D == '#'\n@@ -494,17 +494,17 @@\n l%5D%5Btree.\n-c\n+l\n +1%5D == '\n@@ -592,17 +592,17 @@\n l%5D%5Btree.\n-c\n+l\n -1%5D == '\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-15_16-26-52",
+            "content": "@@ -249,21 +249,16 @@\n o'%0A%09%09if \n-tree.\n l + 1 %3C \n@@ -354,21 +354,16 @@\n %09%7D%0A%09%09if \n-tree.\n l - 1 %3E \n@@ -452,21 +452,16 @@\n %09%7D%0A%09%09if \n-tree.\n c + 1 %3C \n@@ -560,21 +560,16 @@\n %09%7D%0A%09%09if \n-tree.\n c - 1 %3E \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-15_16-28-11",
+            "content": "@@ -118,44 +118,8 @@\n ) %7B%0A\n-%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A\n %09sta\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-15_16-29-05",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tif grid[l][c] != '#' {\n\t\treturn\n\t}\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l: l, c: c})\n\tfor !stack.IsEmpty() {\n\t\ttree := stack.Pop()\n\t\tgrid[tree.l][tree.c] = 'o'\n\t\tif tree.l + 1 < len(grid) && grid[tree.l+1][tree.c] == '#' {\n\t\t\tstack.Push(Pos{l: tree.l+1, c: tree.c})\n\t\t}\n\t\tif tree.l - 1 > -1 && grid[tree.l-1][tree.c] == '#' {\n\t\t\tstack.Push(Pos{l: tree.l-1, c: tree.c})\n\t\t}\n\t\tif tree.c + 1 < len(grid[0]) && grid[tree.l][tree.c+1] == '#' {\n\t\t\tstack.Push(Pos{l: tree.l, c: tree.c+1})\n\t\t}\n\t\tif tree.c - 1 > -1 && grid[tree.l][tree.c-1] == '#' {\n\t\t\tstack.Push(Pos{l: tree.l, c: tree.c-1})\n\t\t}\n\t}\n\t// Essa fun\u00e7\u00e3o deve usar uma list como pilha\n\t// e marcar as \u00e1rvores na matriz como queimados\n\t// Uma sugest\u00e3o de como fazer isso \u00e9:\n\t// - adicionar a primeira posi\u00e7\u00e3o na pilha\n\t// - enquanto a pilha n\u00e3o estiver vazia:\n\t//   - retirar o elemento do topo\n\t//   - se puder ser queimado, queime e adicione seus vizinhos \u00e0 pilha\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "66"
+        }
+    ]
+}

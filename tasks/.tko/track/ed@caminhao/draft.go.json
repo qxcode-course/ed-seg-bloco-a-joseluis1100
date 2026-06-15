@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_17-52-22",
+            "content": "@@ -616,24 +616,29 @@\n , n)%0A    for\n+ i :=\n  range bomba\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_17-52-36",
+            "content": "@@ -967,17 +967,28 @@\n as.data%5B\n-0\n+bombas.front\n %5D) %7B%0A   \n@@ -1157,13 +1157,8 @@\n ruim\n- kkkk\n %22)%0A%7D\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_17-58-09",
+            "content": "@@ -619,33 +619,43 @@\n )%0A    for range \n-n\n+bombas.data\n  %7B%0A        var g\n@@ -967,28 +967,17 @@\n as.data%5B\n-bombas.front\n+0\n %5D) %7B%0A   \n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_17-59-16",
+            "content": "@@ -957,17 +957,28 @@\n as.data%5B\n-0\n+bombas.front\n %5D) %7B%0A   \n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_18-01-19",
+            "content": "@@ -66,21 +66,21 @@\n %7D%0A%0Atype \n-Queue\n+Stack\n  struct \n@@ -98,16 +98,36 @@\n %5B%5DBomba%0A\n+    front, size int%0A\n %7D%0A%0Afunc \n@@ -129,21 +129,21 @@\n func new\n-Queue\n+Stack\n (n int) \n@@ -143,21 +143,21 @@\n n int) *\n-Queue\n+Stack\n  %7B%0A    r\n@@ -163,21 +163,21 @@\n return &\n-Queue\n+Stack\n %7Bdata: m\n@@ -194,16 +194,35 @@\n a, 0, n)\n+, front: 0, size: n\n %7D%0A%7D%0A%0Afun\n@@ -227,21 +227,21 @@\n unc (s *\n-Queue\n+Stack\n ) Push(v\n@@ -293,21 +293,21 @@\n unc (s *\n-Queue\n+Stack\n ) Pop() \n@@ -344,21 +344,21 @@\n unc (s *\n-Queue\n+Stack\n ) isEmpt\n@@ -569,16 +569,42 @@\n ombas :=\n+ newStack(n)%0A    backup :=\n  make(%5B%5D\n@@ -612,37 +612,32 @@\n omba, n)%0A    for\n- i :=\n  range n %7B%0A     \n@@ -705,14 +705,14 @@\n mbas\n-%5Bi%5D = \n+.Push(\n Bomb\n@@ -734,16 +734,17 @@\n t: dist%7D\n+)\n %0A    %7D%0A \n@@ -750,153 +750,51 @@\n     \n-for i := range n %7B%0A            queue := newQueue(n)%0A    \n+copy(backup, bombas.data)%0A\n     for\n- j :=\n  range \n-bombas %7B%0A            queue.Push(bombas%5B(j+i) %25 len(bombas)%5D)%0A        %7D\n+n %7B\n %0A   \n@@ -827,21 +827,22 @@\n      if \n-queue\n+bombas\n .isEmpty\n@@ -884,11 +884,14 @@\n mbas\n-%5Bi%5D\n+.front\n )%0A  \n@@ -945,21 +945,22 @@\n if pode(\n-queue\n+bombas\n .data%5B0%5D\n@@ -983,13 +983,14 @@\n     \n-queue\n+bombas\n .Pop\n@@ -1012,24 +1012,109 @@\n %7D%0A        %7D%0A\n+        bombas.data = backup%0A        bombas.front = (bombas.front + 1) %25 bombas.size%0A\n     %7D%0A    fm\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-15_18-09-38",
+            "content": "@@ -708,24 +708,28 @@\n n %7B%0A        \n+    \n queue := new\n@@ -1031,51 +1031,8 @@\n p()%0A\n-            %7D else %7B%0A                break%0A\n     \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-06-15_18-10-52",
+            "content": "@@ -102,25 +102,8 @@\n mba%0A\n-    totalgas int%0A\n %7D%0A%0Af\n@@ -177,33 +177,33 @@\n 0, n)%7D%0A%7D%0A%0Afunc (\n-q\n+s\n  *Queue) Push(v \n@@ -207,33 +207,33 @@\n (v Bomba) %7B%0A    \n-q\n+s\n .data = append(q\n@@ -231,17 +231,17 @@\n  append(\n-q\n+s\n .data, v\n@@ -243,33 +243,33 @@\n ta, v)%0A%7D%0A%0Afunc (\n-q\n+s\n  *Queue) Pop() %7B\n@@ -277,17 +277,17 @@\n     \n-q\n+s\n .data = \n q.da\n@@ -282,17 +282,17 @@\n .data = \n-q\n+s\n .data%5B1:\n@@ -294,33 +294,33 @@\n ta%5B1:%5D%0A%7D%0A%0Afunc (\n-q\n+s\n  *Queue) isEmpty\n@@ -344,17 +344,17 @@\n urn len(\n-q\n+s\n .data) =\n@@ -369,165 +369,95 @@\n unc \n-(q *Queue) pode() bool %7B%0A    if q.totalgas + q.data%5B0%5D.gas - q.data%5B0%5D.dist %3C 0 %7B%0A        return false%0A    %7D%0A    q.totalgas += q.data%5B0%5D.gas - q.data%5B0%5D.dist\n+pode(bomba Bomba) bool %7B%0A    if bomba.gas - bomba.dist %3C 0 %7B%0A        return false%0A    %7D\n %0A   \n@@ -977,19 +977,26 @@\n  if \n+pode(\n queue.\n-pode(\n+data%5B0%5D\n ) %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-15_18-16-08",
+            "content": "@@ -957,20 +957,23 @@\n f queue.\n-pode\n+isEmpty\n () %7B%0A   \n@@ -989,18 +989,29 @@\n     \n-queue.Pop(\n+fmt.Println(bombas%5Bi%5D\n )%0A  \n@@ -1028,16 +1028,14 @@\n     \n-%7D else %7B\n+return\n %0A   \n@@ -1047,39 +1047,39 @@\n     \n-        break%0A                %7D\n+%7D%0A            if queue.pode() %7B\n %0A   \n@@ -1088,84 +1088,47 @@\n     \n-   %7D%0A\n        \n-     if queue.isEmpty() %7B%0A                fmt.Println(bombas%5Bi%5D)\n+queue.Pop()%0A            %7D else %7B\n %0A   \n@@ -1136,35 +1136,44 @@\n             \n+b\n re\n-turn%0A    \n+ak%0A            %7D%0A\n         %7D%0A  \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-06-15_18-18-03",
+            "content": "@@ -1138,17 +1138,25 @@\n Println(\n-i\n+bombas%5Bi%5D\n )%0A      \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-06-15_18-18-17",
+            "content": "package main\nimport \"fmt\"\n\ntype Bomba struct {\n    gas, dist int\n}\n\ntype Queue struct {\n    data []Bomba\n    totalgas int\n}\n\nfunc newQueue(n int) *Queue {\n    return &Queue{data: make([]Bomba, 0, n)}\n}\n\nfunc (q *Queue) Push(v Bomba) {\n    q.data = append(q.data, v)\n}\n\nfunc (q *Queue) Pop() {\n    q.data = q.data[1:]\n}\n\nfunc (q *Queue) isEmpty() bool {\n    return len(q.data) == 0\n}\n\nfunc (q *Queue) pode() bool {\n    if q.totalgas + q.data[0].gas - q.data[0].dist < 0 {\n        return false\n    }\n    q.totalgas += q.data[0].gas - q.data[0].dist\n    return true\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    bombas := make([]Bomba, n)\n    for i := range n {\n        var gas, dist int\n        fmt.Scan(&gas, &dist)\n        bombas[i] = Bomba{gas: gas, dist: dist}\n    }\n    for i := range n {\n        queue := newQueue(n)\n        for j := range bombas {\n            queue.Push(bombas[(j+i) % len(bombas)])\n        }\n        for range n {\n            if queue.pode() {\n                queue.Pop()\n                } else {\n                    break\n                }\n            }\n            if queue.isEmpty() {\n                fmt.Println(i)\n                return\n            }\n    }\n    fmt.Println(\"deu ruim kkkk\")\n}\n",
+            "lines": "64"
+        }
+    ]
+}

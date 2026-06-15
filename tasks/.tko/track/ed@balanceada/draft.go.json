@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_17-04-34",
+            "content": "@@ -325,72 +325,8 @@\n %0A%7D%0A%0A\n-func (s *Stack) isEmpty() bool %7B%0A    return len(s.data) == 0%0A%7D%0A%0A\n func\n@@ -520,109 +520,8 @@\n   %7D%0A\n-        if (text%5Bi%5D == ')' %7C%7C text%5Bi%5D == '%5D') && abre.isEmpty() %7B%0A            return false%0A        %7D%0A\n     \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-15_17-07-02",
+            "content": "@@ -935,60 +935,8 @@\n   %7D%0A\n-    if !abre.isEmpty() %7B%0A        return false%0A    %7D%0A\n     \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-15_17-07-38",
+            "content": "package main\nimport \"fmt\"\n\ntype Stack struct {\n    data []byte\n}\n\nfunc newStack() *Stack {\n    return &Stack{data: make([]byte, 0)}\n}\n\nfunc (s *Stack) Top() byte {\n    return s.data[len(s.data)-1]\n}\n\nfunc (s *Stack) Push(v byte) {\n    s.data = append(s.data, v)\n}\n\nfunc (s *Stack) Pop() {\n    s.data = s.data[:len(s.data)-1]\n}\n\nfunc (s *Stack) isEmpty() bool {\n    return len(s.data) == 0\n}\n\nfunc ehBalanceado(text string) bool {\n    abre := newStack()\n    for i := range text {\n        if text[i] == '(' || text[i] == '[' {\n            abre.Push(text[i])\n            continue\n        }\n        if (text[i] == ')' || text[i] == ']') && abre.isEmpty() {\n            return false\n        }\n        if text[i] == ')' && abre.Top() != '(' || text[i] == ']' && abre.Top() != '[' {\n            return false\n        }\n        if text[i] == ')' && abre.Top() == '(' || text[i] == ']' && abre.Top() == '[' {\n            abre.Pop()\n        }\n    }\n    if !abre.isEmpty() {\n        return false\n    }\n    return true\n}\nfunc main() {\n    var text string\n    fmt.Scan(&text)\n    if ehBalanceado(text) {\n        fmt.Println(\"balanceado\")\n    } else {\n\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "lines": "59"
+        }
+    ]
+}

@@ -59,18 +59,63 @@ func str2list(serial string) *LList {
 }
 
 func equals(lla, llb *LList) bool {
-	if lla == nil && llb == nil {
-		return true
-	}
-	currA, currB := lla.root, llb.root
-	for currA != nil && currB != nil {
+	currA, currB := lla.root.next, llb.root.next
+	for currA != lla.root && currB != llb.root {
 		if currA.Value != currB.Value {
 			return false
 		}
 		currA = currA.next
 		currB = currB.next
 	}
-	return true
+	return currA == lla.root && currB == llb.root
+}
+
+func addsorted(lla *LList, value int) {
+	curr := lla.root.next
+	for curr != lla.root {
+		if value <= curr.Value {
+			lla.insertBefore(curr, value)
+			return
+		}
+		curr = curr.next
+	}
+	lla.insertBefore(curr, value)
+}
+
+func reverse(lla *LList) {
+	if lla.root.next == lla.root {
+		return
+	}
+	curr := lla.root
+	for {
+		curr.prev, curr.next = curr.next, curr.prev
+		curr = curr.prev
+		if curr == curr.root {
+			return
+		}
+	}
+}
+
+func merge(lla, llb *LList) *LList {
+	curr := llb.root.next
+	for curr != llb.root {
+		addsorted(lla, curr.Value)
+		curr = curr.next
+	}
+	return lla
+}
+
+func (ll *LList) String() string {
+	str, curr := "[", ll.root.next
+	for curr != ll.root {
+		str += strconv.Itoa(curr.Value)
+		if curr.next != ll.root {
+			str += ", "
+		}
+		curr = curr.next
+	}
+	str += "]"
+	return str
 }
 
 func main() {
@@ -101,21 +146,21 @@ func main() {
 				fmt.Println("diferentes")
 			}
 		case "addsorted":
-			// lla := NewLList()
-			// for i := 1; i < len(args); i++ {
-			// 	value, _ := strconv.Atoi(args[i])
-			// 	addsorted(lla, value)
-			// }
-			// fmt.Println(lla)
+			lla := NewLList()
+			for i := 1; i < len(args); i++ {
+				value, _ := strconv.Atoi(args[i])
+				addsorted(lla, value)
+			}
+			fmt.Println(lla)
 		case "reverse":
-			// lla := str2list(args[1])
-			// reverse(lla)
-			// fmt.Println(lla)
+			lla := str2list(args[1])
+			reverse(lla)
+			fmt.Println(lla)
 		case "merge":
-			// lla := str2list(args[1])
-			// llb := str2list(args[2])
-			// merged := merge(lla, llb)
-			// fmt.Println(merged)
+			lla := str2list(args[1])
+			llb := str2list(args[2])
+			merged := merge(lla, llb)
+			fmt.Println(merged)
 		case "end":
 			return
 		default:
