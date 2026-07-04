@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_19-43-08",
+            "content": "@@ -72,17 +72,16 @@\n %0A%09texto \n- \n *list.Li\n@@ -266,15 +266,8 @@\n  += \n-string(\n i.Va\n@@ -275,13 +275,14 @@\n ue.(\n-byte)\n+string\n )%0A%09%7D\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-29_19-44-27",
+            "content": "@@ -293,39 +293,8 @@\n %0A%09%7D%0A\n-%09if c == nil %7B%0A%09%09str += %22%7C%22%0A%09%7D%0A\n %09ret\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-29_19-44-52",
+            "content": "@@ -113,34 +113,48 @@\n %0A%7D%0A%0A\n-%0A%0A\n func \n-(e *Editor) String(\n+toStr(l *list.List, c *list.Element\n ) st\n@@ -186,23 +186,17 @@\n or i := \n-e.texto\n+l\n .Front()\n@@ -232,24 +232,17 @@\n if i == \n-e.cursor\n+c\n  %7B%0A%09%09%09st\n@@ -289,32 +289,25 @@\n te))%0A%09%7D%0A%09if \n-e.cursor\n+c\n  == nil %7B%0A%09%09\n@@ -392,29 +392,16 @@\n o)%0A%09\n-e := Editor%7B%0A%09%09texto:\n+lista :=\n  lis\n@@ -411,27 +411,40 @@\n ew()\n-,\n %0A%09\n-%09\n+var \n cursor\n-: nil,%0A%09%7D\n+ *list.Element = nil\n %0A%09fo\n@@ -494,34 +494,32 @@\n case 'R':%0A%09%09%09if \n-e.\n cursor == nil %7B%0A\n@@ -514,39 +514,37 @@\n or == nil %7B%0A%09%09%09%09\n-e.texto\n+lista\n .PushBack('%5Cn')%0A\n@@ -551,39 +551,37 @@\n %09%09%09%7D else %7B%0A%09%09%09%09\n-e.texto\n+lista\n .InsertBefore('%5C\n@@ -584,18 +584,16 @@\n e('%5Cn', \n-e.\n cursor)%0A\n@@ -607,34 +607,32 @@\n case 'B':%0A%09%09%09if \n-e.\n cursor == nil %7B%0A\n@@ -638,23 +638,21 @@\n %0A%09%09%09%09if \n-e.texto\n+lista\n .Back() \n@@ -665,31 +665,29 @@\n  %7B%0A%09%09%09%09%09\n-e.texto\n+lista\n .Remove(\n e.texto.\n@@ -678,23 +678,21 @@\n .Remove(\n-e.texto\n+lista\n .Back())\n@@ -713,26 +713,24 @@\n se %7B%0A%09%09%09%09if \n-e.\n cursor.Prev(\n@@ -749,23 +749,21 @@\n %09%09%09%09\n-e.texto\n+lista\n .Remove(\n e.cu\n@@ -758,18 +758,16 @@\n .Remove(\n-e.\n cursor.P\n@@ -801,18 +801,16 @@\n :%0A%09%09%09if \n-e.\n cursor =\n@@ -821,23 +821,21 @@\n l %7B%0A%09%09%09%09\n-e.texto\n+lista\n .PushBac\n@@ -866,15 +866,13 @@\n %09%09%09%09\n-e.texto\n+lista\n .Ins\n@@ -891,18 +891,16 @@\n xto%5Bi%5D, \n-e.\n cursor)%0A\n@@ -924,13 +924,32 @@\n Println(\n-e\n+toStr(lista, cursor)\n )%0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-29_19-50-11",
+            "content": "@@ -965,17 +965,8 @@\n ln(e\n-.String()\n )%0A%7D%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-29_19-50-27",
+            "content": "@@ -113,92 +113,8 @@\n %0A%7D%0A%0A\n-func newEditor() *Editor %7B%0A%09return &Editor%7B%0A%09%09texto: list.New(),%0A%09%09cursor: nil,%0A%09%7D%0A%7D\n %0A%0Afu\n@@ -403,19 +403,54 @@\n  := \n-new\n Editor\n-()\n+%7B%0A%09%09texto: list.New(),%0A%09%09cursor: nil,%0A%09%7D\n %0A%09fo\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-06-29_19-51-42",
+            "content": "@@ -600,19 +600,13 @@\n ack(\n-byte(\n '%5Cn')\n-)\n %0A%09%09%09\n@@ -643,18 +643,12 @@\n ore(\n-byte(\n '%5Cn'\n-)\n , e.\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-06-29_19-55-59",
+            "content": "@@ -877,122 +877,8 @@\n %09%09%7D%0A\n-%09%09case '%3C':%0A%09%09%09if e.cursor == nil %7B%0A%09%09%09%09e.cursor = e.texto.Back()%0A%09%09%09%7D else %7B%0A%09%09%09%09e.cursor = e.cursor.Prev()%0A%09%09%09%7D%0A\n %09%09de\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-06-29_19-58-56",
+            "content": "@@ -991,80 +991,8 @@\n %09%09%7D%0A\n-%09%09case '%3E':%0A%09%09%09if e.cursor != nil %7B%0A%09%09%09%09e.cursor = e.cursor.Next()%0A%09%09%09%7D%0A\n %09%09de\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-29_19-59-47",
+            "content": "@@ -877,124 +877,8 @@\n %09%09%7D%0A\n-%09%09case 'D':%0A%09%09%09if e.cursor != nil %7B%0A%09%09%09%09tmp := e.cursor.Next()%0A%09%09%09%09e.texto.Remove(e.cursor)%0A%09%09%09%09e.cursor = tmp%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-06-29_20-02-49",
+            "content": "@@ -1002,24 +1002,57 @@\n e '%3C':%0A%09%09%09if\n+ e.cursor == nil %7B%0A%09%09%09%09e.cursor =\n  e.texto.Bac\n@@ -1050,31 +1050,34 @@\n texto.Back()\n- != nil\n+%0A%09%09%09%7D else\n  %7B%0A%09%09%09%09e.cur\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-06-29_20-07-34",
+            "content": "@@ -1013,118 +1013,18 @@\n f e.\n-cursor == nil %7B%0A%09%09%09%09if e.texto.Back() != nil %7B%0A%09%09%09%09%09e.cursor = e.texto.Back()%0A%09%09%09%09%7D%0A%09%09%09%7D else if e.cursor.Prev\n+texto.Back\n () !\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-06-29_20-08-51",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\ntype Editor struct {\n\ttexto  *list.List\n\tcursor *list.Element\n}\n\nfunc newEditor() *Editor {\n\treturn &Editor{\n\t\ttexto: list.New(),\n\t\tcursor: nil,\n\t}\n}\n\nfunc (e *Editor) String() string {\n\tvar str string\n\tfor i := e.texto.Front(); i != nil; i = i.Next() {\n\t\tif i == e.cursor {\n\t\t\tstr += \"|\"\n\t\t}\n\t\tstr += string(i.Value.(byte))\n\t}\n\tif e.cursor == nil {\n\t\tstr += \"|\"\n\t}\n\treturn str\n}\n\nfunc main() {\n\tvar texto string\n\tfmt.Scanln(&texto)\n\te := newEditor()\n\tfor i := range texto {\n\t\tswitch texto[i] {\n\t\tcase 'R':\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(byte('\\n'))\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(byte('\\n'), e.cursor)\n\t\t\t}\n\t\tcase 'B':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.texto.Remove(e.texto.Back())\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif e.cursor.Prev() != nil {\n\t\t\t\t\te.texto.Remove(e.cursor.Prev())\n\t\t\t\t}\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif e.cursor != nil {\n\t\t\t\ttmp := e.cursor.Next()\n\t\t\t\te.texto.Remove(e.cursor)\n\t\t\t\te.cursor = tmp\n\t\t\t}\n\t\tcase '<':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.cursor = e.texto.Back()\n\t\t\t\t}\n\t\t\t} else if e.cursor.Prev() != nil {\n\t\t\t\te.cursor = e.cursor.Prev()\n\t\t\t}\n\t\tcase '>':\n\t\t\tif e.cursor != nil {\n\t\t\t\te.cursor = e.cursor.Next()\n\t\t\t}\n\t\tdefault:\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(texto[i])\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(texto[i], e.cursor)\n\t\t\t}\n\t\t}\n\t}\n\tfmt.Println(e.String())\n}\n",
+            "lines": "83"
+        }
+    ]
+}

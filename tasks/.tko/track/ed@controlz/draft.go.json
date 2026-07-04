@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_20-10-02",
+            "content": "@@ -499,34 +499,8 @@\n r()%0A\n-    backup := newEditor()%0A\n %09for\n@@ -1243,49 +1243,8 @@\n %09%09%7D%0A\n-        case 'Z':%0A            e = backup%0A\n %09%09de\n@@ -1376,23 +1376,8 @@\n %09%7D%0A%09\n-backup = e%0A    \n %7D%0A%09f\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-29_20-39-26",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\ntype Editor struct {\n\ttexto  *list.List\n\tcursor *list.Element\n}\n\nfunc newEditor() *Editor {\n\treturn &Editor{\n\t\ttexto: list.New(),\n\t\tcursor: nil,\n\t}\n}\n\nfunc (e *Editor) String() string {\n\tvar str string\n\tfor i := e.texto.Front(); i != nil; i = i.Next() {\n\t\tif i == e.cursor {\n\t\t\tstr += \"|\"\n\t\t}\n\t\tstr += string(i.Value.(byte))\n\t}\n\tif e.cursor == nil {\n\t\tstr += \"|\"\n\t}\n\treturn str\n}\n\nfunc main() {\n\tvar texto string\n\tfmt.Scanln(&texto)\n\te := newEditor()\n    backup := newEditor()\n\tfor i := range texto {\n\t\tswitch texto[i] {\n\t\tcase 'R':\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(byte('\\n'))\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(byte('\\n'), e.cursor)\n\t\t\t}\n\t\tcase 'B':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.texto.Remove(e.texto.Back())\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif e.cursor.Prev() != nil {\n\t\t\t\t\te.texto.Remove(e.cursor.Prev())\n\t\t\t\t}\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif e.cursor != nil {\n\t\t\t\ttmp := e.cursor.Next()\n\t\t\t\te.texto.Remove(e.cursor)\n\t\t\t\te.cursor = tmp\n\t\t\t}\n\t\tcase '<':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.cursor = e.texto.Back()\n\t\t\t\t}\n\t\t\t} else if e.cursor.Prev() != nil {\n\t\t\t\te.cursor = e.cursor.Prev()\n\t\t\t}\n\t\tcase '>':\n\t\t\tif e.cursor != nil {\n\t\t\t\te.cursor = e.cursor.Next()\n\t\t\t}\n        case 'Z':\n            e = backup\n\t\tdefault:\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(texto[i])\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(texto[i], e.cursor)\n\t\t\t}\n\t\t}\n\tbackup = e\n    }\n\tfmt.Println(e.String())\n}\n",
+            "lines": "87"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_18-08-58",
+            "content": "@@ -153,167 +153,18 @@\n  %7B%0A%09\n-str := %22%5B %22%0A%09for i := l.Back() ; i != nil; i.Next() %7B%0A%09%09str += fmt.Sprint(i.Value)%0A%09%09if i == sword %7B%0A%09%09%09str +=\n+return\n  %22\n-%3E\n %22%0A\n-%09%09%7D%0A%09%09str += %22 %22%0A%09%7D%0A%09str += %22%5D%22%0A%09return str%0A\n %7D%0A%0A/\n@@ -262,33 +262,27 @@\n t %7B%0A%09return \n-l.Front()\n+nil\n %0A%7D%0A%0A// move \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-29_18-19-40",
+            "content": "@@ -173,21 +173,20 @@\n  i := l.\n-Front\n+Back\n () ; i !\n@@ -191,20 +191,16 @@\n  != nil;\n- i =\n  i.Next(\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-06-29_18-21-02",
+            "content": "@@ -416,53 +416,8 @@\n t %7B%0A\n-%09if it.Next() != nil %7B%0A%09%09return it.Next()%0A%09%7D%0A\n %09ret\n@@ -532,66 +532,22 @@\n  %7B%0A%09\n-if it.Prev() != nil %7B%0A%09%09return it.Prev()%0A%09%7D%0A%09return l.Back\n+return l.Front\n ()%0A%7D\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-06-29_18-22-31",
+            "content": "@@ -212,54 +212,8 @@\n ) %7B%0A\n-%09%09if i == sword %7B%0A%09%09%09if i.Value.(int) %3E 0 %7B%0A%09%09\n %09%09st\n@@ -243,34 +243,24 @@\n )%0A%09%09\n-%09%09str += %22%3E%22%0A%09%09%09%7D else\n+if i == sword\n  %7B%0A\n-%09\n %09%09%09s\n@@ -270,46 +270,10 @@\n += %22\n-%3C%22%0A%09%09%09%09str += fmt.Sprint(i.Value)%0A%09%09%09%7D\n+%3E%22\n %0A%09%09%7D\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-29_18-25-40",
+            "content": "@@ -365,49 +365,8 @@\n %09%09%7D%0A\n-%09%09%7D else %7B%0A%09%09%09str += fmt.Sprint(i.Value)%0A\n %09%09%7D%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-29_18-26-18",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *list.List, sword *list.Element) string {\n\tstr := \"[ \"\n\tfor i := l.Front() ; i != nil; i = i.Next() {\n\t\tif i == sword {\n\t\t\tif i.Value.(int) > 0 {\n\t\t\t\tstr += fmt.Sprint(i.Value)\n\t\t\t\tstr += \">\"\n\t\t\t} else {\n\t\t\t\tstr += \"<\"\n\t\t\t\tstr += fmt.Sprint(i.Value)\n\t\t\t}\n\t\t} else {\n\t\t\tstr += fmt.Sprint(i.Value)\n\t\t}\n\t\tstr += \" \"\n\t}\n\tstr += \"]\"\n\treturn str\n}\n\n// move para frente na lista circular\nfunc Next(l *list.List, it *list.Element) *list.Element {\n\tif it.Next() != nil {\n\t\treturn it.Next()\n\t}\n\treturn l.Front()\n}\n\n// move para tras na lista circular\nfunc Prev(l *list.List, it *list.Element) *list.Element {\n\tif it.Prev() != nil {\n\t\treturn it.Prev()\n\t}\n\treturn l.Back()\n}\n\nfunc main() {\n\tvar qtd, chosen, fase int\n\tfmt.Scan(&qtd, &chosen, &fase)\n\tl := list.New()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i * fase)\n\t\tfase = -fase\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tif sword.Value.(int) > 0 {\n\t\t\tl.Remove(Next(l, sword))\n\t\t\tsword = Next(l, sword)\n\t\t} else {\n\t\t\tl.Remove(Prev(l, sword))\n\t\t\tsword = Prev(l, sword)\n\t\t}\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "68"
+        }
+    ]
+}

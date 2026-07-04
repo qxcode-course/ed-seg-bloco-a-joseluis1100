@@ -328,3 +328,6 @@
 2026-06-15 20:45:01, MOVE, v:1, k:ed@lista_d4, mode:EDIT
 2026-06-15 20:48:15, MOVE, v:1, k:ed@lista_d4, mode:EDIT
 2026-06-15 20:48:18, MOVE, v:1, k:ed@lista_d4, mode:EDIT
+2026-06-15 20:50:25, EXEC, v:1, k:ed@lista_d4, mode:FULL, rate:0, size:125
+2026-06-15 20:50:36, MOVE, v:1, k:ed@lista_d4, mode:EDIT
+2026-06-15 20:50:25, MOVE, v:1, k:ed@lista_d4, mode:EDIT
