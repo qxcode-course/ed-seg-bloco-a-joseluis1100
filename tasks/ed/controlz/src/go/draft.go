@@ -17,6 +17,17 @@ func newEditor() *Editor {
 	}
 }
 
+func (e *Editor) clonar() *Editor {
+	tmp := newEditor()
+	for i := e.texto.Front(); i != nil; i = i.Next() {
+		node := tmp.texto.PushBack(i.Value)
+		if i == e.cursor {
+			tmp.cursor = node
+		}
+	}
+	return tmp
+}
+
 func (e *Editor) String() string {
 	var str string
 	for i := e.texto.Front(); i != nil; i = i.Next() {
@@ -35,8 +46,25 @@ func main() {
 	var texto string
 	fmt.Scanln(&texto)
 	e := newEditor()
-    backup := newEditor()
+    historico := []*Editor{}
+	desfeitos := []*Editor{}
 	for i := range texto {
+		if texto[i] == 'Z' {
+			if len(historico) > 0 {
+				desfeitos = append(desfeitos, e.clonar())
+				e = historico[len(historico)-1].clonar()
+				historico = historico[:len(historico)-1]
+			}
+			continue
+		}
+		if texto[i] == 'Y' {
+			if len(desfeitos) > 0 {
+				e = desfeitos[len(desfeitos)-1].clonar()
+				desfeitos = desfeitos[:len(desfeitos)-1]
+			}
+			continue
+		} 
+		historico = append(historico, e.clonar())
 		switch texto[i] {
 		case 'R':
 			if e.cursor == nil {
@@ -72,8 +100,6 @@ func main() {
 			if e.cursor != nil {
 				e.cursor = e.cursor.Next()
 			}
-        case 'Z':
-            e = backup
 		default:
 			if e.cursor == nil {
 				e.texto.PushBack(texto[i])
@@ -81,7 +107,6 @@ func main() {
 				e.texto.InsertBefore(texto[i], e.cursor)
 			}
 		}
-	backup = e
     }
 	fmt.Println(e.String())
 }

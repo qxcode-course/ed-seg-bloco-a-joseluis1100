@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_04-08-11",
+            "content": "@@ -10,34 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -72,1028 +72,8 @@\n     \n-neig := make(map%5Bint%5D%5B%5Dint)%0A    for i := range bombs %7B%0A        for j := range bombs %7B%0A            if i != j && math.Pow(float64(bombs%5Bj%5D%5B0%5D-bombs%5Bi%5D%5B0%5D), 2)+math.Pow(float64(bombs%5Bj%5D%5B1%5D-bombs%5Bi%5D%5B1%5D), 2) %3C= math.Pow(float64(bombs%5Bi%5D%5B2%5D), 2) %7B%0A                neig%5Bi%5D = append(neig%5Bi%5D, j)%0A            %7D%0A        %7D%0A    %7D%0A    var max int%0A    for i := range bombs %7B%0A        visited := make(map%5Bint%5Dbool)%0A        queue := %5B%5Dint%7Bi%7D%0A        visited%5Bi%5D = true%0A        for len(queue) %3E 0 %7B%0A            tmp := queue%5B0%5D%0A            queue = queue%5B1:%5D%0A            if _, ok := neig%5Btmp%5D; ok %7B%0A                for j := range neig%5Btmp%5D %7B%0A                    if !visited%5Bneig%5Btmp%5D%5Bj%5D%5D %7B%0A                        visited%5Bneig%5Btmp%5D%5Bj%5D%5D = true%0A                        queue = append(queue, neig%5Btmp%5D%5Bj%5D)%0A                    %7D%0A                %7D%0A            %7D%0A        %7D%0A        if len(visited) == len(bombs) %7B%0A            return len(visited)%0A        %7D%0A        if len(visited) %3E max %7B%0A            max = len(visited)%0A        %7D%0A    %7D%0A    return max\n %0A%7D%0A%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-07-06_04-35-41",
+            "content": "@@ -1255,120 +1255,8 @@\n   %7D%0A\n-    for i := range bombs %7B%0A        for j := range bombs%5B0%5D %7B%0A            fmt.Scan(&bombs%5Bi%5D%5Bj%5D)%0A        %7D%0A    %7D%0A\n     \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-06_04-38-56",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc maximumDetonation(bombs [][]int) int {\n    neig := make(map[int][]int)\n    for i := range bombs {\n        for j := range bombs {\n            if i != j && math.Pow(float64(bombs[j][0]-bombs[i][0]), 2)+math.Pow(float64(bombs[j][1]-bombs[i][1]), 2) <= math.Pow(float64(bombs[i][2]), 2) {\n                neig[i] = append(neig[i], j)\n            }\n        }\n    }\n    var max int\n    for i := range bombs {\n        visited := make(map[int]bool)\n        queue := []int{i}\n        visited[i] = true\n        for len(queue) > 0 {\n            tmp := queue[0]\n            queue = queue[1:]\n            if _, ok := neig[tmp]; ok {\n                for j := range neig[tmp] {\n                    if !visited[neig[tmp][j]] {\n                        visited[neig[tmp][j]] = true\n                        queue = append(queue, neig[tmp][j])\n                    }\n                }\n            }\n        }\n        if len(visited) == len(bombs) {\n            return len(visited)\n        }\n        if len(visited) > max {\n            max = len(visited)\n        }\n    }\n    return max\n}\n\nfunc main() {\n    var l, c int\n    fmt.Scan(&l, &c)\n    bombs := make([][]int, l)\n    for i := range l {\n        bombs[i] = make([]int, c)\n    }\n    for i := range bombs {\n        for j := range bombs[0] {\n            fmt.Scan(&bombs[i][j])\n        }\n    }\n    fmt.Println(maximumDetonation(bombs))\n}\n",
+            "lines": "57"
+        }
+    ]
+}

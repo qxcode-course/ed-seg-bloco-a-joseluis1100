@@ -7,8 +7,53 @@
         },
         {
             "label": "2026-07-04_05-26-47",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    \n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -10,2370 +10,71 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22container/list%22%0A%09%22fmt%22%0A%09%22slices%22%0A)%0A%0Atype Queue%5BT any%5D struct %7B%0A%09queue *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%0A%09%09queue: list.New(),%0A%09%7D%0A%7D%0Afunc (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09q.queue.PushBack(value)%0A%7D%0Afunc (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09q.queue.Remove(element)%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D%0Afunc (q *Queue%5BT%5D) Peek() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D%0Afunc (q *Queue%5BT%5D) IsEmpty() bool %7B%0A%09return q.queue.Len() == 0%0A%7D%0A%0Atype Pos struct %7B%0A%09l, c int%0A%7D%0A%0Afunc (p Pos) getNeig() %5B%5DPos %7B%0A%09return %5B%5DPos%7B%0A%09%09%7Bp.l - 1, p.c%7D,%0A%09%09%7Bp.l + 1, p.c%7D,%0A%09%09%7Bp.l, p.c - 1%7D,%0A%09%09%7Bp.l, p.c + 1%7D,%0A%09%7D%0A%7D%0A%0Afunc inside(grid %5B%5D%5B%5Dint, pos Pos) bool %7B%0A%09nrows := len(grid)%0A%09ncols := len(grid%5B0%5D)%0A%09return pos.l %3E= 0 && pos.l %3C nrows && pos.c %3E= 0 && pos.c %3C ncols%0A%7D%0A%0Afunc match(grid %5B%5D%5B%5Dint, pos Pos, num int) bool %7B%0A%09return inside(grid, pos) && grid%5Bpos.l%5D%5Bpos.c%5D == num%0A%7D%0A%0Afunc cmpGrid(grid, backup %5B%5D%5B%5Dint) bool %7B%0A    if len(grid) != len(backup) %7B%0A        return false%0A    %7D%0A    for i := range grid %7B%0A        if !slices.Equal(grid%5Bi%5D, backup%5Bi%5D) %7B%0A            return false%0A        %7D%0A    %7D%0A    return true%0A%7D%0A%0Afunc updateGrid(grid %5B%5D%5B%5Dint) %7B%0A    queue := NewQueue%5BPos%5D()%0A    queue.Enqueue(Pos%7Bl: 0, c: 0%7D)%0A    visited := make(map%5BPos%5Dbool)%0A    for !queue.IsEmpty() %7B%0A        tmp, _ := queue.Dequeue()%0A        for _, neig := range tmp.getNeig() %7B%0A            if _, ok := visited%5Bneig%5D; !match(grid, neig, 1) && !ok %7B%0A                visited%5Bneig%5D = true%0A                queue.Enqueue(neig)%0A            %7D%0A        %7D%0A    %7D%0A%7D%0A%0Afunc calcTime(grid %5B%5D%5B%5Dint) int %7B%0A    times := -1%0A    for %7B%0A        backup := make(%5B%5D%5B%5Dint, len(grid))%0A        for i := range grid %7B%0A            backup%5Bi%5D = make(%5B%5Dint, len(grid%5Bi%5D))%0A            copy(backup%5Bi%5D, grid%5Bi%5D)%0A        %7D%0A        updateGrid(grid)%0A        if cmpGrid(grid, backup) %7B%0A            break%0A        %7D%0A        times++%0A    %7D%0A    return times%0A%7D%0A%0Afunc main() %7B%0A    var m, n int%0A    fmt.Scan(&m, &n)%0A    grid := make(%5B%5D%5B%5Dint, m)%0A    for i := range grid %7B%0A        grid%5Bi%5D = make(%5B%5Dint, n)%0A    %7D%0A    for i := range grid %7B%0A        for j := range grid%5Bi%5D %7B%0A            fmt.Scan(&grid%5Bi%5D%5Bj%5D)%0A        %7D%0A    %7D\n+%22fmt%22%0Afunc main() %7B%0A    %0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "6"
+        },
+        {
+            "label": "2026-07-04_14-43-25",
+            "content": "@@ -2374,38 +2374,6 @@\n   %7D%0A\n-    fmt.Println(calcTime(grid))%0A\n %7D%0A\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-07-04_14-43-51",
+            "content": "@@ -22,24 +22,677 @@\n (%0A%09%22\n-fmt%22%0A%09%22slices%22%0A)\n+container/list%22%0A%09%22fmt%22%0A%09%22slices%22%0A)%0A%0Atype Queue%5BT any%5D struct %7B%0A%09queue *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%0A%09%09queue: list.New(),%0A%09%7D%0A%7D%0Afunc (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09q.queue.PushBack(value)%0A%7D%0Afunc (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09q.queue.Remove(element)%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D%0Afunc (q *Queue%5BT%5D) Peek() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D%0Afunc (q *Queue%5BT%5D) IsEmpty() bool %7B%0A%09return q.queue.Len() == 0%0A%7D\n %0A%0Aty\n@@ -1359,32 +1359,24 @@\n ateGrid(grid\n-, backup\n  %5B%5D%5B%5Dint) %7B%0A\n@@ -1383,147 +1383,163 @@\n     \n-for l := range backup %7B%0A        for c := range backup%5Bl%5D %7B%0A            if backup%5Bl%5D%5Bc%5D == 2 %7B%0A                p := Pos%7Bl: l, c: c%7D%0A        \n+queue := NewQueue%5BPos%5D()%0A    queue.Enqueue(Pos%7Bl: 0, c: 0%7D)%0A    visited := make(map%5BPos%5Dbool)%0A    for !queue.IsEmpty() %7B%0A        tmp, _ := queue.Dequeue()%0A\n     \n@@ -1563,16 +1563,18 @@\n = range \n+tm\n p.getNei\n@@ -1595,31 +1595,46 @@\n     \n-        if match(backup\n+if _, ok := visited%5Bneig%5D; !match(grid\n , ne\n@@ -1639,16 +1639,23 @@\n neig, 1)\n+ && !ok\n  %7B%0A     \n@@ -1669,40 +1669,28 @@\n     \n-        grid%5Bneig.l%5D\n+visited\n %5Bneig\n-.c\n %5D = \n-2\n+true\n %0A   \n@@ -1706,31 +1706,27 @@\n     \n-    %7D%0A                %7D\n+queue.Enqueue(neig)\n %0A   \n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-07-04_15-00-55",
+            "content": "@@ -1339,24 +1339,16 @@\n rid(grid\n-, backup\n )%0A      \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_15-00-57",
+            "content": "@@ -1133,17 +1133,18 @@\n imes := \n-0\n+-1\n %0A    for\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_15-01-14",
+            "content": "@@ -1437,50 +1437,8 @@\n   %7D%0A\n-    if times == 0 %7B%0A        return %0A    %7D%0A\n     \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_15-01-32",
+            "content": "@@ -1472,10 +1472,8 @@\n urn \n--1\n %0A   \n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-07-04_15-01-33",
+            "content": "@@ -1429,24 +1429,68 @@\n mes++%0A    %7D%0A\n+    if times == 0 %7B%0A        return -1%0A    %7D%0A\n     return t\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-07-04_15-01-50",
+            "content": "@@ -1437,156 +1437,8 @@\n   %7D%0A\n-    for i := range grid %7B%0A        for j := range grid%5Bi%5D %7B%0A            if grid%5Bi%5D%5Bj%5D == 1 %7B%0A                return -1%0A            %7D%0A        %7D%0A    %7D%0A\n     \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_15-17-48",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"slices\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l - 1, p.c},\n\t\t{p.l + 1, p.c},\n\t\t{p.l, p.c - 1},\n\t\t{p.l, p.c + 1},\n\t}\n}\n\nfunc inside(grid [][]int, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]int, pos Pos, num int) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == num\n}\n\nfunc cmpGrid(grid, backup [][]int) bool {\n    if len(grid) != len(backup) {\n        return false\n    }\n    for i := range grid {\n        if !slices.Equal(grid[i], backup[i]) {\n            return false\n        }\n    }\n    return true\n}\n\nfunc updateGrid(grid, backup [][]int) {\n    for l := range backup {\n        for c := range backup[l] {\n            if backup[l][c] == 2 {\n                p := Pos{l: l, c: c}\n                for _, neig := range p.getNeig() {\n                    if match(backup, neig, 1) {\n                        grid[neig.l][neig.c] = 2\n                    }\n                }\n            }\n        }\n    }\n}\n\nfunc calcTime(grid [][]int) int {\n    times := 0\n    for {\n        backup := make([][]int, len(grid))\n        for i := range grid {\n            backup[i] = make([]int, len(grid[i]))\n            copy(backup[i], grid[i])\n        }\n        updateGrid(grid, backup)\n        if cmpGrid(grid, backup) {\n            break\n        }\n        times++\n    }\n    for i := range grid {\n        for j := range grid[i] {\n            if grid[i][j] == 1 {\n                return -1\n            }\n        }\n    }\n    return times\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n    grid := make([][]int, m)\n    for i := range grid {\n        grid[i] = make([]int, n)\n    }\n    for i := range grid {\n        for j := range grid[i] {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n    fmt.Println(calcTime(grid))\n}\n",
+            "lines": "95"
         }
     ]
 }

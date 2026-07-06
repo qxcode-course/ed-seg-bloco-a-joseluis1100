@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_23-54-57",
+            "content": "@@ -10,151 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A%09%22slices%22%0A)%0A%0Afunc sortString(line string) string %7B%0A    chars := %5B%5Dbyte(line)%0A    slices.Sort(chars)%0A    return string(chars)%0A%7D\n %0A%0Afu\n@@ -310,36 +310,8 @@\n g %7B%0A\n-    line = sortString(line)%0A\n     \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-07-05_23-57-31",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"slices\"\n)\n\nfunc sortString(line string) string {\n    chars := []byte(line)\n    slices.Sort(chars)\n    return string(chars)\n}\n\nfunc aux(resultados *[]string, resto, atual string) {\n    if resto == \"\" {\n        *resultados = append(*resultados, atual)\n        return\n    }\n    for i := range resto {\n        aux(resultados, resto[:i]+resto[i+1:], atual+string(resto[i]))\n    }\n}\n\nfunc perm(line string) []string {\n    line = sortString(line)\n    var resultados []string\n    aux(&resultados, line, \"\")\n    return resultados\n}\n\nfunc main() {\n    var line string\n    fmt.Scan(&line)\n    for _, perm := range perm(line) {\n        fmt.Println(perm)\n    }\n}\n",
+            "lines": "37"
+        }
+    ]
+}

@@ -7,8 +7,38 @@
         },
         {
             "label": "2026-06-04_17-41-22",
-            "content": "package main\nimport \"fmt\"\n\nfunc pode(linha string, l, pos, valor int) bool {\n    for i := range l {\n        if linha[pos+i] == byte(valor) || linha[pos-i] == byte(valor) {\n            return false\n        }\n    }\n    return true\n}\n\nfunc processa(linha string, l int) string {\n    novalinha := []byte(linha)\n    for i := range linha {\n        if linha[i] == '.' {\n            for j := 0; j <= l; j++ {\n                if pode(linha, l, i, j){\n                    novalinha[i] = byte(j + '0')\n                    break\n                }\n            }\n        }\n    }\n    return string(novalinha)\n}\n\nfunc main() {\n    var linha string\n    var l int\n    fmt.Scan(linha, l)\n    println(processa(linha, l))\n}\n",
+            "content": "@@ -656,17 +656,15 @@\n can(\n-&\n linha, \n-&\n l)%0A \n",
             "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-01-09",
+            "content": "@@ -107,30 +107,8 @@\n   if\n- pos+i %3C len(linha) &&\n  lin\n@@ -136,30 +136,10 @@\n or) \n-+ '0' %7C%7C pos-i %3E= 0 &&\n+%7C%7C\n  lin\n@@ -162,22 +162,16 @@\n e(valor)\n- + '0'\n  %7B%0A     \n@@ -418,33 +418,21 @@\n if pode(\n-string(nova\n linha\n-)\n , l, i, \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-06-21",
+            "content": "@@ -94,10 +94,8 @@\n ge l\n-+1\n  %7B%0A \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-10-12",
+            "content": "@@ -87,22 +87,17 @@\n  := \n-1; i %3C= l; i++\n+range l+1\n  %7B%0A \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-11-37",
+            "content": "@@ -739,13 +739,9 @@\n     \n-fmt.P\n+p\n rint\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-12-39",
+            "content": "@@ -32,30 +32,30 @@\n  pode(linha \n-%5B%5Dbyte\n+string\n , l, pos, va\n@@ -289,98 +289,109 @@\n unc \n-aux(linha %5B%5Dbyte, l, pos int) bool %7B%0A    if pos == len\n+processa(linha string, l int) string %7B%0A    novalinha := %5B%5Dbyte\n (linha)\n- %7B\n %0A    \n-    return true\n+for i := range linha %7B\n %0A    \n-%7D%0A\n     \n@@ -403,14 +403,12 @@\n nha%5B\n-pos%5D !\n+i%5D =\n = '.\n@@ -423,50 +423,16 @@\n     \n-return aux(linha, l, pos+1)%0A    %7D%0A\n     for \n i :=\n@@ -431,25 +431,38 @@\n for \n-i\n+j\n  := \n-range l+1 %7B%0A\n+0; j %3C= l; j++ %7B%0A        \n     \n@@ -477,28 +477,42 @@\n ode(\n+string(nova\n linha\n+)\n , l, \n-pos, i) %7B%0A\n+i, j)%7B%0A     \n     \n@@ -515,33 +515,38 @@\n             \n+   nova\n linha%5B\n-pos\n+i\n %5D = byte(i +\n@@ -542,17 +542,17 @@\n  = byte(\n-i\n+j\n  + '0')%0A\n@@ -567,62 +567,26 @@\n     \n-if aux(linha, l, pos+1) %7B%0A                return true%0A\n+        break%0A    \n     \n@@ -603,33 +603,8 @@\n     \n-        linha%5Bpos%5D = '.'%0A\n     \n@@ -616,130 +616,20 @@\n %0A   \n- %7D%0A\n     \n-return false%0A%7D%0A%0Afunc processa(linha string, l int) string %7B%0A    novalinha := %5B%5Dbyte(linha)%0A    aux(novalinha, l, 0)\n+ %7D%0A    %7D\n %0A   \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-05_23-28-30",
+            "content": "package main\nimport \"fmt\"\n\nfunc pode(linha []byte, l, pos, valor int) bool {\n    for i := 1; i <= l; i++ {\n        if pos+i < len(linha) && linha[pos+i] == byte(valor) + '0' || pos-i >= 0 && linha[pos-i] == byte(valor) + '0' {\n            return false\n        }\n    }\n    return true\n}\n\nfunc aux(linha []byte, l, pos int) bool {\n    if pos == len(linha) {\n        return true\n    }\n    if linha[pos] != '.' {\n        return aux(linha, l, pos+1)\n    }\n    for i := range l+1 {\n        if pode(linha, l, pos, i) {\n            linha[pos] = byte(i + '0')\n            if aux(linha, l, pos+1) {\n                return true\n            }\n            linha[pos] = '.'\n        }\n    }\n    return false\n}\n\nfunc processa(linha string, l int) string {\n    novalinha := []byte(linha)\n    aux(novalinha, l, 0)\n    return string(novalinha)\n}\n\nfunc main() {\n    var linha string\n    var l int\n    fmt.Scan(&linha, &l)\n    fmt.Println(processa(linha, l))\n}\n",
+            "lines": "43"
         }
     ]
 }

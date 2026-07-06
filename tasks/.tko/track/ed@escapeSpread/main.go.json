@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_17-04-12",
+            "content": "@@ -1859,79 +1859,9 @@\n urn \n-fogo%5Blen(grid)-1%5D%5Blen(grid%5B0%5D)-1%5D - pessoa%5Blen(grid)-1%5D%5Blen(grid%5B0%5D)-1%5D\n+0\n %0A%7D%0A%0A\n@@ -2055,19 +2055,20 @@\n ake(%5B%5D%5B%5D\n-int\n+byte\n , nl)%0A%09f\n@@ -2079,130 +2079,76 @@\n  := \n-range grid %7B%0A%09%09grid%5Bi%5D = make(%5B%5Dint, nc)%0A%09%7D%0A%09for i := range grid %7B%0A%09%09for j := range grid%5B0%5D %7B%0A%09%09%09fmt\n+0; i %3C nl; i++ %7B%0A%09%09scanner\n .Scan(\n-&\n+)%0A%09%09\n grid%5Bi%5D\n-%5Bj%5D)%0A%09%09%7D\n+ = %5B%5Dbyte(scanner.Text())\n %0A%09%7D%0A\n@@ -2158,29 +2158,25 @@\n sult := \n-maximumMinute\n+numIsland\n s(grid)%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-06_17-08-49",
+            "content": "@@ -576,16 +576,20 @@\n  %5B%5DPath%7B\n+Path\n %7Bx: 0, y\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-06_17-11-29",
+            "content": "@@ -78,16 +78,139 @@\n  int%0A%7D%0A%0A\n+// N%C3%A3o modifique a assinatura da fun%C3%A7%C3%A3o numIslands%0A// Ela %C3%A9 a fun%C3%A7%C3%A3o que ser%C3%A1 chamada no LeetCode para resolver o problema%0A\n func max\n@@ -847,54 +847,8 @@\n = 0 \n-&& pessoa%5Bcurr.x+dir%5B0%5D%5D%5Bcurr.y+dir%5B1%5D%5D == -1 \n %7B%0A%09%09\n@@ -1461,52 +1461,8 @@\n = 0 \n-&& fogo%5Bcurr.x+dir%5B0%5D%5D%5Bcurr.y+dir%5B1%5D%5D == -1 \n %7B%0A%09%09\n@@ -1848,15 +1848,14 @@\n %09%7D%0A%09\n-diff :=\n+return\n  fog\n@@ -1927,27 +1927,8 @@\n -1%5D%0A\n-%09%0A%09return diff - 1%0A\n %7D%0A%0A/\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-06_17-15-07",
+            "content": "@@ -1896,280 +1896,8 @@\n 1%5D%0A%09\n-if pessoa%5Blen(grid)-1%5D%5Blen(grid%5B0%5D)-2%5D %3E -1 && pessoa%5Blen(grid)-2%5D%5Blen(grid%5B0%5D)-1%5D %3E -1 && (fogo%5Blen(grid)-1%5D%5Blen(grid%5B0%5D)-2%5D - pessoa%5Blen(grid)-1%5D%5Blen(grid%5B0%5D)-2%5D %3E diff %7C%7C fogo%5Blen(grid)-2%5D%5Blen(grid%5B0%5D)-1%5D - pessoa%5Blen(grid)-2%5D%5Blen(grid%5B0%5D)-1%5D %3E diff) %7B%0A%09%09return diff%0A%09%7D\n %0A%09re\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-06_17-17-57",
+            "content": "@@ -2230,16 +2230,95 @@\n ain() %7B%0A\n+%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A\n %09var nl,\n@@ -2331,20 +2331,37 @@\n t%0A%09fmt.S\n+s\n can\n-(\n+f(line, %22%25d %25d%22, \n &nl, &nc\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-06_17-24-21",
+            "content": "@@ -18,13 +18,33 @@\n ort \n-%22fmt%22\n+(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)\n %0A%0Aty\n@@ -169,17 +169,20 @@\n -1, 0%7D%7D%0A\n-%09\n+    \n pessoa :\n@@ -811,35 +811,33 @@\n r%5B1%5D%5D = curr.dia\n- + \n++\n 1%0A%09%09%09%09frente = a\n@@ -856,35 +856,33 @@\n , Path%7Bx: curr.x\n- + \n++\n dir%5B0%5D, y: curr.\n@@ -874,35 +874,33 @@\n ir%5B0%5D, y: curr.y\n- + \n++\n dir%5B1%5D, dia: cur\n@@ -896,35 +896,33 @@\n %5D, dia: curr.dia\n- + \n++\n 1%7D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n@@ -1475,19 +1475,17 @@\n curr.dia\n- + \n++\n 1%0A%09%09%09%09fr\n@@ -1528,19 +1528,17 @@\n : curr.x\n- + \n++\n dir%5B0%5D, \n@@ -1546,19 +1546,17 @@\n : curr.y\n- + \n++\n dir%5B1%5D, \n@@ -1572,11 +1572,9 @@\n .dia\n- + \n++\n 1%7D)%0A\n@@ -2017,17 +2017,19 @@\n d%5B0%5D)-2%5D\n--\n+ - \n pessoa%5Bl\n@@ -2099,17 +2099,19 @@\n d%5B0%5D)-1%5D\n--\n+ - \n pessoa%5Bl\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-07-06_17-24-39",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Path struct {\n\tx, y, dia int\n}\n\nfunc maximumMinutes(grid [][]int) int {\n\tdirs := [][]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}\n\tpessoa := make([][]int, len(grid))\n\tfogo := make([][]int, len(grid))\n\tfor i := range grid {\n\t\tpessoa[i] = make([]int, len(grid[0]))\n\t\tfogo[i] = make([]int, len(grid[0]))\n\t\tfor j := range grid[0] {\n\t\t\tpessoa[i][j] = -1\n\t\t\tfogo[i][j] = -1\n\t\t}\n\t}\n\tpessoa[0][0] = 0\n\tfrente := []Path{{x: 0, y: 0, dia: 0}}\n\tfor len(frente) > 0 {\n\t\tcurr := frente[0]\n\t\tfrente = frente[1:]\n\t\tfor _, dir := range dirs {\n\t\t\tif curr.x+dir[0] >= 0 && curr.x+dir[0] < len(grid) && curr.y+dir[1] >= 0 && curr.y+dir[1] < len(grid[0]) && grid[curr.x+dir[0]][curr.y+dir[1]] == 0 && pessoa[curr.x+dir[0]][curr.y+dir[1]] == -1 {\n\t\t\t\tpessoa[curr.x+dir[0]][curr.y+dir[1]] = curr.dia + 1\n\t\t\t\tfrente = append(frente, Path{x: curr.x + dir[0], y: curr.y + dir[1], dia: curr.dia + 1})\n\t\t\t}\n\t\t}\n\t}\n\tfrenteFogo := make([]Path, 0)\n\tfor i := range grid {\n\t\tfor j := range grid[0] {\n\t\t\tif grid[i][j] == 1 {\n\t\t\t\tfogo[i][j] = 0\n\t\t\t\tfrenteFogo = append(frenteFogo, Path{x: i, y: j, dia: 0})\n\t\t\t}\n\t\t}\n\t}\n\tfor len(frenteFogo) > 0 {\n\t\tcurr := frenteFogo[0]\n\t\tfrenteFogo = frenteFogo[1:]\n\t\tfor _, dir := range dirs {\n\t\t\tif curr.x+dir[0] >= 0 && curr.x+dir[0] < len(grid) && curr.y+dir[1] >= 0 && curr.y+dir[1] < len(grid[0]) && grid[curr.x+dir[0]][curr.y+dir[1]] == 0 && fogo[curr.x+dir[0]][curr.y+dir[1]] == -1 {\n\t\t\t\tfogo[curr.x+dir[0]][curr.y+dir[1]] = curr.dia + 1\n\t\t\t\tfrenteFogo = append(frenteFogo, Path{x: curr.x + dir[0], y: curr.y + dir[1], dia: curr.dia + 1})\n\t\t\t}\n\t\t}\n\t}\n\tif pessoa[len(grid)-1][len(grid[0])-1] == -1 {\n\t\treturn -1\n\t}\n\tif fogo[len(grid)-1][len(grid[0])-1] == -1 {\n\t\treturn 1000000000\n\t}\n\tif fogo[len(grid)-1][len(grid[0])-1] < pessoa[len(grid)-1][len(grid[0])-1] {\n\t\treturn -1\n\t}\n\tdiff := fogo[len(grid)-1][len(grid[0])-1] - pessoa[len(grid)-1][len(grid[0])-1]\n\tif pessoa[len(grid)-1][len(grid[0])-2] > -1 && pessoa[len(grid)-2][len(grid[0])-1] > -1 && (fogo[len(grid)-1][len(grid[0])-2]-pessoa[len(grid)-1][len(grid[0])-2] > diff || fogo[len(grid)-2][len(grid[0])-1]-pessoa[len(grid)-2][len(grid[0])-1] > diff) {\n\t\treturn diff\n\t}\n\treturn diff - 1\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tvar nl, nc int\n\tfmt.Scan(&nl, &nc)\n\tgrid := make([][]int, nl)\n\tfor i := range grid {\n\t\tgrid[i] = make([]int, nc)\n\t}\n\tfor i := range grid {\n\t\tfor j := range grid[0] {\n\t\t\tfmt.Scan(&grid[i][j])\n\t\t}\n\t}\n\tresult := maximumMinutes(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "83"
+        }
+    ]
+}

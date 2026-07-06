@@ -7,8 +7,43 @@
         },
         {
             "label": "2026-06-29_20-39-26",
-            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\ntype Editor struct {\n\ttexto  *list.List\n\tcursor *list.Element\n}\n\nfunc newEditor() *Editor {\n\treturn &Editor{\n\t\ttexto: list.New(),\n\t\tcursor: nil,\n\t}\n}\n\nfunc (e *Editor) String() string {\n\tvar str string\n\tfor i := e.texto.Front(); i != nil; i = i.Next() {\n\t\tif i == e.cursor {\n\t\t\tstr += \"|\"\n\t\t}\n\t\tstr += string(i.Value.(byte))\n\t}\n\tif e.cursor == nil {\n\t\tstr += \"|\"\n\t}\n\treturn str\n}\n\nfunc main() {\n\tvar texto string\n\tfmt.Scanln(&texto)\n\te := newEditor()\n    backup := newEditor()\n\tfor i := range texto {\n\t\tswitch texto[i] {\n\t\tcase 'R':\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(byte('\\n'))\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(byte('\\n'), e.cursor)\n\t\t\t}\n\t\tcase 'B':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.texto.Remove(e.texto.Back())\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif e.cursor.Prev() != nil {\n\t\t\t\t\te.texto.Remove(e.cursor.Prev())\n\t\t\t\t}\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif e.cursor != nil {\n\t\t\t\ttmp := e.cursor.Next()\n\t\t\t\te.texto.Remove(e.cursor)\n\t\t\t\te.cursor = tmp\n\t\t\t}\n\t\tcase '<':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.cursor = e.texto.Back()\n\t\t\t\t}\n\t\t\t} else if e.cursor.Prev() != nil {\n\t\t\t\te.cursor = e.cursor.Prev()\n\t\t\t}\n\t\tcase '>':\n\t\t\tif e.cursor != nil {\n\t\t\t\te.cursor = e.cursor.Next()\n\t\t\t}\n        case 'Z':\n            e = backup\n\t\tdefault:\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(texto[i])\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(texto[i], e.cursor)\n\t\t\t}\n\t\t}\n\tbackup = e\n    }\n\tfmt.Println(e.String())\n}\n",
+            "content": "@@ -199,218 +199,8 @@\n %0A%7D%0A%0A\n-func (e *Editor) clonar() *Editor %7B%0A%09tmp := newEditor()%0A%09for i := e.texto.Front(); i != nil; i = i.Next() %7B%0A%09%09node := tmp.texto.PushBack(i.Value)%0A%09%09if i == e.cursor %7B%0A%09%09%09tmp.cursor = node%0A%09%09%7D%0A%09%7D%0A%09return tmp%0A%7D%0A%0A\n func\n@@ -549,30 +549,8 @@\n o %7B%0A\n-%09%09backup = e.clonar()%0A\n %09%09sw\n@@ -1309,17 +1309,8 @@\n ckup\n-.clonar()\n %0A%09%09d\n@@ -1434,24 +1434,36 @@\n r)%0A%09%09%09%7D%0A%09%09%7D%0A\n+%09backup = e%0A\n     %7D%0A%09fmt.P\n",
             "lines": "87"
+        },
+        {
+            "label": "2026-07-05_03-20-45",
+            "content": "@@ -719,23 +719,24 @@\n ckup := \n-e.clona\n+newEdito\n r()%0A%09for\n@@ -759,70 +759,8 @@\n o %7B%0A\n-%09%09if texto%5Bi%5D == 'Z' %7B%0A%09%09%09e = backup.clonar()%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09ba\n@@ -1497,16 +1497,66 @@\n ()%0A%09%09%09%7D%0A\n+        case 'Z':%0A            e = backup.clonar()%0A\n %09%09defaul\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-07-05_03-23-03",
+            "content": "@@ -713,32 +713,28 @@\n     \n-historico := %5B%5D*Editor%7B%7D\n+backup := e.clonar()\n %0A%09fo\n@@ -784,67 +784,18 @@\n %0A%09%09%09\n-if len(historico) %3E 0 %7B%0A%09%09%09%09e = historico%5Blen(historico)-1%5D\n+e = backup\n .clo\n@@ -807,90 +807,31 @@\n %0A%09%09%09\n-%09\n-historico = historico%5B:len(historico)-1%5D\n+continue\n %0A%09%09\n-%09\n %7D%0A%09%09\n-%7D%0A%09%09historico = append(historico,\n+backup =\n  e.c\n@@ -837,17 +837,16 @@\n clonar()\n-)\n %0A%09%09switc\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-07-05_03-27-22",
+            "content": "@@ -907,20 +907,8 @@\n %09%09%7D%0A\n-%09%09%09continue%0A\n %09%09%7D%0A\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-07-05_03-28-05",
+            "content": "@@ -738,34 +738,8 @@\n r%7B%7D%0A\n-%09desfeitos := %5B%5D*Editor%7B%7D%0A\n %09for\n@@ -758,16 +758,16 @@\n texto %7B%0A\n+\n %09%09if tex\n@@ -812,54 +812,8 @@\n 0 %7B%0A\n-%09%09%09%09desfeitos = append(desfeitos, e.clonar())%0A\n %09%09%09%09\n@@ -919,199 +919,11 @@\n nue%0A\n+\n %09%09%7D\n- else %7B%0A%09%09%09desfeitos = %5B%5D*Editor%7B%7D%0A%09%09%7D%0A%09%09if texto%5Bi%5D == 'Y' %7B%0A%09%09%09if len(desfeitos) %3E 0 %7B%0A%09%09%09%09e = desfeitos%5Blen(desfeitos)-1%5D.clonar()%0A%09%09%09%09desfeitos = desfeitos%5B:len(desfeitos)-1%5D%0A%09%09%09%7D%0A%09%09%7D \n %0A%09%09h\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-05_03-31-22",
+            "content": "@@ -1170,36 +1170,24 @@\n os)-1%5D%0A%09%09%09%7D%0A\n-%09%09%09continue%0A\n %09%09%7D %0A%09%09histo\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-07-05_03-31-34",
+            "content": "@@ -987,16 +987,54 @@\n ontinue%0A\n+%09%09%7D else %7B%0A%09%09%09desfeitos = %5B%5D*Editor%7B%7D%0A\n %09%09%7D%0A%09%09if\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-05_03-33-24",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\ntype Editor struct {\n\ttexto  *list.List\n\tcursor *list.Element\n}\n\nfunc newEditor() *Editor {\n\treturn &Editor{\n\t\ttexto: list.New(),\n\t\tcursor: nil,\n\t}\n}\n\nfunc (e *Editor) clonar() *Editor {\n\ttmp := newEditor()\n\tfor i := e.texto.Front(); i != nil; i = i.Next() {\n\t\tnode := tmp.texto.PushBack(i.Value)\n\t\tif i == e.cursor {\n\t\t\ttmp.cursor = node\n\t\t}\n\t}\n\treturn tmp\n}\n\nfunc (e *Editor) String() string {\n\tvar str string\n\tfor i := e.texto.Front(); i != nil; i = i.Next() {\n\t\tif i == e.cursor {\n\t\t\tstr += \"|\"\n\t\t}\n\t\tstr += string(i.Value.(byte))\n\t}\n\tif e.cursor == nil {\n\t\tstr += \"|\"\n\t}\n\treturn str\n}\n\nfunc main() {\n\tvar texto string\n\tfmt.Scanln(&texto)\n\te := newEditor()\n    historico := []*Editor{}\n\tdesfeitos := []*Editor{}\n\tfor i := range texto {\n\t\tif texto[i] == 'Z' {\n\t\t\tif len(historico) > 0 {\n\t\t\t\tdesfeitos = append(desfeitos, e.clonar())\n\t\t\t\te = historico[len(historico)-1].clonar()\n\t\t\t\thistorico = historico[:len(historico)-1]\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\tif texto[i] == 'Y' {\n\t\t\tif len(desfeitos) > 0 {\n\t\t\t\te = desfeitos[len(desfeitos)-1].clonar()\n\t\t\t\tdesfeitos = desfeitos[:len(desfeitos)-1]\n\t\t\t}\n\t\t\tcontinue\n\t\t} \n\t\thistorico = append(historico, e.clonar())\n\t\tswitch texto[i] {\n\t\tcase 'R':\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(byte('\\n'))\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(byte('\\n'), e.cursor)\n\t\t\t}\n\t\tcase 'B':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.texto.Remove(e.texto.Back())\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif e.cursor.Prev() != nil {\n\t\t\t\t\te.texto.Remove(e.cursor.Prev())\n\t\t\t\t}\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif e.cursor != nil {\n\t\t\t\ttmp := e.cursor.Next()\n\t\t\t\te.texto.Remove(e.cursor)\n\t\t\t\te.cursor = tmp\n\t\t\t}\n\t\tcase '<':\n\t\t\tif e.cursor == nil {\n\t\t\t\tif e.texto.Back() != nil {\n\t\t\t\t\te.cursor = e.texto.Back()\n\t\t\t\t}\n\t\t\t} else if e.cursor.Prev() != nil {\n\t\t\t\te.cursor = e.cursor.Prev()\n\t\t\t}\n\t\tcase '>':\n\t\t\tif e.cursor != nil {\n\t\t\t\te.cursor = e.cursor.Next()\n\t\t\t}\n\t\tdefault:\n\t\t\tif e.cursor == nil {\n\t\t\t\te.texto.PushBack(texto[i])\n\t\t\t} else {\n\t\t\t\te.texto.InsertBefore(texto[i], e.cursor)\n\t\t\t}\n\t\t}\n    }\n\tfmt.Println(e.String())\n}\n",
+            "lines": "112"
         }
     ]
 }

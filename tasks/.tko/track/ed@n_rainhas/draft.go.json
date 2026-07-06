@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_01-04-37",
+            "content": "@@ -55,16 +55,23 @@\n lin, col\n+, valor\n  int) bo\n@@ -727,16 +727,19 @@\n iz, l, c\n+, i\n ) %7B%0A    \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-07-06_01-05-21",
+            "content": "@@ -1134,25 +1134,8 @@\n int%0A\n-    fmt.Scan(&n)%0A\n     \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-07-06_01-06-07",
+            "content": "@@ -1106,232 +1106,8 @@\n %0A%7D%0A%0A\n-func contaRainhas(matriz %5B%5D%5B%5Dbool) int %7B%0A    count := 0%0A    for i := range matriz %7B%0A        for j := range matriz%5B0%5D %7B%0A            if matriz%5Bi%5D%5Bj%5D %7B%0A                count++%0A            %7D%0A        %7D %0A    %7D%0A    return count%0A%7D%0A%0A\n func\n@@ -1293,28 +1293,8 @@\n tln(\n-contaRainhas(matriz)\n )%0A%7D%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-07-06_01-08-45",
+            "content": "@@ -266,576 +266,8 @@\n   %7D%0A\n-    for i, j := lin-1, col-1; i %3E= 0 && j %3E= 0; i, j = i-1, j-1 %7B%0A        if matriz%5Bi%5D%5Bj%5D %7B%0A            return false%0A        %7D%0A    %7D%0A    for i, j := lin-1, col+1; i %3E= 0 && j %3C len(matriz); i, j = i-1, j+1 %7B%0A        if matriz%5Bi%5D%5Bj%5D %7B%0A            return false%0A        %7D%0A    %7D%0A    for i, j := lin+1, col+1; i %3C len(matriz) && j %3C len(matriz); i, j = i+1, j+1 %7B%0A        if matriz%5Bi%5D%5Bj%5D %7B%0A            return false%0A        %7D%0A    %7D%0A    for i, j := lin+1, col-1; i %3C len(matriz) && j %3E= 0; i, j = i+1, j-1 %7B%0A        if matriz%5Bi%5D%5Bj%5D %7B%0A            return false%0A        %7D%0A    %7D%0A\n     \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-07-06_01-15-52",
+            "content": "@@ -1016,16 +1016,50 @@\n   %7D%0A\n+    // se n%C3%A3o for rainha, continue%0A\n     if \n-!\n matr\n@@ -1066,16 +1066,25 @@\n iz%5Bl%5D%5Bc%5D\n+ == false\n  %7B%0A     \n@@ -1133,99 +1133,370 @@\n     \n-if pode(matriz, l, c) %7B%0A        matriz%5Bl%5D%5Bc%5D = true%0A        if resolver(matriz, index+1) %7B%0A\n+// para todos os n%C3%BAmeros de %5B1 a N%5D%0A    for i := 1; i %3C= nl; i++ %7B%0A    //     se o n%C3%BAmero n%C3%A3o estiver na linha, coluna e quadrante%0A        if pode(matriz, l, c) %7B%0A    //         coloque o n%C3%BAmero na matriz%0A            matriz%5Bl%5D%5Bc%5D = true%0A    //         se resolver(matriz, index + 1):%0A            if resolver(matriz, index+1) %7B%0A    //             return True%0A    \n     \n@@ -1515,34 +1515,98 @@\n rn true%0A        \n+  \n+  \n %7D%0A\n+    //         matriz%5Bl%5D%5Bc%5D = '.' // desfaz a tentativa%0A    \n         matriz%5Bl\n@@ -1614,24 +1614,28 @@\n %5Bc%5D = false%0A\n+    \n     %7D%0A%7D%0A    \n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-07-06_01-18-35",
+            "content": "@@ -1242,24 +1242,46 @@\n false%0A    %7D%0A\n+%7D%0A    // return False%0A\n     return f\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-07-06_01-18-51",
+            "content": "@@ -1641,32 +1641,8 @@\n   %7D%0A\n-    matriz%5B0%5D%5B0%5D = true%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-07-06_01-20-00",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -68,17 +68,20 @@\n  bool %7B%0A\n-%09\n+    \n for i :=\n@@ -88,34 +88,40 @@\n  range matriz %7B%0A\n-%09%09\n+        \n if matriz%5Bi%5D%5Bcol\n@@ -120,27 +120,36 @@\n z%5Bi%5D%5Bcol%5D %7B%0A\n-%09%09%09\n+            \n return false\n@@ -145,32 +145,44 @@\n eturn false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n for i := ran\n@@ -193,18 +193,24 @@\n atriz %7B%0A\n-%09%09\n+        \n if matri\n@@ -217,27 +217,36 @@\n z%5Blin%5D%5Bi%5D %7B%0A\n-%09%09%09\n+            \n return false\n@@ -242,32 +242,44 @@\n eturn false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n for i, j := \n@@ -320,34 +320,40 @@\n  j = i-1, j-1 %7B%0A\n-%09%09\n+        \n if matriz%5Bi%5D%5Bj%5D \n@@ -346,35 +346,44 @@\n  matriz%5Bi%5D%5Bj%5D %7B%0A\n-%09%09%09\n+            \n return false%0A%09%09%7D\n@@ -375,32 +375,44 @@\n eturn false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n for i, j := \n@@ -462,34 +462,40 @@\n  j = i-1, j+1 %7B%0A\n-%09%09\n+        \n if matriz%5Bi%5D%5Bj%5D \n@@ -488,35 +488,44 @@\n  matriz%5Bi%5D%5Bj%5D %7B%0A\n-%09%09%09\n+            \n return false%0A%09%09%7D\n@@ -517,32 +517,44 @@\n eturn false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n for i, j := \n@@ -617,26 +617,32 @@\n  i+1, j+1 %7B%0A\n-%09%09\n+        \n if matriz%5Bi%5D\n@@ -639,35 +639,44 @@\n  matriz%5Bi%5D%5Bj%5D %7B%0A\n-%09%09%09\n+            \n return false%0A%09%09%7D\n@@ -672,24 +672,36 @@\n n false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n for i, j\n@@ -763,18 +763,24 @@\n , j-1 %7B%0A\n-%09%09\n+        \n if matri\n@@ -789,19 +789,28 @@\n i%5D%5Bj%5D %7B%0A\n-%09%09%09\n+            \n return f\n@@ -814,24 +814,36 @@\n n false%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n return t\n@@ -898,17 +898,20 @@\n  bool %7B%0A\n-%09\n+    \n nl := le\n@@ -920,17 +920,20 @@\n matriz)%0A\n-%09\n+    \n l := ind\n@@ -940,17 +940,20 @@\n ex / nl%0A\n-%09\n+    \n c := ind\n@@ -960,17 +960,20 @@\n ex %25 nl%0A\n-%09\n+    \n if index\n@@ -982,54 +982,116 @@\n = nl\n-*\n+ * \n nl %7B%0A\n-%09%09return contaRainhas(matriz) == nl%0A%09%7D%0A%09\n+        return true%0A    %7D%0A    if !matriz%5Bl%5D%5Bc%5D %7B%0A        return resolver(matriz, index+1)%0A    %7D%0A    \n if p\n@@ -1110,18 +1110,24 @@\n l, c) %7B%0A\n-%09%09\n+        \n matriz%5Bl\n@@ -1138,18 +1138,24 @@\n  = true%0A\n-%09%09\n+        \n if resol\n@@ -1181,86 +1181,93 @@\n ) %7B%0A\n-%09%09%09return true%0A%09%09%7D%0A%09%09matriz%5Bl%5D%5Bc%5D = false%0A%09%7D%0A%09return resolver(matriz, index+1)\n+            return true%0A        %7D%0A        matriz%5Bl%5D%5Bc%5D = false%0A    %7D%0A    return false\n %0A%7D%0A%0A\n@@ -1307,17 +1307,20 @@\n ) int %7B%0A\n-%09\n+    \n count :=\n@@ -1322,17 +1322,20 @@\n nt := 0%0A\n-%09\n+    \n for i :=\n@@ -1350,18 +1350,24 @@\n atriz %7B%0A\n-%09%09\n+        \n for j :=\n@@ -1385,19 +1385,28 @@\n iz%5B0%5D %7B%0A\n-%09%09%09\n+            \n if matri\n@@ -1419,33 +1419,67 @@\n %5D %7B%0A\n-%09%09%09%09count++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+                count++%0A            %7D%0A        %7D %0A    %7D%0A    \n retu\n@@ -1504,17 +1504,20 @@\n ain() %7B%0A\n-%09\n+    \n var n in\n@@ -1518,17 +1518,20 @@\n r n int%0A\n-%09\n+    \n fmt.Scan\n@@ -1535,17 +1535,20 @@\n can(&n)%0A\n-%09\n+    \n matriz :\n@@ -1567,17 +1567,20 @@\n ool, n)%0A\n-%09\n+    \n for i :=\n@@ -1599,10 +1599,16 @@\n z %7B%0A\n-%09%09\n+        \n matr\n@@ -1635,12 +1635,18 @@\n  n)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n matr\n@@ -1661,17 +1661,20 @@\n  = true%0A\n-%09\n+    \n resolver\n@@ -1689,9 +1689,12 @@\n  0)%0A\n-%09\n+    \n fmt.\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-07-06_01-26-43",
+            "content": "@@ -1304,16 +1304,37 @@\n , n)%0A%09%7D%0A\n+%09matriz%5B0%5D%5B0%5D = true%0A\n %09resolve\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-07-06_01-29-32",
+            "content": "@@ -25,106 +25,122 @@\n t%22%0A%0A\n-var total int%0A%0Afunc resolver(line, n \n+func pode(matriz %5B%5D%5B%5Dbool, l\n in\n-t\n , col\n-, d1, d2 %5B%5D\n+ int) \n bool\n-)\n  %7B%0A%09\n-if line == n %7B%0A%09%09total++%0A%09%09return\n+for i := range matriz %7B%0A%09%09if matriz%5Bi%5D%5Bcol%5D %7B%0A%09%09%09return false%0A%09%09%7D\n %0A%09%7D%0A\n@@ -159,17 +159,22 @@\n nge \n-n\n+matriz\n  %7B%0A%09%09if \n !col\n@@ -173,221 +173,1013 @@\n %09if \n-!col%5Bi%5D && !d1%5Bline+i%5D && !d2%5Bline-i+n-1%5D %7B%0A%09%09%09col%5Bi%5D = true%0A%09%09%09d1%5Bline+i%5D = true%0A%09%09%09d2%5Bline-i+n-1%5D = true%0A%09%09%09resolver(line+1, n, col,d1,d2)%0A%09%09%09col%5Bi%5D = false%0A%09%09%09d1%5Bline+i%5D = false%0A%09%09%09d2%5Bline-i+n-1%5D = false%0A%09%09%7D%0A%09%7D\n+matriz%5Blin%5D%5Bi%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09for i, j := lin-1, col-1; i %3E= 0 && j %3E= 0; i, j = i-1, j-1 %7B%0A%09%09if matriz%5Bi%5D%5Bj%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09for i, j := lin-1, col+1; i %3E= 0 && j %3C len(matriz); i, j = i-1, j+1 %7B%0A%09%09if matriz%5Bi%5D%5Bj%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09for i, j := lin+1, col+1; i %3C len(matriz) && j %3C len(matriz); i, j = i+1, j+1 %7B%0A%09%09if matriz%5Bi%5D%5Bj%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09for i, j := lin+1, col-1; i %3C len(matriz) && j %3E= 0; i, j = i+1, j-1 %7B%0A%09%09if matriz%5Bi%5D%5Bj%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09return true%0A%7D%0A%0Afunc resolver(matriz %5B%5D%5B%5Dbool, index int) bool %7B%0A%09nl := len(matriz)%0A%09l := index / nl%0A%09c := index %25 nl%0A%09if index == nl*nl %7B%0A%09%09return contaRainhas(matriz) == nl%0A%09%7D%0A%09if pode(matriz, l, c) %7B%0A%09%09matriz%5Bl%5D%5Bc%5D = true%0A%09%09if resolver(matriz, index+1) %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%09matriz%5Bl%5D%5Bc%5D = false%0A%09%7D%0A%09return resolver(matriz, index+1)%0A%7D%0A%0Afunc contaRainhas(matriz %5B%5D%5B%5Dbool) int %7B%0A%09count := 0%0A%09for i := range matriz %7B%0A%09%09for j := range matriz%5B0%5D %7B%0A%09%09%09if matriz%5Bi%5D%5Bj%5D %7B%0A%09%09%09%09count++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return count\n %0A%7D%0A%0A\n@@ -1218,19 +1218,22 @@\n an(&n)%0A%09\n-col\n+matriz\n  := make\n@@ -1231,24 +1231,26 @@\n z := make(%5B%5D\n+%5B%5D\n bool, n)%0A%09d1\n@@ -1251,37 +1251,44 @@\n n)%0A%09\n-d1 := make(%5B%5Dbool, 2*n)%0A%09d2 :\n+for i := range matriz %7B%0A%09%09matriz%5Bi%5D \n = ma\n@@ -1302,23 +1302,13 @@\n ol, \n-2*\n n)%0A%09\n-total = 0\n+%7D\n %0A%09re\n@@ -1318,45 +1318,52 @@\n ver(\n-0, n, col, d1, d2)%0A%09fmt.Println(total\n+matriz, 0)%0A%09fmt.Println(contaRainhas(matriz)\n )%0A%7D%0A\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-07-06_04-09-16",
+            "content": "package main\n\nimport \"fmt\"\n\nvar total int\n\nfunc resolver(line, n int, col, d1, d2 []bool) {\n\tif line == n {\n\t\ttotal++\n\t\treturn\n\t}\n\tfor i := range n {\n\t\tif !col[i] && !d1[line+i] && !d2[line-i+n-1] {\n\t\t\tcol[i] = true\n\t\t\td1[line+i] = true\n\t\t\td2[line-i+n-1] = true\n\t\t\tresolver(line+1, n, col,d1,d2)\n\t\t\tcol[i] = false\n\t\t\td1[line+i] = false\n\t\t\td2[line-i+n-1] = false\n\t\t}\n\t}\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tcol := make([]bool, n)\n\td1 := make([]bool, 2*n)\n\td2 := make([]bool, 2*n)\n\ttotal = 0\n\tresolver(0, n, col, d1, d2)\n\tfmt.Println(total)\n}\n",
+            "lines": "34"
+        }
+    ]
+}
