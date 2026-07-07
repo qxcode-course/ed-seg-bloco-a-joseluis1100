@@ -126,3 +126,26 @@
 2026-07-07 05:33:36, MOVE, v:1, k:ed@hex, mode:DOWN
 2026-07-07 05:33:46, MOVE, v:1, k:ed@hex, mode:PICK
 2026-07-07 05:30:31, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-07-07 05:38:11, MOVE, v:1, k:ed@hex, mode:BACK
+2026-07-07 15:46:31, MOVE, v:1, k:ed@compare, mode:PICK
+2026-07-07 15:50:46, MOVE, v:1, k:ed@compare, mode:BACK
+2026-07-07 15:53:12, MOVE, v:1, k:ed@hex, mode:PICK
+2026-07-07 15:56:16, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 16:01:06, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 16:05:54, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 16:11:06, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 16:16:08, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 16:21:07, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:09:46, MOVE, v:1, k:ed@hex, mode:PICK
+2026-07-07 17:14:32, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:15:27, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:19:38, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:24:39, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:29:37, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:34:36, MOVE, v:1, k:ed@hex, mode:EDIT
+2026-07-07 17:38:39, EXEC, v:1, k:ed@hex, mode:LOCK, rate:0, size:281
+2026-07-07 17:38:57, MOVE, v:1, k:ed@hex, mode:BACK
+2026-07-07 17:39:18, EXEC, v:1, k:ed@hex, mode:FREE
+2026-07-07 17:43:18, EXEC, v:1, k:ed@hex, mode:FREE
+2026-07-07 17:53:17, EXEC, v:1, k:ed@hex, mode:FREE
+2026-07-07 18:07:23, EXEC, v:1, k:ed@hex, mode:FREE
