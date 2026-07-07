@@ -20,7 +20,6 @@ sources:
   quests: null
 expanded:
 - ed@linear
-- ed@rec
 flags:
   inbox: all
   panel: skills
@@ -30,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@dfs
-selected_index: 42
+selected: ed@vector
+selected_index: 3

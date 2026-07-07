@@ -107,45 +107,29 @@ func randInt(min, max int) int {
 // 	}
 // }
 
-// func triangulo(pen *Pen, tam, depth float64) {
-// 	if depth == 0 {
-// 		return
-// 	}
-// 	for range 3 {
-// 		pen.Walk(tam)
-// 		pen.Right(120)
-// 		triangulo(pen, tam/2, depth-1)
-// 	}
-// }
-
-func trigo(pen *Pen, tam, depth float64) {
+func triangulo(pen *Pen, tam, depth float64) {
 	if depth == 0 {
 		return
 	}
-	for range 4 {
-		pen.Walk(tam/4)
-		pen.Left(30)
-		trigo(pen, tam/3, depth-1)
-		pen.Right(60)
-		trigo(pen, tam/3, depth-1)
-		pen.Left(30)
+	for range 3 {
+		pen.Walk(tam)
+		pen.Right(120)
+		triangulo(pen, tam/2, depth-1)
 	}
-	pen.Walk(-tam)
 }
 
 func main() {
-	pen := NewPen(1000, 1000)
-	pen.SetRGB(225, 0, 0)
-	pen.SetPosition(500, 1000)
-	pen.SetHeading(90)
+	pen := NewPen(1000, 1000) // cria um canvas de 500 de largura por 500 de altura
+	pen.SetRGB(225, 0, 0)     // muda a cor do pincel para vermelho
+	pen.SetPosition(100, 100) // move o pincel para x 250, y 500
+	pen.SetHeading(0)
 	//arvore(pen, 200, 15)
 	//circulo(pen, 325, 5)
 	//gelo(pen, 325, 5)
 	//quadrado(pen, 400, 6)
 	//rotacao(pen, 800)
 	//carpete(pen, 400, 6)
-	//triangulo(pen, 800, 9)
-	trigo(pen, 800, 7)
-	pen.SavePNG("wheat.png")
+	triangulo(pen, 800, 9)
+	pen.SavePNG("triangle.png")
 	fmt.Println("PNG file created successfully.")
 }

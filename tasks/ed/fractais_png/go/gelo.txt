@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+// func arvore(pen *Pen, dist, times float64) {
+//     if times == 0 {
+//         return
+//     }
+//     pen.Walk(dist)
+//     pen.Left(25)
+//     arvore(pen, dist*0.75, times-1)
+//     pen.Right(50)
+//     arvore(pen, dist*0.75, times-1)
+//     pen.Left(25)
+//     pen.Walk(-dist)
+// }
+
+// func circulo(pen *Pen, raio, depth float64) {
+//     if depth == 0 {
+//         return
+//     }
+//     pen.DrawCircle(raio)
+//     for range 6 {
+//         pen.Up()
+//         pen.Walk(raio)
+//         pen.Down()
+//         circulo(pen, raio/3, depth-1)
+//         pen.Up()
+//         pen.Walk(-raio)
+//         pen.Down()
+//         pen.Left(60)
+//     }
+// }
+
+func gelo(pen *Pen, raio, depth float64) {
+    if depth == 0 {
+        return
+    }
+    for range 5 {
+        pen.Walk(raio)
+        gelo(pen, raio/3, depth-1)
+        pen.Walk(-raio)
+        pen.Left(360/5)
+    }
+}
+
+func main() {
+	pen := NewPen(1000, 1000)   // cria um canvas de 500 de largura por 500 de altura
+	pen.SetRGB(225, 0, 0)     // muda a cor do pincel para vermelho
+	pen.SetPosition(500, 500) // move o pincel para x 250, y 500
+    pen.SetHeading(270)
+    //arvore(pen, 200, 15)
+    //circulo(pen, 325, 5)
+    gelo(pen, 325, 5)
+	pen.SavePNG("ice.png")
+	fmt.Println("PNG file created successfully.")
+}
