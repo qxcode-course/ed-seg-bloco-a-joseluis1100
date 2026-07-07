@@ -22,12 +22,12 @@ expanded:
 - ed@linear
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: time
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@hex
-selected_index: 15
+selected: ed@bufferring
+selected_index: 6

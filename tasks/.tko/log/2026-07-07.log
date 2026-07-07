@@ -149,3 +149,6 @@
 2026-07-07 17:43:18, EXEC, v:1, k:ed@hex, mode:FREE
 2026-07-07 17:53:17, EXEC, v:1, k:ed@hex, mode:FREE
 2026-07-07 18:07:23, EXEC, v:1, k:ed@hex, mode:FREE
+2026-07-07 19:42:33, SELF, v:1, k:ed@hex, self:1, study:120
+2026-07-07 19:42:42, SELF, v:1, k:ed@hex, self:1, study:120, refactor:1
+2026-07-07 19:45:41, SELF, v:1, k:ed@hex, self:1, rate:100, study:120, refactor:1
